@@ -1,7 +1,7 @@
 \name{Sim.DiffGUI}
 \alias{Sim.DiffGUI}
 \title{
-GUI for Sim.DiffProc
+GUI for Sim.DiffProc Package
 }
 \usage{
 Sim.DiffGUI()
@@ -21,3 +21,4 @@ Sim.DiffGUI()
 \keyword{ financial models }
 \keyword{ Stochastic Differential Equation }
 \keyword{Numerical Solution of Stochastic Differential Equation}
+
