@@ -1,0 +1,14 @@
+Sim.DiffGUI             GUI for Sim.DiffProc Package
+Sim.DiffProcGUI-package
+                        Graphical User Interface for Simulation of
+                        Diffusion Processes
+## User Interface :: Sim.DiffGUI()
+## file.show(system.file("NEWS", package="Sim.DiffProc"))
+## to look at Sim.DiffProc\\Imgexamples\\......................... 
+## to look at Sim.DiffProc\\Video\\...............................
+## University of Science and Technology Houari Boumediene ( USTHB )
+## Faculty of Mathematics, Department of Probabilities and Statistics
+## 2011 Algeria.
+##
+
+

@@ -13,12 +13,12 @@ A Graphical User Interface for some functions in the Sim.DiffProc package
 BOUKHETALA Kamal ,GUIDOUM Arsalane.
 }
 \examples{
-Sim.DiffGUI()
+## Sim.DiffGUI()
 }
 \keyword{ Diffusion Process }
 \keyword{ Environment R }
 \keyword{ Simulation }
-\keyword{ financial models }
+\keyword{ Financial models }
 \keyword{ Stochastic Differential Equation }
 \keyword{Numerical Solution of Stochastic Differential Equation}
 

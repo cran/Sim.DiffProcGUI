@@ -14,12 +14,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Creating Flow of Arithmetic Brownian Motion ?",command=function(){print(help("ABMF"))},width=45)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                   Brownian Motion\nCreating Flow of Arithmetic Brownian Motion ?",command=function(){print(help("ABMF"))},width=45)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -84,7 +84,7 @@ tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (Coefficient of diffusion)",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -112,12 +112,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Creating Arithmetic Brownian Motion ?",command=function(){print(help("ABM"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                Brownian Motion\nCreating Arithmetic Brownian Motion ?",command=function(){print(help("ABM"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -175,7 +175,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (Coefficient of diffusion)",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -186,6 +186,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BBFGUI <-
 function()
@@ -203,12 +204,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Creating Flow of Brownian Bridge ?",command=function(){print(help("BBF"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="              Brownian Motion\nCreating Flow of Brownian Bridge ?",command=function(){print(help("BBF"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -266,7 +267,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -277,6 +278,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BBGUI <-
 function()
@@ -294,12 +296,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Creating Brownian Bridge ?",command=function(){print(help("BB"))},width=30)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="        Brownian Motion\nCreating Brownian Bridge ?",command=function(){print(help("BB"))},width=30)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -350,7 +352,7 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=8,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -361,6 +363,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BesselpGUI <-
 function()
@@ -378,12 +381,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Bessel Process ?",command=function(){print(help("Besselp"))},width=20)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Stochastic Models\n  Bessel Process ?",command=function(){print(help("Besselp"))},width=20)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -432,7 +435,7 @@ tkgrid(DimHlp.but, row=4, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
 tkgrid(DimHlp.but, row=5, column=2,sticky="w")
-DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="x0 = 1 (x0 =! 0).",icon="info",type="ok"))
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 1 (x0 =! 0).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
 tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
@@ -441,7 +444,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (alpha >=2).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Alpha : "), alpha.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -452,6 +455,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BM2D <-
 function(N=10000,t0=0,x0=0,T=1)
@@ -488,12 +492,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Empirical Covariance for Brownian Motion ?",command=function(){print(help("BMcov"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                Brownian Motion Property\nEmpirical Covariance for Brownian Motion ?",command=function(){print(help("BMcov"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -518,7 +522,7 @@ USTHB <- function(...)
          N      <- as.numeric(tclObj(N))  
          M     <- as.numeric(tclObj(M))
          T      <- as.numeric(tclObj(T))
-         C     <- as.numeric(tclObj(C))
+         C      <- as.numeric(tclObj(C))
         eval(substitute(BMcov(N=N,M=M,T=T,C=C)))
         }
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
@@ -541,6 +545,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BMEuler <-
 function()
@@ -591,12 +596,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Limit for Brownian Motion ?",command=function(){print(help("BMinf"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text=" Brownian Motion Property\nLimit for Brownian Motion ?",command=function(){print(help("BMinf"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -631,6 +636,7 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
+
 .BMIrtGUI <-
 function()
          {
@@ -647,12 +653,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Invariance by Reversal of Time ?",command=function(){print(help("BMIrt"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="   Brownian Motion Property\nInvariance by Reversal of Time ?",command=function(){print(help("BMIrt"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -687,6 +693,7 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
+
 .BMIto2GUI <-
 function()
          {
@@ -703,12 +710,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Ito integral(W(s)dW(s),0,t) ?",command=function(){print(help("BMIto1"))},width=45)
+##tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="           Ito Integral\nIntegral(W(s)dW(s),0,t) ?",command=function(){print(help("BMIto1"))},width=45)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -738,7 +745,7 @@ tkgrid(DimHlp.but, row=3, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=4, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=5,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=5,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -749,6 +756,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BMItoCGUI <-
 function()
@@ -766,12 +774,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Ito integral(alpha*dW(s),0,t) ?",command=function(){print(help("BMItoC"))},width=45)
+##tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="           Ito Integral\nIntegral(alpha*dW(s),0,t) ?",command=function(){print(help("BMItoC"))},width=45)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -808,7 +816,7 @@ tkgrid(DimHlp.but, row=4, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant (Example alpha = 4).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Alpha : "), alpha.entry,sticky="w")
 tkgrid(DimHlp.but, row=5, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=6,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=6,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -836,12 +844,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Ito integral(W(s)^n*dW(s),0,t) ?",command=function(){print(help("BMItoP"))},width=50)
+##tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="           Ito Integral\nIntegral(W(s)^n*dW(s),0,t) ?",command=function(){print(help("BMItoP"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -878,7 +886,7 @@ tkgrid(DimHlp.but, row=4, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant (Example n = 3).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Power (n) : "), power.entry,sticky="w")
 tkgrid(DimHlp.but, row=5, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=6,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=6,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -906,12 +914,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Ito integral(s*dW(s),0,t) ?",command=function(){print(help("BMItoT"))},width=40)
+##tkgrid(tklabel(tt, text = "Ito Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="           Ito Integral\nIntegral(s*dW(s),0,t) ?",command=function(){print(help("BMItoT"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -941,7 +949,7 @@ tkgrid(DimHlp.but, row=3, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=4, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=5,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=5,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -969,12 +977,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Flow of Brownian Motion by The Normal Distribution ?",command=function(){print(help("BMNF"))},width=50)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                                  Brownian Motion\nFlow of Brownian Motion by The Normal Distribution ?",command=function(){print(help("BMNF"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1025,7 +1033,7 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="if C = 1 it is Standard Brownian Motion.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Constant positive (C) : "), C.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=8,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1036,6 +1044,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BMNGUI <-
 function()
@@ -1053,12 +1062,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Brownian Motion by The Normal Distribution ?",command=function(){print(help("BMN"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="          Brownian Motion \nby The Normal Distribution ?",command=function(){print(help("BMN"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1102,7 +1111,7 @@ tkgrid(DimHlp.but, row=5, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="if C = 1 it is Standard Brownian Motion.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Constant positive (C) : "), C.entry,sticky="w")
 tkgrid(DimHlp.but, row=6, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=7,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=7,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1130,12 +1139,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Trajectories Brownian Lies Between The Two Curves ?",command=function(){print(help("BMP"))},width=50)
+##tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                     Brownian Motion Property\nTrajectories Brownian Lies Between The Two Curves ?",command=function(){print(help("BMP"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1200,12 +1209,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Flow of Brownian Motion by a Random Walk ?",command=function(){print(help("BMRWF"))},width=45)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Flow of Brownian Motion \n    by a Random Walk ?",command=function(){print(help("BMRWF"))},width=45)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1256,7 +1265,7 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="if C = 1 it is Standard Brownian Motion.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Constant positive (C) : "), C.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=8,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1267,6 +1276,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BMRWGUI <-
 function()
@@ -1284,12 +1294,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Brownian Motion by a Random Walk ?",command=function(){print(help("BMRW"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text=" Brownian Motion \nby a Random Walk ?",command=function(){print(help("BMRW"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1333,7 +1343,7 @@ tkgrid(DimHlp.but, row=5, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="if C = 1 it is Standard Brownian Motion.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Constant positive (C) : "), C.entry,sticky="w")
 tkgrid(DimHlp.but, row=6, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=7,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=7,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1344,6 +1354,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BMscalGUI <-
 function()
@@ -1361,12 +1372,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Brownian Motion invariance by scaling ?",command=function(){print(help("BMscal"))},width=40)
+##tkgrid(tklabel(tt, text = "Brownian Motion Property", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="         Brownian Motion Property\nBrownian Motion invariance by scaling ?",command=function(){print(help("BMscal"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1417,7 +1428,7 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant (Example S3 = 1.2).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Scale 3 (S3) : "), S3.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=8,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1445,12 +1456,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Stratonovitch integral(alpha o dW(s),0,t) ?",command=function(){print(help("BMStraC"))},width=55)
+##tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="    Stratonovitch Integral\nIntegral(alpha o dW(s),0,t) ?",command=function(){print(help("BMStraC"))},width=55)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1487,7 +1498,7 @@ tkgrid(DimHlp.but, row=4, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant (Example alpha = 4).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Alpha : "), alpha.entry,sticky="w")
 tkgrid(DimHlp.but, row=5, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=6,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=6,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1498,6 +1509,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BMStraGUI <-
 function()
@@ -1515,12 +1527,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Stratonovitch integral(W(s) o dW(s),0,t) ?",command=function(){print(help("BMStra"))},width=55)
+##tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="    Stratonovitch Integral\nIntegral(W(s) o dW(s),0,t) ?",command=function(){print(help("BMStra"))},width=55)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1550,7 +1562,7 @@ tkgrid(DimHlp.but, row=3, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=4, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=5,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=5,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1578,12 +1590,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Stratonovitch integral(W(s)^n o dW(s),0,t) ?",command=function(){print(help("BMStraP"))},width=55)
+##tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="    Stratonovitch Integral\nIntegral(W(s)^n o dW(s),0,t) ?",command=function(){print(help("BMStraP"))},width=55)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1620,7 +1632,7 @@ tkgrid(DimHlp.but, row=4, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant (Example n = 3).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Power (n) : "), power.entry,sticky="w")
 tkgrid(DimHlp.but, row=5, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=6,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=6,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1648,12 +1660,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Simulation of the Stratonovitch integral(s o dW(s),0,t) ?",command=function(){print(help("BMStraT"))},width=55)
+##tkgrid(tklabel(tt, text = "Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="    Stratonovitch Integral\nIntegral(s o dW(s),0,t) ?",command=function(){print(help("BMStraT"))},width=55)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1683,7 +1695,7 @@ tkgrid(DimHlp.but, row=3, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=4, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=5,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=5,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1711,12 +1723,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Constant Elasticity of Variance (CEV) Models ?",command=function(){print(help("CEV"))},width=46)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                         Stochastic Models\nConstant Elasticity of Variance (CEV) Models ?",command=function(){print(help("CEV"))},width=46)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1788,7 +1800,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (sigma * X(t)^gamma :diffusion coefficient). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Gamma : "), gamma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1799,6 +1811,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .CIRGUI <-
 function()
@@ -1816,12 +1829,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Cox-Ingersoll-Ross (CIR) Models ?",command=function(){print(help("CIR"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="           Stochastic Models\nCox-Ingersoll-Ross (CIR) Models ?",command=function(){print(help("CIR"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1893,7 +1906,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive ( sigma * sqrt(X(t)) :diffusion coefficient). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -1921,12 +1934,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="The Modified CIR and Hyperbolic Process ?",command=function(){print(help("CIRhy"))},width=46)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                 Stochastic Models\nThe Modified CIR and Hyperbolic Process ?",command=function(){print(help("CIRhy"))},width=46)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -1991,7 +2004,7 @@ tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive ( sigma * sqrt(1+X(t)^2) :diffusion coefficient). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2002,6 +2015,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .CKLSGUI <-
 function()
@@ -2019,12 +2033,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Chan-Karolyi-Longstaff-Sanders (CKLS) Models ?",command=function(){print(help("CKLS"))},width=55)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                       Stochastic Models\nChan-Karolyi-Longstaff-Sanders (CKLS) Models ?",command=function(){print(help("CKLS"))},width=55)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -2103,7 +2117,7 @@ tkgrid(DimHlp.but, row=10, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive ( sigma * X(t)^gamma :diffusion coefficient).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Gamma : "), gamma.entry,sticky="w")
 tkgrid(DimHlp.but, row=11, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=12,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2131,12 +2145,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Diffusion Bridge Model ?",command=function(){print(help("diffBridge"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="    Stochastic Models\nDiffusion Bridge Model ?",command=function(){print(help("diffBridge"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -2205,7 +2219,7 @@ tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2216,6 +2230,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .DWPGUI <-
 function()
@@ -2233,12 +2248,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Double-Well Potential Model ?",command=function(){print(help("DWP"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="        Stochastic Models\nDouble-Well Potential Model ?",command=function(){print(help("DWP"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="we")
 
 N <- tclVar(1000)
@@ -2289,7 +2304,7 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=8,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2301,80 +2316,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.Euler <-
-function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if (M < 1)
-            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(a))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
-
-if(!is.expression(sigma))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
-
-Eul <- function(N,T=1,Dt,t0,x0,a,sigma)
-     {
-
-A    <- function(t,x)  eval(a)
-S    <- function(t,x)  eval(sigma)
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-u = runif(N,0,1)
-o = rep(1,N)
-o [ which(u < 0.5) ] = -1
-w = cumsum(c(0,o))*sqrt((T-t0)/N)
-D    <- diff(w)
-X    <- numeric()
-X[1] <- x0
-for (i in 2:(N+1)){X[i] = X[i-1] + A(t[i-1],X[i-1])*Dt + S(t[i-1],X[i-1])*D[i-1]}      
-X
-   }
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-Q = sapply(rep(N,length=M),Eul,T=T,t0=t0,x0=x0,Dt=Dt,a=a,sigma=sigma)
-Q.mean <- apply(Q,1,mean)
-r1 <- min(apply(Q,2,min))
-r2 <- max(apply(Q,2,max))
-plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
-mtext(expression("Euler scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
-for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
-mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
-mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
-mtext(a,adj=0.17,col="red",line=1.8)
-mtext(sigma,adj=0.17,col="red",line=0.4)
-mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
-mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
-mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
-mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
-if (M >=2){lines(t,Q.mean,lwd=2,col="blue")
-legend("topleft",bg="gray85",border="gray",c("Average trajectory"),lty=c(1),col=c("blue"),lwd=2)}
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X.mean <- Q.mean
-X <- Q
-Result <- data.frame(time,X)
-if (M >=2) {Result <- data.frame(time,Q,X.mean)}
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "Euler.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-    }
 
 .EulerGUI <-
 function()
@@ -2392,12 +2333,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Euler Scheme ?",command=function(){print(help("snssde"))},width=40)
+##tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Simulation for Numerical Solution\n                Euler Scheme ?",command=function(){print(help("snssde"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -2473,7 +2414,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2519,7 +2460,7 @@ r1 <- min(apply(Q,2,min))
 r2 <- max(apply(Q,2,max))
 plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
 mtext(expression("flow of ":dX[t]== 3*X[t]*dt+2*dW[t]),line=2,cex=1.2,adj=0.5,col="blue")
-for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
+for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1)}
 mtext(bquote(M==.(M)),line=0.4,cex=1,adj=0,col="red")
 mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=0.9,adj=1,col="red")
 mtext(bquote(t[0]==.(t0)),line=0.9,cex=0.9,adj=1,col="red")
@@ -2544,11 +2485,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
 but <- tkbutton(tt,text="Creating Flow of Geometric Brownian Motion ?\n                   Model of Black-Scholes?",command=function(){print(help("GBMF"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
@@ -2614,7 +2555,7 @@ tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (sigma is volatility of risky activities and sigma * X(t):diffusion coefficient).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2642,11 +2583,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "Brownian Motion", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
 but <- tkbutton(tt,text="Creating Geometric Brownian Motion ?\n             Model of Black-Scholes?",command=function(){print(help("GBM"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
@@ -2705,7 +2646,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (sigma is volatility of risky activities and sigma * X(t):diffusion coefficient).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2717,84 +2658,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.Heun <-
-function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if (M < 1)
-            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(a))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
-
-if(!is.expression(sigma))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
-
-H <- function(N,T=1,Dt,t0,x0,a,sigma)
-   {
-A    <- function(t,x)  eval(a)
-S    <- function(t,x)  eval(sigma)
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-u = runif(N,0,1)
-o = rep(1,N)
-o [ which(u < 0.5) ] = -1
-w = cumsum(c(0,o))*sqrt((T-t0)/N)
-D    <- diff(w)
-X    <- numeric()
-Y    <- numeric()
-X[1] <- x0
-for (i in 2:(N+1)){
-         Y[i-1]= X[i-1]+A(t[i-1],X[i-1])*Dt+S(t[i-1],X[i-1])*D[i-1]
-         X[i]  = X[i-1]+0.5*Dt*(A(t[i-1],X[i-1])+A(t[i-1],Y[i-1]))+
-                 0.5*(S(t[i-1],X[i-1])+S(t[i-1],Y[i-1]))*D[i-1]
-               }          
-X      
-   }
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-Q = sapply(rep(N,length=M),H,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
-Q.mean <- apply(Q,1,mean)
-r1 <- min(apply(Q,2,min))
-r2 <- max(apply(Q,2,max))
-plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
-mtext(expression("Heun scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
-for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
-mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
-mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
-mtext(a,adj=0.17,col="red",line=1.8)
-mtext(sigma,adj=0.17,col="red",line=0.4)
-mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
-mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
-mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
-mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
-if (M >=2){lines(t,Q.mean,lwd=2,col="blue")
-legend("topleft",bg="gray85",border="gray",c("Average trajectory"),lty=c(1),col=c("blue"),lwd=2)}
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X.mean <- Q.mean
-X <- Q
-Result <- data.frame(time,X)
-if (M >=2) {Result <- data.frame(time,Q,X.mean)}
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "Heun.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-    }
 
 .HeunGUI <-
 function()
@@ -2812,12 +2675,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Heun Scheme ?",command=function(){print(help("snssde"))},width=40)
+##tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Simulation for Numerical Solution\n               Heun Scheme ?",command=function(){print(help("snssde"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -2893,7 +2756,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -2921,12 +2784,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Flow of Hull-White/Vasicek (HWV)? \n     Gaussian Diffusion Models ?",command=function(){print(help("HWVF"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="            Stochastic Models\nFlow of Hull-White/Vasicek (HWV)? \n     Gaussian Diffusion Models ?",command=function(){print(help("HWVF"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -2998,7 +2861,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (sigma (Volatility) :diffusion coefficient). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3026,12 +2889,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Hull-White/Vasicek (HWV)? \nGaussian Diffusion Models ?",command=function(){print(help("HWV"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="        Stochastic Models\nHull-White/Vasicek (HWV) \nGaussian Diffusion Models ?",command=function(){print(help("HWV"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -3096,7 +2959,7 @@ tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (sigma (Volatility) :diffusion coefficient). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3107,6 +2970,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .HyprocgGUI <-
 function()
@@ -3124,12 +2988,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="General Hyperbolic Diffusion ?",command=function(){print(help("Hyprocg"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="         Stochastic Models\nGeneral Hyperbolic Diffusion ?",command=function(){print(help("Hyprocg"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -3216,7 +3080,7 @@ tkgrid(DimHlp.but, row=11, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive ( sigma :diffusion coefficient).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=12, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3227,6 +3091,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .HyprocGUI <-
 function()
@@ -3244,12 +3109,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Hyperbolic Process ?",command=function(){print(help("Hyproc"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="  Stochastic Models\nHyperbolic Process ?",command=function(){print(help("Hyproc"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -3307,7 +3172,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Theta : "), theta.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3318,6 +3183,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .importDataGUI <-
 function()
@@ -3427,27 +3293,30 @@ generateReadCommand <- function (choice) {
   onChange <- function () {
    getDataButton <- tkbutton(ttI, text="Select a Data File",width=20,command=generateReadCommand(as.character(tclvalue(dataFormat))))
     
-   tkgrid(getDataButton, row=2, column=1)
+   tkgrid(getDataButton, row=3, column=1)
   }
 ttI <- tktoplevel(width=400, height=50)
 tkwm.resizable(ttI, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(ttI, Rico)
 tk2ico.destroy(Rico)
 rm(Rico)
 tktitle (ttI) <- "Sim.DiffProc" 
+but <- tkbutton(ttI,text="\nImport Data From...?\n",command=function(){print(help("read.table"))},width=45)
+tkgrid(but,row=1,columnspan = 3,sticky="we")
 dataFormat <- tclVar(availableDataFormat[1])
 dataFormat.comboBox <- ttkcombobox(ttI, values=availableDataFormat, textvariable=dataFormat, width=20)
-tkgrid (tklabel(ttI, text="Import Data From...", font=tkfont.create(size=10,weight="bold"),foreground="blue"), row=0, column=1)
-tkgrid (tklabel(ttI, text="Choose a Data Format"), row=1, column=0)
-tkgrid (dataFormat.comboBox, row=2, column=0, sticky="e")
+##tkgrid (tklabel(ttI, text="Import Data From...", font=tkfont.create(size=10,weight="bold"),foreground="blue"), row=0, column=1)
+tkgrid (tklabel(ttI, text="Choose a Data Format :"), row=2, column=0)
+tkgrid (dataFormat.comboBox, row=2, column=1, sticky="e")
 tkbind (dataFormat.comboBox, "<<ComboboxSelected>>", onChange)  
 exitButton <- tkbutton(ttI, text="Exit", command=function() tkdestroy(ttI), width=20)
-tkgrid(exitButton, row=2, column=2,sticky="w")
+tkgrid(exitButton, row=3, column=2,sticky="w")
 onChange()
 tkfocus(ttI)  
 })
 }
+
 
 .INFSRGUI <-
 function()
@@ -3465,12 +3334,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Inverse of Feller Square Root Models ?",command=function(){print(help("INFSR"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                  Stochastic Models\nInverse of Feller Square Root Models ?",command=function(){print(help("INFSR"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -3542,7 +3411,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive ( sigma * X(t)^(3/2) :diffusion coefficient).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3570,13 +3439,16 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Ito Integral vs Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-tkgrid(tklabel(tt, text = "Integral(W(s)dW(s),0,t) vs Integral(W(s) o dW(s),0,t)", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=2,sticky="ew")
+##tkgrid(tklabel(tt, text = "Ito Integral vs Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "                           Simulation \nIntegral(W(s)dW(s),0,t) vs Integral(W(s) o dW(s),0,t)", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=2,sticky="ew")
+
+but <- tkbutton(tt,text="                               Simulation \nIntegral(W(s)dW(s),0,t) vs Integral(W(s) o dW(s),0,t)",width=26)
+tkgrid(but,row=2,columnspan = 3,sticky="ew")
 N <- tclVar(1000)
 T <- tclVar(1)
 output <- tclVar("FALSE")
@@ -3587,8 +3459,8 @@ reset <- function()
          tclvalue(output) <-"FALSE"
          }
 tkentry       <- ttkentry
-N.entry       <- tkentry(tt, textvariable=N,width = 35)
-T.entry       <- tkentry(tt, textvariable=T,width = 35)
+N.entry       <- tkentry(tt, textvariable=N,width = 25)
+T.entry       <- tkentry(tt, textvariable=T,width = 25)
 output.entry  <- tkentry(tt, textvariable=output)
 USTHB <- function(...) 
         {
@@ -3604,7 +3476,7 @@ tkgrid(DimHlp.but, row=3, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=4, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=5,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=5,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3632,13 +3504,15 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Ito Integral vs Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-tkgrid(tklabel(tt, text = "Integral(W(s)^n*dW(s),0,t) vs Integral(W(s)^n o dW(s),0,t)", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=2,sticky="ew")
+##tkgrid(tklabel(tt, text = "Ito Integral vs Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "        Integral(W(s)^n*dW(s),0,t) vs Integral(W(s)^n o dW(s),0,t)", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=2,sticky="ew")
+but <- tkbutton(tt,text="                                       Simulation\nIntegral(W(s)^n*dW(s),0,t) vs Integral(W(s)^n o dW(s),0,t)",width=26)
+tkgrid(but,row=2,columnspan = 3,sticky="ew")
 N <- tclVar(1000)
 T <- tclVar(1)
 power <- tclVar(3)
@@ -3651,9 +3525,9 @@ reset <- function()
          tclvalue(output) <-"FALSE"
          }
 tkentry       <- ttkentry
-N.entry       <- tkentry(tt, textvariable=N,width = 42)
-T.entry       <- tkentry(tt, textvariable=T,width = 42)
-power.entry   <- tkentry(tt, textvariable=power,width = 42)
+N.entry       <- tkentry(tt, textvariable=N,width = 25)
+T.entry       <- tkentry(tt, textvariable=T,width = 25)
+power.entry   <- tkentry(tt, textvariable=power,width = 25)
 output.entry  <- tkentry(tt, textvariable=output)
 USTHB <- function(...) 
         {
@@ -3673,7 +3547,7 @@ tkgrid(DimHlp.but, row=4, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant (Example n = 3).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Power (n) : "), power.entry,sticky="w")
 tkgrid(DimHlp.but, row=5, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=6,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=6,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3701,13 +3575,15 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Ito Integral vs Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-tkgrid(tklabel(tt, text = "Integral(s*dW(s),0,t) vs Integral(s o dW(s),0,t)", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=2,sticky="ew")
+##tkgrid(tklabel(tt, text = "Ito Integral vs Stratonovitch Integral", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "     Integral(s*dW(s),0,t) vs Integral(s o dW(s),0,t)", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=2,sticky="ew")
+but <- tkbutton(tt,text="                               Simulation\nIntegral(s*dW(s),0,t) vs Integral(s o dW(s),0,t)",width=26)
+tkgrid(but,row=2,columnspan = 3,sticky="ew")
 N <- tclVar(1000)
 T <- tclVar(1)
 output <- tclVar("FALSE")
@@ -3718,8 +3594,8 @@ reset <- function()
          tclvalue(output) <-"FALSE"
          }
 tkentry       <- ttkentry
-N.entry       <- tkentry(tt, textvariable=N,width = 30)
-T.entry       <- tkentry(tt, textvariable=T,width = 30)
+N.entry       <- tkentry(tt, textvariable=N,width = 25)
+T.entry       <- tkentry(tt, textvariable=T,width = 25)
 output.entry  <- tkentry(tt, textvariable=output)
 USTHB <- function(...) 
         {
@@ -3735,7 +3611,7 @@ tkgrid(DimHlp.but, row=3, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
 tkgrid(DimHlp.but, row=4, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=5,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=5,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3763,12 +3639,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Jacobi Diffusion Process ?",command=function(){print(help("JDP"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="       Stochastic Models\nJacobi Diffusion Process ?",command=function(){print(help("JDP"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -3826,7 +3702,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive. ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Theta : "), theta.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3854,12 +3730,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Exponential Martingales Process ?",command=function(){print(help("MartExp"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="           Stochastic Models\nExponential Martingales Process ?",command=function(){print(help("MartExp"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -3903,7 +3779,7 @@ tkgrid(DimHlp.but, row=5, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (sigma is Volatility)..",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=6, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=7,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=7,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -3915,84 +3791,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.Milstein <-
-function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if (M < 1)
-            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(a))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
-
-if(!is.expression(sigma))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
-
-Mils <- function(N,T=1,Dt,t0,x0,a,sigma)
-   {
-DSx  <- D(sigma,"x")
-A    <- function(t,x)  eval(a)
-S    <- function(t,x)  eval(sigma)
-Sx   <- function(t,x)  eval(DSx)
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-u = runif(N,0,1)
-o = rep(1,N)
-o [ which(u < 0.5) ] = -1
-w = cumsum(c(0,o))*sqrt((T-t0)/N)
-D    <- diff(w)
-X    <- numeric()
-X[1] <- x0
-for (i in 2:(N+1)){
-X[i] = X[i-1]+ A(t[i-1],X[i-1])*Dt + S(t[i-1],X[i-1])*D[i-1]+ 
-       0.5 *S(t[i-1],X[i-1])*Sx(t[i-1],X[i-1])*((D[i-1])^2 -Dt)
-              }
-X      
-   }
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-Q = sapply(rep(N,length=M),Mils,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
-Q.mean <- apply(Q,1,mean)
-r1 <- min(apply(Q,2,min))
-r2 <- max(apply(Q,2,max))
-plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
-mtext(expression("Milstein scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
-for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
-mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
-mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
-mtext(a,adj=0.17,col="red",line=1.8)
-mtext(sigma,adj=0.17,col="red",line=0.4)
-mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
-mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
-mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
-mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
-if (M >=2){lines(t,Q.mean,lwd=2,col="blue")
-legend("topleft",bg="gray85",border="gray",c("Average trajectory"),lty=c(1),col=c("blue"),lwd=2)}
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X.mean <- Q.mean
-X <- Q
-Result <- data.frame(time,X)
-if (M >=2) {Result <- data.frame(time,Q,X.mean)}
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "Milstein.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-    }
 
 .MilsteinGUI <-
 function()
@@ -4010,12 +3808,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Milstein Scheme ?",command=function(){print(help("snssde"))},width=40)
+##tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Simulation for Numerical Solution\n              Milstein Scheme ?",command=function(){print(help("snssde"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -4091,7 +3889,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -4103,95 +3901,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.MilsteinS <-
-function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if (M < 1)
-            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(a))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
-
-if(!is.expression(sigma))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
-
-MilS <- function(N,T=1,Dt,t0,x0,a,sigma)
-   {
-DAx  <- D(a,"x")
-DAxx <- D(D(a,"x"),"x")
-DSx  <- D(sigma,"x")
-DSxx <- D(D(sigma,"x"),"x")
-A    <- function(t,x)  eval(a)
-Ax   <- function(t,x)  eval(DAx)
-Axx  <- function(t,x)  eval(DAxx)
-S    <- function(t,x)  eval(sigma)
-Sx   <- function(t,x)  eval(DSx)
-Sxx  <- function(t,x)  eval(DSxx)
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-u = runif(N,0,1)
-o = rep(1,N)
-o [ which(u < 0.5) ] = -1
-w = cumsum(c(0,o))*sqrt((T-t0)/N)
-D    <- diff(w)
-X    <- numeric()
-X[1] <- x0
-for (i in 2:(N+1)){
-X[i] = X[i-1] + A(t[i-1],X[i-1])*Dt + S(t[i-1],X[i-1])*D[i-1] +
-       0.5 *S(t[i-1],X[i-1]) * Sx(t[i-1],X[i-1])*(D[i-1]^2-Dt)+ 
-       Dt^(3 /2)*(0.5 *A(t[i-1],X[i-1])*Sx(t[i-1],X[i-1]) +
-       0.5 *Ax(t[i-1],X[i-1])*S(t[i-1],X[i-1])+
-       0.25 *(S(t[i -1] ,X[i -1])^2) * Sxx(t[i -1] ,X[i -1]))*D[i -1]+ 
-       (Dt^2) * (0.5*A(t[i -1],X[i -1])*Ax(t[i-1],X[i-1])+
-       0.25 *Axx(t[i-1],X[i-1])*(S(t[i-1],X[i-1])^2))
-               }               
-X      
-   }
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-Q = sapply(rep(N,length=M),MilS,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
-Q.mean <- apply(Q,1,mean)
-r1 <- min(apply(Q,2,min))
-r2 <- max(apply(Q,2,max))
-plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
-mtext(expression("Second Milstein scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
-for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
-mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
-mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
-mtext(a,adj=0.17,col="red",line=1.8)
-mtext(sigma,adj=0.17,col="red",line=0.4)
-mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
-mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
-mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
-mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
-if (M >=2){lines(t,Q.mean,lwd=2,col="blue")
-legend("topleft",bg="gray85",border="gray",c("Average trajectory"),lty=c(1),col=c("blue"),lwd=2)}
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X.mean <- Q.mean
-X <- Q
-Result <- data.frame(time,X)
-if (M >=2) {Result <- data.frame(time,Q,X.mean)}
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "MilsteinS.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-    }
 
 .MilsteinSGUI <-
 function()
@@ -4209,12 +3918,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Milstein Second Scheme ?",command=function(){print(help("snssde"))},width=40)
+##tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Simulation for Numerical Solution\n      Milstein Second Scheme ?",command=function(){print(help("snssde"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -4290,7 +3999,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -4320,12 +4029,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Flow of Ornstein-Uhlenbeck Process ?",command=function(){print(help("OUF"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                 Stochastic Models\nFlow of Ornstein-Uhlenbeck Process ?",command=function(){print(help("OUF"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -4390,7 +4099,7 @@ tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (Sigma (volatility) :diffusion coefficient).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -4418,12 +4127,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Ornstein-Uhlenbeck Process ?",command=function(){print(help("OU"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="          Stochastic Models\nOrnstein-Uhlenbeck Process ?",command=function(){print(help("OU"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -4481,7 +4190,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (Sigma (volatility) :diffusion coefficient).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -4510,7 +4219,7 @@ local({
     tf <- tktoplevel()
     tkwm.title(tf, "Sim.DiffProc")
     tkwm.resizable(tf, 0,0)
-    Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+    Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
     tk2ico.set(tf, Rico)
     tk2ico.destroy(Rico)
     frame1 <- tkframe(tf, relief = "groove", borderwidth = 2)
@@ -4580,8 +4289,10 @@ local({
         dev.off()
         tkdestroy(tf)
     }
-    tkgrid(tklabel(tf, text = "Save graphic", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
-        columnspan = 2)
+    ##tkgrid(tklabel(tf, text = "Save graphic", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
+    ##    columnspan = 2)
+	but <- tkbutton(tf,text=" \nSave Graphic ?\n",command=function(){print(help("save.image"))},width=18)
+    tkgrid(but,columnspan = 2,sticky="we")
     tkgrid(tklabel(frame2, text = "Output format : "), sticky = "n")
     tkgrid(tkradiobutton(frame2, text = "Postscript", value = 1, 
         variable = formatvar), sticky = "w")
@@ -4668,12 +4379,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Pearson Diffusions Process ?",command=function(){print(help("PDP"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="       Stochastic Models\nPearson Diffusions Process ?",command=function(){print(help("PDP"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -4759,7 +4470,7 @@ tkgrid(DimHlp.but, row=11, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example c = 1",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Constant (c) : "), c.entry,sticky="w")
 tkgrid(DimHlp.but, row=12, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -4787,11 +4498,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
 but <- tkbutton(tt,text="Parametric Estimation of Arithmetic Brownian Motion ?\n                       Exact likelihood Inference",command=function(){print(help("PEABM"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 data(DATA3)
@@ -4865,11 +4576,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
 but <- tkbutton(tt,text="Parametric Estimation of Black-Scholes Models ?\n                 Exact likelihood Inference",command=function(){print(help("PEBS"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 data(DATA2)
@@ -4943,11 +4654,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
 but <- tkbutton(tt,text="Parametric Estimation of Ornstein-Uhlenbeck Model ?\n                               Explicit Estimators",command=function(){print(help("PEOUexp"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 data(DATA1)
@@ -5000,11 +4711,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
 but <- tkbutton(tt,text="Parametric Estimation of Hull-White/Vasicek Model ?\n                    Exact likelihood Inference",command=function(){print(help("PEOUG"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 data(DATA1)
@@ -5085,11 +4796,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
+##tkgrid(tklabel(tt, text = "Parametric Estimation", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
 but <- tkbutton(tt,text="Parametric Estimation of Ornstein-Uhlenbeck Model ?\n                      Exact likelihood Inference",command=function(){print(help("PEOU"))},width=50)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 data(DATA1)
@@ -5239,12 +4950,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Predictor-Corrector Method ?",command=function(){print(help("PredCorr"))},width=40)
+##tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Simulation for Numerical Solution\n    Predictor-Corrector Method ?",command=function(){print(help("PredCorr"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -5334,7 +5045,7 @@ tkgrid(DimHlp.but, row=11, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=12, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -5346,87 +5057,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.RK3 <-
-function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if (M < 1)
-            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(a))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
-
-if(!is.expression(sigma))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
-
-rk3 <- function(N,T=1,Dt,t0,x0,a,sigma)
-   {
-A    <- function(t,x)  eval(a)
-S    <- function(t,x)  eval(sigma)
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-u = runif(N,0,1)
-o = rep(1,N)
-o [ which(u < 0.5) ] = -1
-w = cumsum(c(0,o))*sqrt((T-t0)/N)
-D    <- diff(w)
-X    <- numeric()
-X[1] <- x0
-for (i in 2:(N+1)){
-              Y    <- numeric()
-              Z    <- numeric()
-              Y[i-1]=X[i-1]+0.5*Dt*A(t[i-1],X[i-1])+S(t[i-1],X[i-1])*D[i-1]
-              Z[i-1]=X[i-1]-A(t[i-1],X[i-1])*Dt+2*Dt*A(t[i-1]+0.5*Dt,Y[i-1])+
-                     (2*S(t[i-1]+0.5*Dt,Y[i-1])-S(t[i-1],X[i-1]))*D[i-1]
-              X[i] = X[i-1]+(Dt/6)*(A(t[i-1],X[i-1])+4*A(t[i-1]+0.5*Dt,Y[i-1])+A(t[i-1]+Dt,Z[i-1]))+
-                     (1/6)*(S(t[i-1],X[i-1])+4*S(t[i-1]+0.5*Dt,Y[i-1])+S(t[i-1]+Dt,Z[i-1]))*D[i-1]
-               }          
-X      
-   }
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-Q = sapply(rep(N,length=M),rk3,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
-Q.mean <- apply(Q,1,mean)
-r1 <- min(apply(Q,2,min))
-r2 <- max(apply(Q,2,max))
-plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
-mtext(expression("Runge-Kutta scheme Order3":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
-for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
-mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
-mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
-mtext(a,adj=0.17,col="red",line=1.8)
-mtext(sigma,adj=0.17,col="red",line=0.4)
-mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
-mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
-mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
-mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
-if (M >=2){lines(t,Q.mean,lwd=2,col="blue")
-legend("topleft",bg="gray85",border="gray",c("Average trajectory"),lty=c(1),col=c("blue"),lwd=2)}
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X.mean <- Q.mean
-X <- Q
-Result <- data.frame(time,X)
-if (M >=2) {Result <- data.frame(time,Q,X.mean)}
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "RK3.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-    }
 
 .RK3GUI <-
 function()
@@ -5444,12 +5074,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Runge-Kutta Scheme ?",command=function(){print(help("snssde"))},width=40)
+##tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Simulation for Numerical Solution\n          Runge-Kutta Scheme ?",command=function(){print(help("snssde"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -5525,7 +5155,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -5553,12 +5183,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Radial Ornstein-Uhlenbeck Process ?",command=function(){print(help("ROU"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Models", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="                Stochastic Models\nRadial Ornstein-Uhlenbeck Process ?",command=function(){print(help("ROU"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -5616,7 +5246,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive. ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Theta : "), theta.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -5719,8 +5349,8 @@ X[1] <- x0
 for (i in 2:(N+1)){
     X[i] = X[i-1] + A(t[i-1],X[i-1])*Dt + S(t[i-1],X[i-1])*D[i-1]
     plot(t,X,type="n",ylab=expression(X[t]),xlab="time",las=1,main=expression(dX[t]== (0.03*t*X[t]-X[t]^5)*dt+0.1*dW[t]))
-    points(t,X,type="l",panel.frist=grid(col="gray"),col="blue")
-    mtext(paste(date()),adj=0.5,col="blue",line=3.0,cex=1.4)
+    points(t,X,type="l",col="blue")
+    ##mtext(paste(date()),adj=0.5,col="blue",line=3.0,cex=1.4)
     mtext(bquote(t[i]==.(round(t[i],2))),adj=0,col="red",line=0.32,cex=1.2)
     mtext(bquote(X[t[i]]==.(round(X[i],2))),adj=0.2,col="red",line=0.2,cex=1.2)
     mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=0.9,adj=1,col="red")
@@ -5747,12 +5377,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Random Walk ?",command=function(){print(help("SRW"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Stochastic Process\n Random Walk ?",command=function(){print(help("SRW"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -5796,7 +5426,7 @@ tkgrid(DimHlp.but, row=5, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="probability of choosing X = -1 or +1. ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Probability : "), p.entry,sticky="w")
 tkgrid(DimHlp.but, row=6, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=7,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=7,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -5824,12 +5454,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Stochastic Process The Gamma Distribution ?",command=function(){print(help("Stgamma"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="     Stochastic Process \nThe Gamma Distribution ?",command=function(){print(help("Stgamma"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -5880,7 +5510,7 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="An alternative way to specify the scale.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Beta : "), beta.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=8,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -5892,96 +5522,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.STS <-
-function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if (M < 1)
-            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(a))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
-
-if(!is.expression(sigma))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
-
-st <- function(N,T=1,Dt,t0,x0,a,sigma)
-   {
-DAx  <- D(a,"x")
-DAxx <- D(D(a,"x"),"x")
-DSx  <- D(sigma,"x")
-DSxx <- D(D(sigma,"x"),"x")
-A    <- function(t,x)  eval(a)
-Ax   <- function(t,x)  eval(DAx)
-Axx  <- function(t,x)  eval(DAxx)
-S    <- function(t,x)  eval(sigma)
-Sx   <- function(t,x)  eval(DSx)
-Sxx  <- function(t,x)  eval(DSxx)
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-u = runif(N,0,1)
-o = rep(1,N)
-o [ which(u < 0.5) ] = -1
-w = cumsum(c(0,o))*sqrt((T-t0)/N)
-D    <- diff(w)
-DZ= rnorm(N,0,sqrt((1/3)*Dt^3))
-X    <- numeric()
-X[1] <- x0
-for (i in 2:(N+1)){
-X[i]=X[i-1]+A(t[i-1],X[i-1])*Dt+S(t[i-1],X[i-1])*D[i-1]+
-     0.5*S(t[i-1],X[i-1])*Sx(t[i-1],X[i-1])*((D[i-1]^2)-Dt)+
-     Ax(t[i-1],X[i-1])*S(t[i-1],X[i-1])*DZ[i-1]+0.5*(A(t[i-1],X[i-1])*Ax(t[i-1],X[i-1])+
-     0.5*(S(t[i-1],X[i-1])^2)*Axx(t[i-1],X[i-1]))*(Dt^2)+(A(t[i-1],X[i-1])*Sx(t[i-1],X[i-1])+
-     0.5*(S(t[i-1],X[i-1])^2)*Sxx(t[i-1],X[i-1]))*(D[i-1]*Dt-DZ[i-1])+
-     0.5*S(t[i-1],X[i-1])*(S(t[i-1],X[i-1])*Sxx(t[i-1],X[i-1])+
-     (Sx(t[i-1],X[i-1])^2))*((1/3)*(D[i-1]^2)-Dt)*D[i-1]
-                }            
-X      
-   }
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-Q = sapply(rep(N,length=M),st,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
-Q.mean <- apply(Q,1,mean)
-r1 <- min(apply(Q,2,min))
-r2 <- max(apply(Q,2,max))
-plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
-mtext(expression("Strong Taylor Scheme Order 1.5":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
-for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
-mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
-mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
-mtext(a,adj=0.17,col="red",line=1.8)
-mtext(sigma,adj=0.17,col="red",line=0.4)
-mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
-mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
-mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
-mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
-if (M >=2){lines(t,Q.mean,lwd=2,col="blue")
-legend("topleft",bg="gray85",border="gray",c("Average trajectory"),lty=c(1),col=c("blue"),lwd=2)}
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X.mean <- Q.mean
-X <- Q
-Result <- data.frame(time,X)
-if (M >=2) {Result <- data.frame(time,Q,X.mean)}
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "STS.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-    }
 
 .STSGUI <-
 function()
@@ -5999,12 +5539,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Strong Ito-Taylor Scheme ?",command=function(){print(help("snssde"))},width=40)
+##tkgrid(tklabel(tt, text = "Simulation for Numerical Solution", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="Simulation for Numerical Solution\n      Strong Ito-Taylor Scheme ?",command=function(){print(help("snssde"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -6080,7 +5620,7 @@ tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Diffusion coefficient : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=11,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -6108,12 +5648,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="Stochastic Process The Student Distribution ?",command=function(){print(help("Stst"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="     Stochastic Process \nThe Student Distribution ?",command=function(){print(help("Stst"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N <- tclVar(1000)
@@ -6157,7 +5697,7 @@ tkgrid(DimHlp.but, row=5, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Degrees of freedom (> 0,non-integer).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Degrees of freedom : "), n.entry,sticky="w")
 tkgrid(DimHlp.but, row=6, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=7,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=7,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -6185,12 +5725,12 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
-        columnspan = 3,row=1)
-but <- tkbutton(tt,text="White Noise Gaussian ?",command=function(){print(help("WNG"))},width=40)
+##tkgrid(tklabel(tt, text = "Stochastic Process", font = tkfont.create(size=10,weight="bold"),foreground="blue"), 
+##        columnspan = 3,row=1)
+but <- tkbutton(tt,text="    Stochastic Process\nWhite Noise Gaussian ?",command=function(){print(help("WNG"))},width=40)
 tkgrid(but,row=2,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -6241,7 +5781,7 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example var = 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Variance : "), sigma2.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=8,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -6316,13 +5856,15 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Plot Your Solution", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
-        columnspan = 2,row=1)
-DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("plot")))
-tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+##tkgrid(tklabel(tt, text = "Plot Your Solution", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
+##        columnspan = 2,row=1)
+##DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("plot")))
+##tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+but <- tkbutton(tt,text="\nPlot Your Solution\n",command=function(){print(help("plot"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 Sol <- tclVar("expression(x0*exp((2-0.5*4)*t+2*w))")
 Start <- tclVar(0)
@@ -6564,13 +6106,15 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Plot Your Data", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
-        columnspan = 2,row=1)
-DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("plot")))
-tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+##tkgrid(tklabel(tt, text = "Plot Your Data", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
+##        columnspan = 2,row=1)
+##DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("plot")))
+##tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+but <- tkbutton(tt,text="\nPlot Your Data\n",command=function(){print(help("plot"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
 data(DATA1)
 data(DATA2)
 data(DATA3)
@@ -6828,13 +6372,15 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Points Your Data", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
-        columnspan = 2,row=1)
-DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("points")))
-tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+##tkgrid(tklabel(tt, text = "Points Your Data", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
+##        columnspan = 2,row=1)
+##DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("points")))
+##tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+but <- tkbutton(tt,text="\nPoints Your Data\n",command=function(){print(help("points"))},width=30)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
 data(DATA1)
 data(DATA2)
 data(DATA3)
@@ -6860,15 +6406,15 @@ reset <- function()
          tclvalue(Type)     <-"l"
          }
 tkentry         <- ttkentry
-Data.entry      <- tkentry(tt, textvariable=Data,width = 30)
-delta.entry     <- tkentry(tt, textvariable=delta,width = 30)
-Start.entry     <- tkentry(tt, textvariable=Start,width = 30)
+Data.entry      <- tkentry(tt, textvariable=Data,width = 25)
+delta.entry     <- tkentry(tt, textvariable=delta,width = 25)
+Start.entry     <- tkentry(tt, textvariable=Start,width = 25)
 Pch.entry       <- tkentry(tt, textvariable=Pch)
-Lty.entry       <- tkentry(tt, textvariable=Lty,width = 30)
-Lwd.entry       <- tkentry(tt, textvariable=Lwd,width = 30)
-Cex.entry       <- tkentry(tt, textvariable=Cex,width = 30)
+Lty.entry       <- tkentry(tt, textvariable=Lty,width = 25)
+Lwd.entry       <- tkentry(tt, textvariable=Lwd,width = 25)
+Cex.entry       <- tkentry(tt, textvariable=Cex,width = 25)
 cole.entry      <- tkentry(tt, textvariable=cole)
-Type.entry      <- tkentry(tt, textvariable=Type,width = 30)
+Type.entry      <- tkentry(tt, textvariable=Type,width = 25)
 USTHB <- function(...) 
         {
          if (is.null(Data)) return()
@@ -6901,7 +6447,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() print(.pchShow()))
 tkgrid(tklabel(tt,text="Pch : "),sticky="w")
 Format <- c("0","1", "2", "3", "4","5","6","7","8","9","10","12","13","14","15","16","17","18",
             "19","20","21","22","23","24","25")
-Format.comboBox <- ttkcombobox(tt, values=Format, textvariable=Pch, width=27)
+Format.comboBox <- ttkcombobox(tt, values=Format, textvariable=Pch, width=23)
 tkgrid (Format.comboBox, row=5, column=1, sticky="e")
 tkgrid(DimHlp.but, row=5, column=2,sticky="w")
 
@@ -6911,7 +6457,7 @@ COLE <- c("black","white", "red", "violet", "blue","green","yellow","orange","gr
           "darkviolet","firebrick","lightgreen","lightgrey","linen","magenta","mediumblue","maroon","mintcream","navy","orchid","pink",
           "tomato","wheat","turquoise","thistle","tan","whitesmoke","snow","salmon","plum","peachpuff","papayawhip","mistyrose","navajowhite","lightgoldenrod",
           "khaki","ivory","honeydew","gold","deeppink","darkturquoise","beige","azure")
-COLE.comboBox <- ttkcombobox(tt, values=COLE, textvariable=cole, width=27)
+COLE.comboBox <- ttkcombobox(tt, values=COLE, textvariable=cole, width=23)
 tkgrid(COLE.comboBox, row=6, column=1,sticky="e")
 tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 
@@ -6957,7 +6503,7 @@ tkgrid(tkradiobutton(frame1, text = "longdash", value = 5, variable = Lty),
         sticky = "w")
 tkgrid(tkradiobutton(frame1, text = "twodash", value = 6, variable = Lty), 
         sticky = "w")
-tkgrid(frame1, rowspan = 4,row=9,column=0, sticky = "n",padx=5,pady=5)
+tkgrid(frame1, rowspan = 4,row=9,column=0, sticky = "nw",padx=5,pady=5)
 
 frame2 <- tkframe(tt, relief = "groove", borderwidth = 4)
 tkgrid(tklabel(frame2, text = "Type : "), sticky = "n")
@@ -6975,7 +6521,7 @@ tkgrid(tkradiobutton(frame2, text = "stair steps", value = "s", variable = Type)
         sticky = "w")
 tkgrid(tkradiobutton(frame2, text = "no plotting", value = "n", variable = Type), 
         sticky = "w")
-tkgrid(frame2, rowspan = 4,row=10, sticky = "n",columnspan=2,padx=5,pady=5)
+tkgrid(frame2, rowspan = 4,row=10, sticky = "ne",columnspan=2,padx=5,pady=5)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
 submit.but <- tkbutton(tt, text="Add Your Data",
                       command=function(){USTHB()})
@@ -6984,6 +6530,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .YourPoints <-
 function(Data,delta,Start=0,Pch=1,Lty=1,Lwd=2,cole="red",Type="l",Cex=1)
@@ -7012,13 +6559,16 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-tkgrid(tklabel(tt, text = "Points Your Solution", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
-        columnspan = 2,row=1)
-DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("points")))
-tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+##tkgrid(tklabel(tt, text = "Points Your Solution", font = tkfont.create(size=14,weight="bold"),foreground="blue"), 
+##       columnspan = 2,row=1)
+##DimHlp.but <- tkbutton(tt, text="?", command=function() print(help("points")))
+##tkgrid(DimHlp.but,row=1,column=2,sticky="w")
+but <- tkbutton(tt,text="\nPoints Your Solution\n",command=function(){print(help("points"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
 Sol <- tclVar("expression(x0*exp((2-0.5*4)*t+2*w))")
 Start <- tclVar(0)
 End <- tclVar(1)
@@ -7230,7 +6780,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Model~~Radial Process")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="Radial Process ?\n M (S=1,Sigma)",command=function(){print(help("RadialP_1"))},width=40)
@@ -7328,7 +6878,7 @@ tkgrid(tkradiobutton(frame1, text = "Runge-Kutta Scheme Order3", value = "RK3", 
         sticky = "w")
 tkgrid(frame1, rowspan = 1,row=10,columnspan=5,padx=5,pady=5)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=14,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=14,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -7356,7 +6906,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~2D Attractive Models")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="Two-Dimensional Attractive Model?\n                    M (S=1,Sigma)",command=function(){print(help("RadialP2D_1"))},width=40)
@@ -7447,7 +6997,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=11,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=11,column=1)
 
@@ -7475,7 +7025,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~2D Polar Corrd")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -7545,7 +7095,7 @@ tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (2*K > sigma^2).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -7572,7 +7122,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~ 3D Attractive Models")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="Three-Dimensional Attractive Model?\n                    M (S=1,Sigma)",command=function(){print(help("RadialP3D_1"))},width=40)
@@ -7673,7 +7223,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=11, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=12,column=1)
 
@@ -7702,7 +7252,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -7811,7 +7361,7 @@ tkgrid(tkradiobutton(frame1, text = "Runge-Kutta Scheme Order3", value = "RK3", 
         sticky = "w")
 tkgrid(frame1, rowspan = 1,row=11,columnspan=5,padx=5,pady=5)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=15,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=15,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -7840,7 +7390,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -8011,7 +7561,7 @@ replot <- function(...) {
         if (is.null(y)) return() 
         bw.sav <<- b <- as.numeric(tclObj(bw))
         k  <- as.character(tclObj(kernel))
-        eval(substitute(plot(density(y, bw=b, kernel=k),xlim=xlim,xlab=expression(tilde(tau[c])^(1)==1/tau[c]^(1)),main="",panel.frist=grid(col="gray"),las=1)))
+        eval(substitute(plot(density(y, bw=b, kernel=k),xlim=xlim,xlab=expression(tilde(tau[c])^(1)==1/tau[c]^(1)),main="",las=1)))
         mtext(bquote("Estimated Density of the (FPT)\nUsing The Kernel Method ": bolditalic(M[(list(s==1,sigma))])),line=2.1,adj=0.5,cex=0.9,col="black")
         mtext(bquote(Kernel== .(k)),line=1.1,adj=0,cex=0.9,col="red")
         mtext(bquote(Bandwidth== .(round(b,4))),line=0.25,adj=0,cex=0.9,col="red")
@@ -8038,14 +7588,14 @@ GAMMA <- function(H=c("TRUE","FALSE"))
         ech <- seq(0,max(y)+10,length.out=1000)
         points(ech,dgamma(ech, shape=B, rate=C), type="l",col="blue",lwd=2)
         mtext(bquote("law" :Gamma(.(round(B,2)),.(round(C,2)))),adj=1,line=0.2,cex=1,col="blue")
-        legend("topright",bg="gray85",border="gray",c("Estimated Density","Gamma Law"),col=c("black","blue"),lwd=c(2,2),lty=c(1,1))
+        legend("topright",border="gray",c("Estimated Density","Gamma Law"),col=c("black","blue"),lwd=c(2,2),lty=c(1,1))
                    }
       }
 
 base <- tktoplevel()
 tkwm.title(base, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(base,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(base, Rico)
 tk2ico.destroy(Rico)
 but2 <- tkbutton(base,text="Estimated Density of the (FPT)?\n    Using The Kernel Method  \n              M (S=1,Sigma)",command=function(){print(help("plot.density"))},width=40)
@@ -8112,7 +7662,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -8179,11 +7729,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
-but <- tkbutton(tt,text="Simulation the First Passage Time (FPT)?\n                       M (S>=2,Sigma)",command=function(){print(help("tho_M2"))},width=40)
+but <- tkbutton(tt,text="Simulation the First Passage Time (FPT)?\n                       M (S > 1,Sigma)",command=function(){print(help("tho_M2"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -8272,7 +7822,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="K : "), K.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 
-DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive ( s >= 2 ).",icon="info",type="ok"))
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive ( s > 1 ).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="S : "), s.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 
@@ -8297,7 +7847,7 @@ tkgrid(tkradiobutton(frame1, text = "Runge-Kutta Scheme Order3", value = "RK3", 
         sticky = "w")
 tkgrid(frame1, rowspan = 1,row=12,columnspan=5,padx=5,pady=5)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -8327,11 +7877,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
-but2 <- tkbutton(tt,text="Histograms for First Passage Time (FPT)?\n                       M (S>=2,Sigma)",command=function(){print(help("hist_meth"))},width=40)
+but2 <- tkbutton(tt,text="Histograms for First Passage Time (FPT)?\n                       M (S > 1,Sigma)",command=function(){print(help("hist_meth"))},width=40)
 tkgrid(but2,row=1,columnspan = 3,sticky="ew")
 tclvalue(FPTT) <- FPTT
 
@@ -8501,7 +8051,7 @@ replot <- function(...) {
         if (is.null(y)) return() 
         bw.sav <<- b <- as.numeric(tclObj(bw))
         k  <- as.character(tclObj(kernel))
-        eval(substitute(plot(density(y, bw=b, kernel=k),xlim=xlim,xlab=expression(tilde(tau[c])^(s)==1/tau[c]^(s)),main="",panel.frist=grid(col="gray"),las=1)))
+        eval(substitute(plot(density(y, bw=b, kernel=k),xlim=xlim,xlab=expression(tilde(tau[c])^(s)==1/tau[c]^(s)),main="",las=1)))
         mtext(bquote("Estimated Density of the (FPT)\nUsing The Kernel Method ": bolditalic(M[(list(s>=2,sigma))])),line=2.1,adj=0.5,cex=0.9,col="black")
         mtext(bquote(Kernel== .(k)),line=1.1,adj=0,cex=0.9,col="red")
         mtext(bquote(Bandwidth== .(round(b,4))),line=0.25,adj=0,cex=0.9,col="red")
@@ -8528,7 +8078,7 @@ GAMMA2 <- function(H=c("TRUE","FALSE"))
         ech <- seq(0,max(y)+10,length.out=1000)
         points(ech,dgamma(ech, shape=B, rate=C), type="l",col="blue",lwd=2)
         mtext(bquote("law" :Gamma(.(round(B,2)),.(round(C,2)))),adj=1,line=0.2,cex=1,col="blue")
-        legend("topright",bg="gray85",border="gray",c("Estimated Density","Gamma Law"),col=c("black","blue"),lwd=c(2,2),lty=c(1,1))
+        legend("topright",border="gray",c("Estimated Density","Gamma Law"),col=c("black","blue"),lwd=c(2,2),lty=c(1,1))
                    }
       }
 
@@ -8536,10 +8086,10 @@ GAMMA2 <- function(H=c("TRUE","FALSE"))
 base <- tktoplevel()
 tkwm.title(base, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(base,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(base, Rico)
 tk2ico.destroy(Rico)
-but2 <- tkbutton(base,text="Estimated Density of the (FPT)?\n    Using The Kernel Method  \n              M (S>=2,Sigma)",command=function(){print(help("plot.density"))},width=40)
+but2 <- tkbutton(base,text="Estimated Density of the (FPT)?\n    Using The Kernel Method  \n              M (S > 1,Sigma)",command=function(){print(help("plot.density"))},width=40)
 tkgrid(but2,columnspan = 3,row=1)
 tkpack(but2)
 spec.frm <- tkframe(base,borderwidth=2)
@@ -8602,11 +8152,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Models")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
-but2 <- tkbutton(tt,text="Kolmogorov-Smirnov test?\n          M (S>=2,Sigma)",command=function(){print(help("ks.test"))},width=40)
+but2 <- tkbutton(tt,text="Kolmogorov-Smirnov test?\n          M (S > 1,Sigma)",command=function(){print(help("ks.test"))},width=40)
 tkgrid(but2,row=1,columnspan = 3)
 
 tclvalue(FPTT) <- FPTT
@@ -8669,10 +8219,10 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Model~~Radial Process")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-but <- tkbutton(tt,text="Radial Process ?\nM(S>=2,Sigma)",command=function(){print(help("RadialP_2"))},width=40)
+but <- tkbutton(tt,text="Radial Process ?\nM(S > 1,Sigma)",command=function(){print(help("RadialP_2"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -8751,7 +8301,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="K : "), K.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
 
-DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive S >= 2.",icon="info",type="ok"))
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive s > 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="S : "), s.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 
@@ -8776,7 +8326,7 @@ tkgrid(tkradiobutton(frame1, text = "Runge-Kutta Scheme Order3", value = "RK3", 
         sticky = "w")
 tkgrid(frame1, rowspan = 1,row=10,columnspan=5,padx=5,pady=5)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=14,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=14,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -8803,10 +8353,10 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~2D Attractive Models")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-but <- tkbutton(tt,text="Two-Dimensional Attractive Model?\n                 M (S>=2,Sigma)",command=function(){print(help("RadialP2D_2"))},width=40)
+but <- tkbutton(tt,text="Two-Dimensional Attractive Model?\n                 M (S > 1,Sigma)",command=function(){print(help("RadialP2D_2"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N        <- tclVar(1000)
@@ -8894,7 +8444,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="K : "), K.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
 
-DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (s >= 2).",icon="info",type="ok"))
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (s > 1).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="S : "), s.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
 
@@ -8902,7 +8452,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=11, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=12,column=1)
 
@@ -8931,11 +8481,11 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~2D Polar Corrd")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
-but <- tkbutton(tt,text="       Two-Dimensional Attractive Model?\n   Models(S>=2,Sigma) in Polar coordinates",command=function(){print(help("RadialP2D_2PC"))},width=40)
+but <- tkbutton(tt,text="       Two-Dimensional Attractive Model?\n   Models(S > 1,Sigma) in Polar coordinates",command=function(){print(help("RadialP2D_2PC"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N        <- tclVar(1000)
@@ -9002,14 +8552,14 @@ tkgrid(DimHlp.but, row=6, column=2,sticky="w")
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (2*K > sigma^2).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="K : "), K.entry,sticky="w")
 tkgrid(DimHlp.but, row=7, column=2,sticky="w")
-DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive S >= 2.",icon="info",type="ok"))
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive s > 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="S : "), s.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive (2*K > sigma^2).",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Sigma : "), sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=9, column=2,sticky="w")
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -9036,10 +8586,10 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~ 3D Attractive Models")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-but <- tkbutton(tt,text="Three-Dimensional Attractive Model?\n                    M (S>=2,Sigma)",command=function(){print(help("RadialP3D_2"))},width=40)
+but <- tkbutton(tt,text="Three-Dimensional Attractive Model?\n                    M (S > 1,Sigma)",command=function(){print(help("RadialP3D_2"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N        <- tclVar(1000)
@@ -9137,7 +8687,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="K : "), K.entry,sticky="w")
 tkgrid(DimHlp.but, row=10, column=2,sticky="w")
 
-DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive S >= 2.",icon="info",type="ok"))
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Constant positive s > 1.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="S : "), s.entry,sticky="w")
 tkgrid(DimHlp.but, row=11, column=2,sticky="w")
 
@@ -9145,7 +8695,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=12, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=13,column=1)
 
@@ -9201,7 +8751,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Diffusion Attractive Models")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -9249,18 +8799,18 @@ tkgrid(frame2, rowspan = 1,row=6,column=1,padx=5,pady=5)
 
 
 HLP2 <- function(){print(help("?"))}
-HLP2.but <- tkbutton(tt,text="       Diffusion Attractive Models ? \n Second Case Model(S >= 2, Sigma) ?",command=function(){print(help(RadialP_2))},width=80)
+HLP2.but <- tkbutton(tt,text="       Diffusion Attractive Models ? \n Second Case Model(S > 1, Sigma) ?",command=function(){print(help(RadialP_2))},width=80)
 tkgrid(HLP2.but,padx=5,pady=5,row=7,columnspan = 3)
 
 frame3 <- tkframe(tt, relief = "ridge", borderwidth = 5)
 
-tkgrid(tkradiobutton(frame3, text = "One-Dimensional Attractive Models \n   Models(S>=2,Sigma)", value = 8, 
+tkgrid(tkradiobutton(frame3, text = "One-Dimensional Attractive Models \n   Models(S > 1,Sigma)", value = 8, 
         variable = A), sticky = "w")
-tkgrid(tkradiobutton(frame3, text = "Two-Dimensional Attractive Models \n   Models(S>=2,Sigma) in Polar coordinates", value = 9, 
+tkgrid(tkradiobutton(frame3, text = "Two-Dimensional Attractive Models \n   Models(S > 1,Sigma) in Polar coordinates", value = 9, 
         variable = A), sticky = "w")
-tkgrid(tkradiobutton(frame3, text = "Two-Dimensional Attractive Models \n   Models(S>=2,Sigma)", value = 10, 
+tkgrid(tkradiobutton(frame3, text = "Two-Dimensional Attractive Models \n   Models(S > 1,Sigma)", value = 10, 
         variable = A), sticky = "w")
-tkgrid(tkradiobutton(frame3, text = "Three-Dimensional Attractive Models \n   Models(S>=2,Sigma)", value = 11, 
+tkgrid(tkradiobutton(frame3, text = "Three-Dimensional Attractive Models \n   Models(S > 1,Sigma)", value = 11, 
         variable = A), sticky = "w")
 
 tkgrid(frame3, rowspan = 1,row=9,padx=5,pady=5)
@@ -9301,7 +8851,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Model for 2-Diffusion Processes")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="Two-Dimensional Attractive Model for Two-Diffusion Processes ? \n                      V(1)=(X(1),X(2)) and V(2)=(Y(1),Y(2))",command=function(){print(help("TowDiffAtra2D"))})
@@ -9369,7 +8919,7 @@ USTHB <- function(...)
          Y2_0      <- as.numeric(tclObj(Y2_0)) 
          v         <- as.numeric(tclObj(v))
          Output    <- as.character(tclObj(Output))
-        eval(substitute(TowDiffAtra2D(N,t0,Dt,T=1,X1_0,X2_0,Y1_0,Y2_0,v,K,m,Sigma,Output)))
+        eval(substitute(TwoDiffAtra2D(N,t0,Dt,T=1,X1_0,X2_0,Y1_0,Y2_0,v,K,m,Sigma,Output)))
         }
 
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
@@ -9420,7 +8970,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=13, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=14,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=14,column=1)
 
@@ -9448,7 +8998,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Model for 2-Diffusion Processes")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="Three-Dimensional Attractive Model for Two-Diffusion Processes ? \n                      V(1)=(X(1),X(2),X(3)) and V(2)=(Y(1),Y(2),Y(3))",command=function(){print(help("TowDiffAtra3D"))})
@@ -9524,7 +9074,7 @@ USTHB <- function(...)
          Y3_0      <- as.numeric(tclObj(Y3_0))
          v         <- as.numeric(tclObj(v))
          Output    <- as.character(tclObj(Output))
-        eval(substitute(TowDiffAtra3D(N,t0,Dt,T=1,X1_0,X2_0,X3_0,Y1_0,Y2_0,Y3_0,v,K,m,Sigma,Output)))
+        eval(substitute(TwoDiffAtra3D(N,t0,Dt,T=1,X1_0,X2_0,X3_0,Y1_0,Y2_0,Y3_0,v,K,m,Sigma,Output)))
         }
 
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
@@ -9583,7 +9133,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=15, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
 
@@ -9596,75 +9146,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.Euler2D <-
-function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(driftx) || !is.expression(drifty))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
-
-if(!is.expression(diffx) || !is.expression(diffy))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
-
-Ax    <- function(t,x,y)  eval(driftx)
-Ay    <- function(t,x,y)  eval(drifty)
-Sx    <- function(t,x,y)  eval(diffx)
-Sy    <- function(t,x,y)  eval(diffy)
-
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-ux = runif(N,0,1)
-ox = rep(1,N)
-ox [ which(ux < 0.5) ] = -1
-wx = cumsum(c(0,ox))*sqrt((T-t0)/N)
-Dx    <- diff(wx)
-uy = runif(N,0,1)
-oy = rep(1,N)
-oy [ which(uy < 0.5) ] = -1
-wy = cumsum(c(0,oy))*sqrt((T-t0)/N)
-Dy    <- diff(wy)
-X    <- numeric()
-Y    <- numeric()
-X[1] <- x0
-Y[1] <- y0
-for (i in 2:(N+1)){
-    X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]
-    Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1] 
-                  } 
-plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
-points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
-if(Step==FALSE){points(X,Y,type="l",lwd=1,col="black",panel.frist=grid(col="gray"))}
-if(Step==TRUE){for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}}
-mtext(expression("Euler scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
-mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
-mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
-mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
-mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
-mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
-mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
-legend("topleft",bg="gray85",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X1   <- X
-X2   <- Y
-Result <- data.frame(time,X1,X2)
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "Euler2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-}
 
 .Euler2DGUI <-
 function()
@@ -9682,7 +9163,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Simulation for Numerical Solution\n                Euler Scheme ?\n Simulation SDE Two-Dimensional",command=function(){print(help("snssde2D"))},width=40)
@@ -9797,7 +9278,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=12,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -9809,84 +9290,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.Heun2D <-
-function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(driftx) || !is.expression(drifty))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
-
-if(!is.expression(diffx) || !is.expression(diffy))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
-
-Ax    <- function(t,x,y)  eval(driftx)
-Ay    <- function(t,x,y)  eval(drifty)
-
-
-
-Sx    <- function(t,x,y)  eval(diffx)
-Sy    <- function(t,x,y)  eval(diffy)
-
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-ux = runif(N,0,1)
-ox = rep(1,N)
-ox [ which(ux < 0.5) ] = -1
-wx = cumsum(c(0,ox))*sqrt((T-t0)/N)
-Dx    <- diff(wx)
-uy = runif(N,0,1)
-oy = rep(1,N)
-oy [ which(uy < 0.5) ] = -1
-wy = cumsum(c(0,oy))*sqrt((T-t0)/N)
-Dy    <- diff(wy)
-X    <- numeric()
-Y    <- numeric()
-XX   <- numeric()
-YY   <- numeric()
-X[1] <- x0
-Y[1] <- y0
-for (i in 2:(N+1)){
-         XX[i-1]= X[i-1]+Ax(t[i-1],X[i-1],Y[i-1])*Dt+Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]
-         YY[i-1]= Y[i-1]+Ay(t[i-1],X[i-1],Y[i-1])*Dt+Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]
-         X[i]   = X[i-1]+0.5*Dt*(Ax(t[i-1],X[i-1],Y[i-1])+Ax(t[i-1],XX[i-1],Y[i-1]))+
-                 0.5*(Sx(t[i-1],X[i-1],Y[i-1])+Sx(t[i-1],XX[i-1],Y[i-1]))*Dx[i-1]
-         Y[i]   = Y[i-1]+0.5*Dt*(Ay(t[i-1],X[i-1],Y[i-1])+Ay(t[i-1],X[i-1],YY[i-1]))+
-                 0.5*(Sy(t[i-1],X[i-1],Y[i-1])+Sy(t[i-1],X[i-1],YY[i-1]))*Dy[i-1]
-                  } 
-plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
-points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
-if(Step==FALSE){points(X,Y,type="l",lwd=1,col="black",panel.frist=grid(col="gray"))}
-if(Step==TRUE){for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}}
-mtext(expression("Heun scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
-mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
-mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
-mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
-mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
-mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
-mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
-legend("topleft",bg="gray85",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X1   <- X
-X2   <- Y
-Result <- data.frame(time,X1,X2)
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-}
 
 .Heun2DGUI <-
 function()
@@ -9904,7 +9307,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Simulation for Numerical Solution\n                Heun Scheme ?\n Simulation SDE Two-Dimensional",command=function(){print(help("snssde2D"))},width=40)
@@ -10019,7 +9422,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=12,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -10031,82 +9434,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.Milstein2D <-
-function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(driftx) || !is.expression(drifty))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
-
-if(!is.expression(diffx) || !is.expression(diffy))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
-
-
-DSxx   <- D(diffx,"x")
-DSyy   <- D(diffy,"y")
-Ax    <- function(t,x,y)  eval(driftx)
-Ay    <- function(t,x,y)  eval(drifty)
-Sx    <- function(t,x,y)  eval(diffx)
-DSx   <- function(t,x,y)  eval(DSxx)
-Sy    <- function(t,x,y)  eval(diffy)
-DSy   <- function(t,x,y)  eval(DSyy)
-
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-ux = runif(N,0,1)
-ox = rep(1,N)
-ox [ which(ux < 0.5) ] = -1
-wx = cumsum(c(0,ox))*sqrt((T-t0)/N)
-Dx    <- diff(wx)
-uy = runif(N,0,1)
-oy = rep(1,N)
-oy [ which(uy < 0.5) ] = -1
-wy = cumsum(c(0,oy))*sqrt((T-t0)/N)
-Dy    <- diff(wy)
-X    <- numeric()
-Y    <- numeric()
-X[1] <- x0
-Y[1] <- y0
-for (i in 2:(N+1)){
-    X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]+
-           0.5 *Sx(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1])*((Dx[i-1])^2 -Dt)
-    Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]+
-           0.5 *Sy(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1])*((Dy[i-1])^2 -Dt) 
-                  } 
-plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
-points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
-if(Step==FALSE){points(X,Y,type="l",lwd=1,col="black",panel.frist=grid(col="gray"))}
-if(Step==TRUE){for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}}
-mtext(expression("Milstein scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
-mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
-mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
-mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
-mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
-mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
-mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
-legend("topleft",bg="gray85",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X1   <- X
-X2   <- Y
-Result <- data.frame(time,X1,X2)
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "Milstein2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-}
 
 .Milstein2DGUI <-
 function()
@@ -10124,7 +9451,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Simulation for Numerical Solution\n                Milstein Scheme ?\n Simulation SDE Two-Dimensional",command=function(){print(help("snssde2D"))},width=40)
@@ -10239,7 +9566,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=12,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -10251,109 +9578,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.MilsteinS2D <-
-function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(driftx) || !is.expression(drifty))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
-
-if(!is.expression(diffx) || !is.expression(diffy))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
-
-
-
-DDAx   <- D(driftx,"x")
-DDDAx  <- D(D(driftx,"x"),"x")
-
-DDSx   <- D(diffx,"x")
-DDDSx  <- D(D(diffx,"x"),"x")
-
-Ax     <- function(t,x,y)  eval(driftx)
-DAxx   <- function(t,x,y)  eval(DDAx)
-DAxxx  <- function(t,x,y)  eval(DDDAx)
-Sx     <- function(t,x,y)  eval(diffx)
-DSx    <- function(t,x,y)  eval(DDSx)
-DSxx   <- function(t,x,y)  eval(DDDSx)
-
-DDAy   <- D(drifty,"y")
-DDDAy  <- D(D(drifty,"y"),"y")
-DDSy   <- D(diffy,"y")
-DDDSy  <- D(D(diffy,"y"),"y")
-Ay     <- function(t,x,y)  eval(drifty)
-DAyy   <- function(t,x,y)  eval(DDAy)
-DAyyy  <- function(t,x,y)  eval(DDDAy)
-Sy     <- function(t,x,y)  eval(diffy)
-DSy    <- function(t,x,y)  eval(DDSy)
-DSyy   <- function(t,x,y)  eval(DDDSy)
-
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-ux = runif(N,0,1)
-ox = rep(1,N)
-ox [ which(ux < 0.5) ] = -1
-wx = cumsum(c(0,ox))*sqrt((T-t0)/N)
-Dx    <- diff(wx)
-uy = runif(N,0,1)
-oy = rep(1,N)
-oy [ which(uy < 0.5) ] = -1
-wy = cumsum(c(0,oy))*sqrt((T-t0)/N)
-Dy    <- diff(wy)
-X    <- numeric()
-Y    <- numeric()
-X[1] <- x0
-Y[1] <- y0
-for (i in 2:(N+1)){
-X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1] +
-       0.5 *Sx(t[i-1],X[i-1],Y[i-1]) * DSx(t[i-1],X[i-1],Y[i-1])*(Dx[i-1]^2-Dt)+ 
-       Dt^(3/2)*(0.5 *Ax(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1]) +
-       0.5 *DAxx(t[i-1],X[i-1],Y[i-1])*Sx(t[i-1],X[i-1],Y[i-1])+
-       0.25 *(Sx(t[i-1],X[i-1],Y[i-1])^2) * DSxx(t[i-1],X[i-1],Y[i-1]))*Dx[i -1]+ 
-       (Dt^2) * (0.5*Ax(t[i-1],X[i-1],Y[i-1])*DAxx(t[i-1],X[i-1],Y[i-1])+
-       0.25 *DAxxx(t[i-1],X[i-1],Y[i-1])*(Sx(t[i-1],X[i-1],Y[i-1])^2))
-
-Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1] +
-       0.5 *Sy(t[i-1],X[i-1],Y[i-1]) * DSy(t[i-1],X[i-1],Y[i-1])*(Dy[i-1]^2-Dt)+ 
-       Dt^(3/2)*(0.5 *Ay(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1]) +
-       0.5 *DAyy(t[i-1],X[i-1],Y[i-1])*Sy(t[i-1],X[i-1],Y[i-1])+
-       0.25 *(Sy(t[i-1],X[i-1],Y[i-1])^2) * DSyy(t[i-1],X[i-1],Y[i-1]))*Dy[i -1]+ 
-       (Dt^2) * (0.5*Ay(t[i-1],X[i-1],Y[i-1])*DAyy(t[i-1],X[i-1],Y[i-1])+
-       0.25 *DAyyy(t[i-1],X[i-1],Y[i-1])*(Sy(t[i-1],X[i-1],Y[i-1])^2))
-                  } 
-plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
-points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
-if(Step==FALSE){points(X,Y,type="l",lwd=1,col="black",panel.frist=grid(col="gray"))}
-if(Step==TRUE){for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}}
-mtext(expression("Second Milstein scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
-mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
-mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
-mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
-mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
-mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
-mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
-legend("topleft",bg="gray85",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X1   <- X
-X2   <- Y
-Result <- data.frame(time,X1,X2)
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-}
 
 .MilsteinS2DGUI <-
 function()
@@ -10371,7 +9595,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Simulation for Numerical Solution\n          Second Milstein Scheme ?\n Simulation SDE Two-Dimensional",command=function(){print(help("snssde2D"))},width=40)
@@ -10486,7 +9710,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=12,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -10608,7 +9832,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Simulation for Numerical Solution\n      Predictor-Corrector Method ?\n Simulation SDE Two-Dimensional",command=function(){print(help("PredCorr2D"))},width=40)
@@ -10685,7 +9909,7 @@ USTHB <- function(...)
          e4     <- try(parse(text=diffy))
          Output <- as.character(tclObj(Output))
          Step   <- as.character(tclObj(Step))
-        eval(substitute(.PredCorr2D(N=N,t0=t0,T=1,x0=x0,y0=y0,Dt=Dt,alpha=alpha,mu=mu,driftx=eval(e1),drifty=eval(e3),diffx=eval(e2),diffy=eval(e4),Step=Step,Output=Output)))
+        eval(substitute(PredCorr2D(N=N,t0=t0,T=1,x0=x0,y0=y0,Dt=Dt,alpha=alpha,mu=mu,driftx=eval(e1),drifty=eval(e3),diffx=eval(e2),diffy=eval(e4),Step=Step,Output=Output)))
         }
 DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
 tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
@@ -10751,7 +9975,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=14,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=14,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=15,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=15,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -10763,89 +9987,6 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
 
-.RK32D <-
-function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(driftx) || !is.expression(drifty))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
-
-if(!is.expression(diffx) || !is.expression(diffy))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
-
-Ax    <- function(t,x,y)  eval(driftx)
-Ay    <- function(t,x,y)  eval(drifty)
-
-Sx    <- function(t,x,y)  eval(diffx)
-Sy    <- function(t,x,y)  eval(diffy)
-
-
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-ux = runif(N,0,1)
-ox = rep(1,N)
-ox [ which(ux < 0.5) ] = -1
-wx = cumsum(c(0,ox))*sqrt((T-t0)/N)
-Dx    <- diff(wx)
-uy = runif(N,0,1)
-oy = rep(1,N)
-oy [ which(uy < 0.5) ] = -1
-wy = cumsum(c(0,oy))*sqrt((T-t0)/N)
-Dy    <- diff(wy)
-X    <- numeric()
-Y    <- numeric()
-XX   <- numeric()
-YY   <- numeric()
-XXX  <- numeric()
-YYY  <- numeric()
-X[1] <- x0
-Y[1] <- y0
-for (i in 2:(N+1)){
-              XX[i-1]=X[i-1]+0.5*Dt*Ax(t[i-1],X[i-1],Y[i-1])+Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]
-              YY[i-1]=Y[i-1]+0.5*Dt*Ay(t[i-1],X[i-1],Y[i-1])+Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]
-              XXX[i-1]=X[i-1]-Ax(t[i-1],X[i-1],Y[i-1])*Dt+2*Dt*Ax(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])+
-                     (2*Sx(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])-Sx(t[i-1],X[i-1],Y[i-1]))*Dx[i-1]
-              YYY[i-1]=Y[i-1]-Ay(t[i-1],X[i-1],Y[i-1])*Dt+2*Dt*Ay(t[i-1]+0.5*Dt,X[i-1],YY[i-1])+
-                     (2*Sy(t[i-1]+0.5*Dt,X[i-1],YY[i-1])-Sy(t[i-1],X[i-1],Y[i-1]))*Dy[i-1]
-              X[i] = X[i-1]+(Dt/6)*(Ax(t[i-1],X[i-1],Y[i-1])+4*Ax(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])+Ax(t[i-1]+Dt,XXX[i-1],Y[i-1]))+
-                     (1/6)*(Sx(t[i-1],X[i-1],Y[i-1])+4*Sx(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])+Sx(t[i-1]+Dt,XXX[i-1],Y[i-1]))*Dx[i-1]
-              Y[i] = Y[i-1]+(Dt/6)*(Ay(t[i-1],X[i-1],Y[i-1])+4*Ay(t[i-1]+0.5*Dt,X[i-1],YY[i-1])+Ay(t[i-1]+Dt,X[i-1],YYY[i-1]))+
-                     (1/6)*(Sy(t[i-1],X[i-1],Y[i-1])+4*Sy(t[i-1]+0.5*Dt,X[i-1],YY[i-1])+Sy(t[i-1]+Dt,X[i-1],YYY[i-1]))*Dy[i-1]
-                  } 
-plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
-points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
-if(Step==FALSE){points(X,Y,type="l",lwd=1,col="black",panel.frist=grid(col="gray"))}
-if(Step==TRUE){for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}}
-mtext(expression("Runge-Kutta scheme Order3: Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
-mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
-mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
-mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
-mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
-mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
-mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
-legend("topleft",bg="gray85",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X1   <- X
-X2   <- Y
-Result <- data.frame(time,X1,X2)
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
-}
 
 
 .RK32DGUI <-
@@ -10864,7 +10005,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Simulation for Numerical Solution\n            Runge-Kutta Scheme ?\n Simulation SDE Two-Dimensional",command=function(){print(help("snssde2D"))},width=40)
@@ -10979,7 +10120,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=12,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -10989,110 +10130,6 @@ q.but <- tkbutton(tt,text="Quit",
                       command=function() tkdestroy(tt))
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
-}
-
-.STS2D <-
-function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
-       {
-if( t0 >= T || t0 < 0 ) 
-            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
-
-if( N <= 1 )   
-            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
-
-if ( Dt <= 0 )
-            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
-
-if(!is.expression(driftx) || !is.expression(drifty))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
-
-if(!is.expression(diffx) || !is.expression(diffy))
-            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
-
-
-
-DDAx   <- D(driftx,"x")
-DDDAx  <- D(D(driftx,"x"),"x")
-
-DDSx   <- D(diffx,"x")
-DDDSx  <- D(D(diffx,"x"),"x")
-Ax     <- function(t,x,y)  eval(driftx)
-DAxx   <- function(t,x,y)  eval(DDAx)
-DAxxx  <- function(t,x,y)  eval(DDDAx)
-Sx     <- function(t,x,y)  eval(diffx)
-DSx    <- function(t,x,y)  eval(DDSx)
-DSxx   <- function(t,x,y)  eval(DDDSx)
-
-DDAy   <- D(drifty,"y")
-DDDAy  <- D(D(drifty,"y"),"y")
-DDSy   <- D(diffy,"y")
-DDDSy  <- D(D(diffy,"y"),"y")
-Ay     <- function(t,x,y)  eval(drifty)
-DAyy   <- function(t,x,y)  eval(DDAy)
-DAyyy  <- function(t,x,y)  eval(DDDAy)
-Sy     <- function(t,x,y)  eval(diffy)
-DSy    <- function(t,x,y)  eval(DDSy)
-DSyy   <- function(t,x,y)  eval(DDDSy)
-
-if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
-          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
-                T <- t[N +1]}
-Dt = (T-t0)/N
-ux = runif(N,0,1)
-ox = rep(1,N)
-ox [ which(ux < 0.5) ] = -1
-wx = cumsum(c(0,ox))*sqrt((T-t0)/N)
-Dx    <- diff(wx)
-uy = runif(N,0,1)
-oy = rep(1,N)
-oy [ which(uy < 0.5) ] = -1
-wy = cumsum(c(0,oy))*sqrt((T-t0)/N)
-Dy    <- diff(wy)
-DZx= rnorm(N,0,sqrt((1/3)*Dt^3))
-DZy= rnorm(N,0,sqrt((1/3)*Dt^3))
-X    <- numeric()
-Y    <- numeric()
-X[1] <- x0
-Y[1] <- y0
-for (i in 2:(N+1)){
-X[i]=X[i-1]+Ax(t[i-1],X[i-1],Y[i-1])*Dt+Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]+
-     0.5*Sx(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1])*((Dx[i-1]^2)-Dt)+
-     DAxx(t[i-1],X[i-1],Y[i-1])*Sx(t[i-1],X[i-1],Y[i-1])*DZx[i-1]+0.5*(Ax(t[i-1],X[i-1],Y[i-1])*DAxx(t[i-1],X[i-1],Y[i-1])+
-     0.5*(Sx(t[i-1],X[i-1],Y[i-1])^2)*DAxxx(t[i-1],X[i-1],Y[i-1]))*(Dt^2)+(Ax(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1])+
-     0.5*(Sx(t[i-1],X[i-1],Y[i-1])^2)*DSxx(t[i-1],X[i-1],Y[i-1]))*(Dx[i-1]*Dt-DZx[i-1])+
-     0.5*Sx(t[i-1],X[i-1],Y[i-1])*(Sx(t[i-1],X[i-1],Y[i-1])*DSxx(t[i-1],X[i-1],Y[i-1])+
-     (DSx(t[i-1],X[i-1],Y[i-1])^2))*((1/3)*(Dx[i-1]^2)-Dt)*Dx[i-1]
-Y[i]=Y[i-1]+Ay(t[i-1],X[i-1],Y[i-1])*Dt+Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]+
-     0.5*Sy(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1])*((Dy[i-1]^2)-Dt)+
-     DAyy(t[i-1],X[i-1],Y[i-1])*Sy(t[i-1],X[i-1],Y[i-1])*DZy[i-1]+0.5*(Ay(t[i-1],X[i-1],Y[i-1])*DAyy(t[i-1],X[i-1],Y[i-1])+
-     0.5*(Sy(t[i-1],X[i-1],Y[i-1])^2)*DAyyy(t[i-1],X[i-1],Y[i-1]))*(Dt^2)+(Ay(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1])+
-     0.5*(Sy(t[i-1],X[i-1],Y[i-1])^2)*DSyy(t[i-1],X[i-1],Y[i-1]))*(Dy[i-1]*Dt-DZy[i-1])+
-     0.5*Sy(t[i-1],X[i-1],Y[i-1])*(Sy(t[i-1],X[i-1],Y[i-1])*DSyy(t[i-1],X[i-1],Y[i-1])+
-     (DSx(t[i-1],X[i-1],Y[i-1])^2))*((1/3)*(Dy[i-1]^2)-Dt)*Dy[i-1]
-                  } 
-plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
-points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
-if(Step==FALSE){points(X,Y,type="l",lwd=1,col="black",panel.frist=grid(col="gray"))}
-if(Step==TRUE){for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}}
-mtext(expression("Strong Taylor Scheme Order 1.5: Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
-mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
-mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
-mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
-mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
-mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
-mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
-legend("topleft",bg="gray85",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
-mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
-time <- t
-X1   <- X
-X2   <- Y
-Result <- data.frame(time,X1,X2)
-showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
-if(Output==TRUE){
-write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
-           col.names=TRUE, row.names=FALSE, append=FALSE)
-}
-attach(Result)
 }
 
 
@@ -11112,7 +10149,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Simulation for Numerical Solution\n  Strong Taylor Scheme Order 1.5 ?\n Simulation SDE Two-Dimensional",command=function(){print(help("snssde2D"))},width=40)
@@ -11227,7 +10264,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=12,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=12,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=13,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=13,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -11254,7 +10291,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but2 <- tkbutton(tt,text="                        Statistical Analysis \n Estimated Density of the Random Variable X?\n                Using The Kernel Method",command=function(){print(help("Kern_meth"))},width=35)
@@ -11401,7 +10438,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -11466,7 +10503,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="       Statistical Analysis \n The Gamma Distribution",command=function(){print(help("Ajdgamma"))},width=50)
@@ -11535,7 +10572,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -11599,7 +10636,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="       Statistical Analysis \n The Beta Distribution",command=function(){print(help("Ajdbeta"))},width=50)
@@ -11668,7 +10705,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text=" Statistical Analysis \n The F Distribution",command=function(){print(help("Ajdf"))},width=50)
@@ -11737,7 +10774,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -11801,7 +10838,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="       Statistical Analysis \n The Weibull Distribution",command=function(){print(help("Ajdweibull"))},width=50)
@@ -11870,7 +10907,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="       Statistical Analysis \n The Normal Distribution",command=function(){print(help("Ajdnorm"))},width=50)
@@ -11939,7 +10976,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="          Statistical Analysis \n The Log Normal Distribution",command=function(){print(help("Ajdlognorm"))})
@@ -12008,7 +11045,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but2 <- tkbutton(tt,text="                          Statistical Analysis \nEmpirical Distribution for the Random Variable X?",command=function(){print(help("fctrep_Meth"))},width=44)
@@ -12055,7 +11092,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -12174,7 +11211,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but2 <- tkbutton(tt,text="                        Statistical Analysis \n Estimated Density of the Random Variable X?\n                Using The Kernel Method",command=function(){print(help("Kern_meth"))},width=35)
@@ -12321,7 +11358,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="                              Statistical Analysis \nSimulation M-Samples of First Passage Time (tau)",command=function(){print(help("AnaSimFPT"))},width=50)
@@ -12446,7 +11483,7 @@ tkgrid(tkradiobutton(tt, text = "Runge-Kutta \nScheme Order3", value = "RK3", va
         row=21,column = 1,sticky = "w")
 
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=22,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=22,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -12473,7 +11510,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="                              Statistical Analysis \nSimulation M-Samples of Random Variable X(v[t])",command=function(){print(help("AnaSimX"))},width=50)
@@ -12589,7 +11626,7 @@ tkgrid(tkradiobutton(frame1, text = "Runge-Kutta Scheme Order3", value = "RK3", 
         sticky = "w")
 tkgrid(frame1, rowspan = 1,row=12,columnspan=5,padx=5,pady=5)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -12616,7 +11653,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -12674,7 +11711,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="         Statistical Analysis \n Kolmogorov-Smirnov Tests \n   The Gamma Distribution",command=function(){print(help("ks.test"))},width=50)
@@ -12736,7 +11773,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -12793,7 +11830,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="         Statistical Analysis \n Kolmogorov-Smirnov Tests\n      The Beta Distribution",command=function(){print(help("ks.test"))},width=50)
@@ -12855,7 +11892,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="        Statistical Analysis \n Kolmogorov-Smirnov Tests\n        The F Distribution",command=function(){print(help("ks.test"))},width=50)
@@ -12917,7 +11954,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -12974,7 +12011,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="         Statistical Analysis \n Kolmogorov-Smirnov Tests\n   The Weibull Distribution",command=function(){print(help("ks.test"))},width=50)
@@ -13037,7 +12074,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="        Statistical Analysis \n Kolmogorov-Smirnov Tests\n   The Normal Distribution",command=function(){print(help("ks.test"))},width=50)
@@ -13099,7 +12136,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="          Statistical Analysis \n Kolmogorov-Smirnov Tests \nThe Log Normal Distribution",command=function(){print(help("ks.test"))},width=50)
@@ -13162,7 +12199,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 
@@ -13300,7 +12337,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt,0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but2 <- tkbutton(tt,text="                        Statistical Analysis \n Estimated Density of the Random Variable X?\n                Using The Kernel Method",command=function(){print(help("Kern_general"))},width=35)
@@ -13474,7 +12511,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Statistical Analysis")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="                              Statistical Analysis \nEmpirical Distribution for the Random Variable X",command=function(){print(help("fctgeneral"))},width=50)
@@ -13537,7 +12574,7 @@ tkgrid(submit.but,reset.but,q.but,sticky="e")
 
 .Attra2D <- function()
        {
-N=1000;t0=0;Dt=0.001;T=1;X0=2;Y0=1;v=0.2;K=3;Sigma=0.2;
+N=1000;t0=0;Dt=0.001;T=1;X0=2;Y0=1;v=0.2;K=3;Sigma=0.1;
 
 drifx     <- expression( (-K*x) / (x^2+y^2) )
 drify     <- expression( (-K*y) / (x^2+y^2) )
@@ -13612,8 +12649,8 @@ points(X0,Y0,type="p",pch=20,col="green4",cex=1.8)
 text(X0,Y0, expression((list(X[t[0]],Y[t[0]]))), col="green4", adj=c(.5,-.2),cex = 0.8)
 
 if (length(n) > 0 ){
-for (i in 1:min(n)){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="blue",lwd=2,panel.frist=grid(col="gray"))}}else{
-for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="blue",lwd=2,panel.frist=grid(col="gray"))}}
+for (i in 1:min(n)){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="blue",lwd=2)}}else{
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="blue",lwd=2)}}
 
 if (length(n) > 0 ){points(X[min(n)],Y[min(n)],type="p",col="red",cex=1.2,pch="*")
                     text(X[min(n)],Y[min(n)], expression(tau[v]^(1)), col=2, adj=c(-.1,-.1),cex = 1.2)
@@ -13713,7 +12750,7 @@ title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of
 .Attra2D2 <- function()
           {
 
-N=3000;t0=0;Dt=0.001;T=1;X1_0=2;X2_0=2;Y1_0=-0.5;Y2_0=-1;v=0.05;K=3;m=0.4;Sigma=0.3;
+N=3000;t0=0;Dt=0.001;T=1;X1_0=2;X2_0=2;Y1_0=-0.5;Y2_0=-1;v=0.05;K=3;m=0.4;Sigma=0.15;
 
 Sigmax <- Sigma
 Sigmay <- Sigma
@@ -13799,7 +12836,7 @@ mtext(bquote(Y[t[0]]^(2)==.(Y2_0)),line=1,adj=1,cex=0.7,col="blue")
 mtext(bquote((list(K,m,sigma,v))==(list(.(K),.(m),.(Sigmax),.(v)))),line=0.2,adj=1,cex=0.7,col="green4")
 
 for (i in 1:length(D)){
-lines(c(Y1[i],Y1[i+1]),c(Y2[i],Y2[i+1]),type="l",col="blue",panel.frist=grid(col="gray"),lwd=2)
+lines(c(Y1[i],Y1[i+1]),c(Y2[i],Y2[i+1]),type="l",col="blue",lwd=2)
 lines(c(X1[i],X1[i+1]),c(X2[i],X2[i+1]),type="l",col="red",lwd=2)
                  }
 n <- which(D <= v)
@@ -13965,10 +13002,10 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Brownian Motion")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-but <- tkbutton(tt,text="Brownian Motion Two-Dimensional by normal law?",command=function(){print(help("BMN2D"))},width=40)
+but <- tkbutton(tt,text="Brownian Motion Two-Dimensional \n                    by normal law?",command=function(){print(help("BMN2D"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N  <- tclVar(10000)
@@ -14040,7 +13077,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=8,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -14067,10 +13104,10 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Brownian Motion")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-but <- tkbutton(tt,text="Brownian Motion Two-Dimensional by Random Walk?",command=function(){print(help("BMRW2D"))},width=40)
+but <- tkbutton(tt,text="Brownian Motion Two-Dimensional \n                 by Random Walk?",command=function(){print(help("BMRW2D"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N  <- tclVar(10000)
@@ -14142,7 +13179,7 @@ tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=8,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=8,column=1)
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=9,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=9,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -14170,10 +13207,10 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Brownian Motion")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-but <- tkbutton(tt,text="Brownian Motion Three-Dimensional by normal law?",command=function(){print(help("BMN3D"))},width=40)
+but <- tkbutton(tt,text="Brownian Motion Three-Dimensional \n                by normal law?",command=function(){print(help("BMN3D"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -14246,7 +13283,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -14257,6 +13294,7 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
 
 .BMRW3DGUI <- function()
          {
@@ -14273,10 +13311,10 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Brownian Motion")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
-but <- tkbutton(tt,text="Brownian Motion Three-Dimensional by Random Walk?",command=function(){print(help("BMRW3D"))},width=40)
+but <- tkbutton(tt,text="Brownian Motion Three-Dimensional \n               by Random Walk?",command=function(){print(help("BMRW3D"))},width=40)
 tkgrid(but,row=1,columnspan = 3,sticky="ew")
 
 N  <- tclVar(1000)
@@ -14349,7 +13387,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=8, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=10,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=10,column=1)
 reset.but  <- tkbutton(tt, text="Reset", command=reset)
@@ -14399,7 +13437,7 @@ for (i in 2:(N+1)){
                   } 
 plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
 points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
-for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1,panel.frist=grid(col="gray"))}
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1)}
 mtext(expression("Euler scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
 mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
 mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
@@ -14426,7 +13464,7 @@ local({
 tt <- tktoplevel()
 tkwm.title(tt, "Sim.DiffProc~~Attractive Model for 2-Diffusion Processes")
 tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 but <- tkbutton(tt,text="Simulation The First Passage Time FPT ? \n V(1)=(X(1),X(2)) and V(2)=(Y(1),Y(2))",command=function(){print(help("tho_02diff"))})
@@ -14553,7 +13591,7 @@ DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help
 tkgrid(tklabel(tt,text="Sigma : "), Sigma.entry,sticky="w")
 tkgrid(DimHlp.but, row=14, column=2,sticky="w")
 
-tkgrid(tklabel(tt,text = "Output in Excel 2007 : "),sticky = "w")
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
 tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=15,columnspan = 2)
 tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=15,column=1)
 
@@ -14565,6 +13603,3337 @@ q.but <- tkbutton(tt,text="Quit",
 tkgrid(submit.but,reset.but,q.but,sticky="e")
 })   
 }
+
+###################
+.Euler <-
+function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if (M < 1)
+            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(a))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
+
+if(!is.expression(sigma))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
+
+Eul <- function(N,T=1,Dt,t0,x0,a,sigma)
+     {
+
+A    <- function(t,x)  eval(a)
+S    <- function(t,x)  eval(sigma)
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+w = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+D    <- diff(w)
+X    <- numeric()
+X[1] <- x0
+for (i in 2:(N+1)){X[i] = X[i-1] + A(t[i-1],X[i-1])*Dt + S(t[i-1],X[i-1])*D[i-1]}      
+X
+   }
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+Q = sapply(rep(N,length=M),Eul,T=T,t0=t0,x0=x0,Dt=Dt,a=a,sigma=sigma)
+Q.mean <- apply(Q,1,mean)
+r1 <- min(apply(Q,2,min))
+r2 <- max(apply(Q,2,max))
+plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
+mtext(expression("Euler scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
+for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1)}
+mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
+mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
+mtext(a,adj=0.17,col="red",line=1.8)
+mtext(sigma,adj=0.17,col="red",line=0.4)
+mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
+mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
+mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
+mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
+if (M >=2){lines(t,Q.mean,lwd=2,col="red")
+legend("topleft",border="gray",c("Average trajectory"),lty=c(1),col=c("red"),lwd=2)}
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
+time <- t
+X.mean <- Q.mean
+X <- Q
+Result <- data.frame(time,X)
+if (M >=2) {Result <- data.frame(time,Q,X.mean)}
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "Euler.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+    }
+
+
+.Milstein <-
+function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if (M < 1)
+            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(a))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
+
+if(!is.expression(sigma))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
+
+Mils <- function(N,T=1,Dt,t0,x0,a,sigma)
+   {
+DSx  <- D(sigma,"x")
+A    <- function(t,x)  eval(a)
+S    <- function(t,x)  eval(sigma)
+Sx   <- function(t,x)  eval(DSx)
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+w = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+D    <- diff(w)
+X    <- numeric()
+X[1] <- x0
+for (i in 2:(N+1)){
+X[i] = X[i-1]+ A(t[i-1],X[i-1])*Dt + S(t[i-1],X[i-1])*D[i-1]+ 
+       0.5 *S(t[i-1],X[i-1])*Sx(t[i-1],X[i-1])*((D[i-1])^2 -Dt)
+              }
+X      
+   }
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+Q = sapply(rep(N,length=M),Mils,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
+Q.mean <- apply(Q,1,mean)
+r1 <- min(apply(Q,2,min))
+r2 <- max(apply(Q,2,max))
+plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
+mtext(expression("Milstein scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
+for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1)}
+mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
+mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
+mtext(a,adj=0.17,col="red",line=1.8)
+mtext(sigma,adj=0.17,col="red",line=0.4)
+mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
+mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
+mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
+mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
+if (M >=2){lines(t,Q.mean,lwd=2,col="red")
+legend("topleft",border="gray",c("Average trajectory"),lty=c(1),col=c("red"),lwd=2)}
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
+time <- t
+X.mean <- Q.mean
+X <- Q
+Result <- data.frame(time,X)
+if (M >=2) {Result <- data.frame(time,Q,X.mean)}
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "Milstein.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+    }
+
+.MilsteinS <-
+function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if (M < 1)
+            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(a))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
+
+if(!is.expression(sigma))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
+
+MilS <- function(N,T=1,Dt,t0,x0,a,sigma)
+   {
+DAx  <- D(a,"x")
+DAxx <- D(D(a,"x"),"x")
+DSx  <- D(sigma,"x")
+DSxx <- D(D(sigma,"x"),"x")
+A    <- function(t,x)  eval(a)
+Ax   <- function(t,x)  eval(DAx)
+Axx  <- function(t,x)  eval(DAxx)
+S    <- function(t,x)  eval(sigma)
+Sx   <- function(t,x)  eval(DSx)
+Sxx  <- function(t,x)  eval(DSxx)
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+w = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+D    <- diff(w)
+X    <- numeric()
+X[1] <- x0
+for (i in 2:(N+1)){
+X[i] = X[i-1] + A(t[i-1],X[i-1])*Dt + S(t[i-1],X[i-1])*D[i-1] +
+       0.5 *S(t[i-1],X[i-1]) * Sx(t[i-1],X[i-1])*(D[i-1]^2-Dt)+ 
+       Dt^(3 /2)*(0.5 *A(t[i-1],X[i-1])*Sx(t[i-1],X[i-1]) +
+       0.5 *Ax(t[i-1],X[i-1])*S(t[i-1],X[i-1])+
+       0.25 *(S(t[i -1] ,X[i -1])^2) * Sxx(t[i -1] ,X[i -1]))*D[i -1]+ 
+       (Dt^2) * (0.5*A(t[i -1],X[i -1])*Ax(t[i-1],X[i-1])+
+       0.25 *Axx(t[i-1],X[i-1])*(S(t[i-1],X[i-1])^2))
+               }               
+X      
+   }
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+Q = sapply(rep(N,length=M),MilS,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
+Q.mean <- apply(Q,1,mean)
+r1 <- min(apply(Q,2,min))
+r2 <- max(apply(Q,2,max))
+plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
+mtext(expression("Second Milstein scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
+for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1)}
+mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
+mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
+mtext(a,adj=0.17,col="red",line=1.8)
+mtext(sigma,adj=0.17,col="red",line=0.4)
+mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
+mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
+mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
+mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
+if (M >=2){lines(t,Q.mean,lwd=2,col="red")
+legend("topleft",border="gray",c("Average trajectory"),lty=c(1),col=c("red"),lwd=2)}
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
+time <- t
+X.mean <- Q.mean
+X <- Q
+Result <- data.frame(time,X)
+if (M >=2) {Result <- data.frame(time,Q,X.mean)}
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "MilsteinS.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+    }
+
+.STS <-
+function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if (M < 1)
+            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(a))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
+
+if(!is.expression(sigma))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
+
+st <- function(N,T=1,Dt,t0,x0,a,sigma)
+   {
+DAx  <- D(a,"x")
+DAxx <- D(D(a,"x"),"x")
+DSx  <- D(sigma,"x")
+DSxx <- D(D(sigma,"x"),"x")
+A    <- function(t,x)  eval(a)
+Ax   <- function(t,x)  eval(DAx)
+Axx  <- function(t,x)  eval(DAxx)
+S    <- function(t,x)  eval(sigma)
+Sx   <- function(t,x)  eval(DSx)
+Sxx  <- function(t,x)  eval(DSxx)
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+w = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+D    <- diff(w)
+DZ= rnorm(N,0,sqrt((1/3)*Dt^3))
+X    <- numeric()
+X[1] <- x0
+for (i in 2:(N+1)){
+X[i]=X[i-1]+A(t[i-1],X[i-1])*Dt+S(t[i-1],X[i-1])*D[i-1]+
+     0.5*S(t[i-1],X[i-1])*Sx(t[i-1],X[i-1])*((D[i-1]^2)-Dt)+
+     Ax(t[i-1],X[i-1])*S(t[i-1],X[i-1])*DZ[i-1]+0.5*(A(t[i-1],X[i-1])*Ax(t[i-1],X[i-1])+
+     0.5*(S(t[i-1],X[i-1])^2)*Axx(t[i-1],X[i-1]))*(Dt^2)+(A(t[i-1],X[i-1])*Sx(t[i-1],X[i-1])+
+     0.5*(S(t[i-1],X[i-1])^2)*Sxx(t[i-1],X[i-1]))*(D[i-1]*Dt-DZ[i-1])+
+     0.5*S(t[i-1],X[i-1])*(S(t[i-1],X[i-1])*Sxx(t[i-1],X[i-1])+
+     (Sx(t[i-1],X[i-1])^2))*((1/3)*(D[i-1]^2)-Dt)*D[i-1]
+                }            
+X      
+   }
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+Q = sapply(rep(N,length=M),st,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
+Q.mean <- apply(Q,1,mean)
+r1 <- min(apply(Q,2,min))
+r2 <- max(apply(Q,2,max))
+plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
+mtext(expression("Strong Taylor Scheme Order 1.5":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
+for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1)}
+mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
+mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
+mtext(a,adj=0.17,col="red",line=1.8)
+mtext(sigma,adj=0.17,col="red",line=0.4)
+mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
+mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
+mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
+mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
+if (M >=2){lines(t,Q.mean,lwd=2,col="red")
+legend("topleft",border="gray",c("Average trajectory"),lty=c(1),col=c("red"),lwd=2)}
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
+time <- t
+X.mean <- Q.mean
+X <- Q
+Result <- data.frame(time,X)
+if (M >=2) {Result <- data.frame(time,Q,X.mean)}
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "STS.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+    }
+
+.Heun <-
+function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if (M < 1)
+            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(a))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
+
+if(!is.expression(sigma))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
+
+H <- function(N,T=1,Dt,t0,x0,a,sigma)
+   {
+A    <- function(t,x)  eval(a)
+S    <- function(t,x)  eval(sigma)
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+w = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+D    <- diff(w)
+X    <- numeric()
+Y    <- numeric()
+X[1] <- x0
+for (i in 2:(N+1)){
+         Y[i-1]= X[i-1]+A(t[i-1],X[i-1])*Dt+S(t[i-1],X[i-1])*D[i-1]
+         X[i]  = X[i-1]+0.5*Dt*(A(t[i-1],X[i-1])+A(t[i-1],Y[i-1]))+
+                 0.5*(S(t[i-1],X[i-1])+S(t[i-1],Y[i-1]))*D[i-1]
+               }          
+X      
+   }
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+Q = sapply(rep(N,length=M),H,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
+Q.mean <- apply(Q,1,mean)
+r1 <- min(apply(Q,2,min))
+r2 <- max(apply(Q,2,max))
+plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
+mtext(expression("Heun scheme":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
+for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1)}
+mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
+mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
+mtext(a,adj=0.17,col="red",line=1.8)
+mtext(sigma,adj=0.17,col="red",line=0.4)
+mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
+mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
+mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
+mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
+if (M >=2){lines(t,Q.mean,lwd=2,col="red")
+legend("topleft",border="gray",c("Average trajectory"),lty=c(1),col=c("red"),lwd=2)}
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
+time <- t
+X.mean <- Q.mean
+X <- Q
+Result <- data.frame(time,X)
+if (M >=2) {Result <- data.frame(time,Q,X.mean)}
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "Heun.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+    }
+
+.RK3 <-
+function(N,M,T=1,t0,x0,Dt,a,sigma,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if (M < 1)
+            stop(tkmessageBox(title="Error",message=paste( "M must be >= 1" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(a))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficient of drift must be expressions f(t,X)" ),icon="error"))
+
+if(!is.expression(sigma))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X)" ),icon="error"))
+
+rk3 <- function(N,T=1,Dt,t0,x0,a,sigma)
+   {
+A    <- function(t,x)  eval(a)
+S    <- function(t,x)  eval(sigma)
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+w = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+D    <- diff(w)
+X    <- numeric()
+X[1] <- x0
+for (i in 2:(N+1)){
+              Y    <- numeric()
+              Z    <- numeric()
+              Y[i-1]=X[i-1]+0.5*Dt*A(t[i-1],X[i-1])+S(t[i-1],X[i-1])*D[i-1]
+              Z[i-1]=X[i-1]-A(t[i-1],X[i-1])*Dt+2*Dt*A(t[i-1]+0.5*Dt,Y[i-1])+
+                     (2*S(t[i-1]+0.5*Dt,Y[i-1])-S(t[i-1],X[i-1]))*D[i-1]
+              X[i] = X[i-1]+(Dt/6)*(A(t[i-1],X[i-1])+4*A(t[i-1]+0.5*Dt,Y[i-1])+A(t[i-1]+Dt,Z[i-1]))+
+                     (1/6)*(S(t[i-1],X[i-1])+4*S(t[i-1]+0.5*Dt,Y[i-1])+S(t[i-1]+Dt,Z[i-1]))*D[i-1]
+               }          
+X      
+   }
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+Q = sapply(rep(N,length=M),rk3,t0=t0,T=T,x0=x0,Dt=Dt,a=a,sigma=sigma)
+Q.mean <- apply(Q,1,mean)
+r1 <- min(apply(Q,2,min))
+r2 <- max(apply(Q,2,max))
+plot(t,Q[,1],type="n",ylab=expression(X[t]),ylim=c(r1,r2),xlab="time",las=1)
+mtext(expression("Runge-Kutta scheme Order3":dX[t]== a(t,X[t])*dt+sigma(t,X[t])*dW[t]),line=3,cex=1.2,adj=0.5)
+for (i in 1:M){points(t,Q[,i],type="l",col="black",lwd=1)}
+mtext(expression(a(t,X[t])==.),adj=0,col="red",line=1.8)
+mtext(expression(sigma(t,X[t])==.),adj=0,col="red",line=0.4)
+mtext(a,adj=0.17,col="red",line=1.8)
+mtext(sigma,adj=0.17,col="red",line=0.4)
+mtext(bquote(Delta*t==.(Dt)),line=0.2,cex=1,adj=1,col="blue")
+mtext(bquote(T==.(T)),line=1.1,cex=1,adj=1,col="blue")
+mtext(bquote(x[.(0)]==.(x0)),line=0.1,cex=1,adj=0.75,col="blue")
+mtext(bquote(t[0]==.(t0)),line=0.9,cex=1,adj=0.75,col="blue")
+if (M >=2){lines(t,Q.mean,lwd=2,col="red")
+legend("topleft",border="gray",c("Average trajectory"),lty=c(1),col=c("red"),lwd=2)}
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria",date()),side = 1, line = 4, adj = 0.5, cex = .66)
+time <- t
+X.mean <- Q.mean
+X <- Q
+Result <- data.frame(time,X)
+if (M >=2) {Result <- data.frame(time,Q,X.mean)}
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "RK3.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+    }
+
+.Euler2D <-
+function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
+
+Ax    <- function(t,x,y)  eval(driftx)
+Ay    <- function(t,x,y)  eval(drifty)
+Sx    <- function(t,x,y)  eval(diffx)
+Sy    <- function(t,x,y)  eval(diffy)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+X    <- numeric()
+Y    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+for (i in 2:(N+1)){
+    X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]
+    Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1] 
+                  } 
+
+if(Step==FALSE){
+plot(X,Y,type="l",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+mtext(expression("Euler scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1)}
+mtext(expression("Euler scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2 ,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+time <- t
+X1   <- X
+X2   <- Y
+Result <- data.frame(time,X1,X2)
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "Euler2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+}
+
+.Milstein2D <-
+function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
+
+
+DSxx   <- D(diffx,"x")
+DSyy   <- D(diffy,"y")
+Ax    <- function(t,x,y)  eval(driftx)
+Ay    <- function(t,x,y)  eval(drifty)
+Sx    <- function(t,x,y)  eval(diffx)
+DSx   <- function(t,x,y)  eval(DSxx)
+Sy    <- function(t,x,y)  eval(diffy)
+DSy   <- function(t,x,y)  eval(DSyy)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+X    <- numeric()
+Y    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+for (i in 2:(N+1)){
+    X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]+
+           0.5 *Sx(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1])*((Dx[i-1])^2 -Dt)
+    Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]+
+           0.5 *Sy(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1])*((Dy[i-1])^2 -Dt) 
+                  } 
+				  
+if(Step==FALSE){
+plot(X,Y,type="l",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+mtext(expression("Milstein scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1)}
+mtext(expression("Milstein scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2 ,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}				  
+time <- t
+X1   <- X
+X2   <- Y
+Result <- data.frame(time,X1,X2)
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "Milstein2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+}
+
+.MilsteinS2D <-
+function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
+
+
+
+DDAx   <- D(driftx,"x")
+DDDAx  <- D(D(driftx,"x"),"x")
+
+DDSx   <- D(diffx,"x")
+DDDSx  <- D(D(diffx,"x"),"x")
+
+Ax     <- function(t,x,y)  eval(driftx)
+DAxx   <- function(t,x,y)  eval(DDAx)
+DAxxx  <- function(t,x,y)  eval(DDDAx)
+Sx     <- function(t,x,y)  eval(diffx)
+DSx    <- function(t,x,y)  eval(DDSx)
+DSxx   <- function(t,x,y)  eval(DDDSx)
+
+DDAy   <- D(drifty,"y")
+DDDAy  <- D(D(drifty,"y"),"y")
+DDSy   <- D(diffy,"y")
+DDDSy  <- D(D(diffy,"y"),"y")
+Ay     <- function(t,x,y)  eval(drifty)
+DAyy   <- function(t,x,y)  eval(DDAy)
+DAyyy  <- function(t,x,y)  eval(DDDAy)
+Sy     <- function(t,x,y)  eval(diffy)
+DSy    <- function(t,x,y)  eval(DDSy)
+DSyy   <- function(t,x,y)  eval(DDDSy)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+X    <- numeric()
+Y    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+for (i in 2:(N+1)){
+X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1] +
+       0.5 *Sx(t[i-1],X[i-1],Y[i-1]) * DSx(t[i-1],X[i-1],Y[i-1])*(Dx[i-1]^2-Dt)+ 
+       Dt^(3/2)*(0.5 *Ax(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1]) +
+       0.5 *DAxx(t[i-1],X[i-1],Y[i-1])*Sx(t[i-1],X[i-1],Y[i-1])+
+       0.25 *(Sx(t[i-1],X[i-1],Y[i-1])^2) * DSxx(t[i-1],X[i-1],Y[i-1]))*Dx[i -1]+ 
+       (Dt^2) * (0.5*Ax(t[i-1],X[i-1],Y[i-1])*DAxx(t[i-1],X[i-1],Y[i-1])+
+       0.25 *DAxxx(t[i-1],X[i-1],Y[i-1])*(Sx(t[i-1],X[i-1],Y[i-1])^2))
+
+Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1] +
+       0.5 *Sy(t[i-1],X[i-1],Y[i-1]) * DSy(t[i-1],X[i-1],Y[i-1])*(Dy[i-1]^2-Dt)+ 
+       Dt^(3/2)*(0.5 *Ay(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1]) +
+       0.5 *DAyy(t[i-1],X[i-1],Y[i-1])*Sy(t[i-1],X[i-1],Y[i-1])+
+       0.25 *(Sy(t[i-1],X[i-1],Y[i-1])^2) * DSyy(t[i-1],X[i-1],Y[i-1]))*Dy[i -1]+ 
+       (Dt^2) * (0.5*Ay(t[i-1],X[i-1],Y[i-1])*DAyy(t[i-1],X[i-1],Y[i-1])+
+       0.25 *DAyyy(t[i-1],X[i-1],Y[i-1])*(Sy(t[i-1],X[i-1],Y[i-1])^2))
+                  } 
+
+if(Step==FALSE){
+plot(X,Y,type="l",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+mtext(expression("Second Milstein scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+if(Step==TRUE){
+plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1)}
+mtext(expression("Second Milstein scheme : Simulation SDE Two-Dimensional"),line=3.4,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2 ,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}					  
+time <- t
+X1   <- X
+X2   <- Y
+Result <- data.frame(time,X1,X2)
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+}
+
+.Heun2D <-
+function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
+
+Ax    <- function(t,x,y)  eval(driftx)
+Ay    <- function(t,x,y)  eval(drifty)
+
+
+
+Sx    <- function(t,x,y)  eval(diffx)
+Sy    <- function(t,x,y)  eval(diffy)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+X    <- numeric()
+Y    <- numeric()
+XX   <- numeric()
+YY   <- numeric()
+X[1] <- x0
+Y[1] <- y0
+for (i in 2:(N+1)){
+         XX[i-1]= X[i-1]+Ax(t[i-1],X[i-1],Y[i-1])*Dt+Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]
+         YY[i-1]= Y[i-1]+Ay(t[i-1],X[i-1],Y[i-1])*Dt+Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]
+         X[i]   = X[i-1]+0.5*Dt*(Ax(t[i-1],X[i-1],Y[i-1])+Ax(t[i-1],XX[i-1],Y[i-1]))+
+                 0.5*(Sx(t[i-1],X[i-1],Y[i-1])+Sx(t[i-1],XX[i-1],Y[i-1]))*Dx[i-1]
+         Y[i]   = Y[i-1]+0.5*Dt*(Ay(t[i-1],X[i-1],Y[i-1])+Ay(t[i-1],X[i-1],YY[i-1]))+
+                 0.5*(Sy(t[i-1],X[i-1],Y[i-1])+Sy(t[i-1],X[i-1],YY[i-1]))*Dy[i-1]
+                  } 
+				  
+if(Step==FALSE){
+plot(X,Y,type="l",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+mtext(expression("Heun scheme : Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+if(Step==TRUE){
+plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1)}
+mtext(expression("Heun scheme : Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2 ,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}					  
+time <- t
+X1   <- X
+X2   <- Y
+Result <- data.frame(time,X1,X2)
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+}
+
+.RK32D <-
+function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
+
+Ax    <- function(t,x,y)  eval(driftx)
+Ay    <- function(t,x,y)  eval(drifty)
+
+Sx    <- function(t,x,y)  eval(diffx)
+Sy    <- function(t,x,y)  eval(diffy)
+
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+X    <- numeric()
+Y    <- numeric()
+XX   <- numeric()
+YY   <- numeric()
+XXX  <- numeric()
+YYY  <- numeric()
+X[1] <- x0
+Y[1] <- y0
+for (i in 2:(N+1)){
+              XX[i-1]=X[i-1]+0.5*Dt*Ax(t[i-1],X[i-1],Y[i-1])+Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]
+              YY[i-1]=Y[i-1]+0.5*Dt*Ay(t[i-1],X[i-1],Y[i-1])+Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]
+              XXX[i-1]=X[i-1]-Ax(t[i-1],X[i-1],Y[i-1])*Dt+2*Dt*Ax(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])+
+                     (2*Sx(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])-Sx(t[i-1],X[i-1],Y[i-1]))*Dx[i-1]
+              YYY[i-1]=Y[i-1]-Ay(t[i-1],X[i-1],Y[i-1])*Dt+2*Dt*Ay(t[i-1]+0.5*Dt,X[i-1],YY[i-1])+
+                     (2*Sy(t[i-1]+0.5*Dt,X[i-1],YY[i-1])-Sy(t[i-1],X[i-1],Y[i-1]))*Dy[i-1]
+              X[i] = X[i-1]+(Dt/6)*(Ax(t[i-1],X[i-1],Y[i-1])+4*Ax(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])+Ax(t[i-1]+Dt,XXX[i-1],Y[i-1]))+
+                     (1/6)*(Sx(t[i-1],X[i-1],Y[i-1])+4*Sx(t[i-1]+0.5*Dt,XX[i-1],Y[i-1])+Sx(t[i-1]+Dt,XXX[i-1],Y[i-1]))*Dx[i-1]
+              Y[i] = Y[i-1]+(Dt/6)*(Ay(t[i-1],X[i-1],Y[i-1])+4*Ay(t[i-1]+0.5*Dt,X[i-1],YY[i-1])+Ay(t[i-1]+Dt,X[i-1],YYY[i-1]))+
+                     (1/6)*(Sy(t[i-1],X[i-1],Y[i-1])+4*Sy(t[i-1]+0.5*Dt,X[i-1],YY[i-1])+Sy(t[i-1]+Dt,X[i-1],YYY[i-1]))*Dy[i-1]
+                  } 
+
+if(Step==FALSE){
+plot(X,Y,type="l",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+mtext(expression("Runge-Kutta scheme Order3: Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+if(Step==TRUE){
+plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1)}
+mtext(expression("Runge-Kutta scheme Order3: Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2 ,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}					  
+time <- t
+X1   <- X
+X2   <- Y
+Result <- data.frame(time,X1,X2)
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+}
+
+.STS2D <-
+function(N,T=1,t0,x0,y0,Dt,driftx,drifty,diffx,diffy,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y)" ),icon="error"))
+
+
+
+DDAx   <- D(driftx,"x")
+DDDAx  <- D(D(driftx,"x"),"x")
+
+DDSx   <- D(diffx,"x")
+DDDSx  <- D(D(diffx,"x"),"x")
+Ax     <- function(t,x,y)  eval(driftx)
+DAxx   <- function(t,x,y)  eval(DDAx)
+DAxxx  <- function(t,x,y)  eval(DDDAx)
+Sx     <- function(t,x,y)  eval(diffx)
+DSx    <- function(t,x,y)  eval(DDSx)
+DSxx   <- function(t,x,y)  eval(DDDSx)
+
+DDAy   <- D(drifty,"y")
+DDDAy  <- D(D(drifty,"y"),"y")
+DDSy   <- D(diffy,"y")
+DDDSy  <- D(D(diffy,"y"),"y")
+Ay     <- function(t,x,y)  eval(drifty)
+DAyy   <- function(t,x,y)  eval(DDAy)
+DAyyy  <- function(t,x,y)  eval(DDDAy)
+Sy     <- function(t,x,y)  eval(diffy)
+DSy    <- function(t,x,y)  eval(DDSy)
+DSyy   <- function(t,x,y)  eval(DDDSy)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+DZx= rnorm(N,0,sqrt((1/3)*Dt^3))
+DZy= rnorm(N,0,sqrt((1/3)*Dt^3))
+X    <- numeric()
+Y    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+for (i in 2:(N+1)){
+X[i]=X[i-1]+Ax(t[i-1],X[i-1],Y[i-1])*Dt+Sx(t[i-1],X[i-1],Y[i-1])*Dx[i-1]+
+     0.5*Sx(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1])*((Dx[i-1]^2)-Dt)+
+     DAxx(t[i-1],X[i-1],Y[i-1])*Sx(t[i-1],X[i-1],Y[i-1])*DZx[i-1]+0.5*(Ax(t[i-1],X[i-1],Y[i-1])*DAxx(t[i-1],X[i-1],Y[i-1])+
+     0.5*(Sx(t[i-1],X[i-1],Y[i-1])^2)*DAxxx(t[i-1],X[i-1],Y[i-1]))*(Dt^2)+(Ax(t[i-1],X[i-1],Y[i-1])*DSx(t[i-1],X[i-1],Y[i-1])+
+     0.5*(Sx(t[i-1],X[i-1],Y[i-1])^2)*DSxx(t[i-1],X[i-1],Y[i-1]))*(Dx[i-1]*Dt-DZx[i-1])+
+     0.5*Sx(t[i-1],X[i-1],Y[i-1])*(Sx(t[i-1],X[i-1],Y[i-1])*DSxx(t[i-1],X[i-1],Y[i-1])+
+     (DSx(t[i-1],X[i-1],Y[i-1])^2))*((1/3)*(Dx[i-1]^2)-Dt)*Dx[i-1]
+Y[i]=Y[i-1]+Ay(t[i-1],X[i-1],Y[i-1])*Dt+Sy(t[i-1],X[i-1],Y[i-1])*Dy[i-1]+
+     0.5*Sy(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1])*((Dy[i-1]^2)-Dt)+
+     DAyy(t[i-1],X[i-1],Y[i-1])*Sy(t[i-1],X[i-1],Y[i-1])*DZy[i-1]+0.5*(Ay(t[i-1],X[i-1],Y[i-1])*DAyy(t[i-1],X[i-1],Y[i-1])+
+     0.5*(Sy(t[i-1],X[i-1],Y[i-1])^2)*DAyyy(t[i-1],X[i-1],Y[i-1]))*(Dt^2)+(Ay(t[i-1],X[i-1],Y[i-1])*DSy(t[i-1],X[i-1],Y[i-1])+
+     0.5*(Sy(t[i-1],X[i-1],Y[i-1])^2)*DSyy(t[i-1],X[i-1],Y[i-1]))*(Dy[i-1]*Dt-DZy[i-1])+
+     0.5*Sy(t[i-1],X[i-1],Y[i-1])*(Sy(t[i-1],X[i-1],Y[i-1])*DSyy(t[i-1],X[i-1],Y[i-1])+
+     (DSy(t[i-1],X[i-1],Y[i-1])^2))*((1/3)*(Dy[i-1]^2)-Dt)*Dy[i-1]
+                  } 
+				  
+if(Step==FALSE){
+plot(X,Y,type="l",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+mtext(expression("Strong Taylor Scheme Order 1.5: Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+if(Step==TRUE){
+plot(X,Y,type="n",xlab=expression(X[t]^1),ylab=expression(X[t]^2),las=1)
+points(x0,y0,type="p",pch=20,col="red2",cex=1.4)
+for (i in 1:N){lines(c(X[i],X[i+1]),c(Y[i],Y[i+1]),type="l",col="black",lwd=1)}
+mtext(expression("Strong Taylor Scheme Order 1.5: Simulation SDE Two-Dimensional"),line=3.2,adj=0.5,cex=1,col="black")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=1.6,col="red3")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="red3")
+mtext(bquote(X[t[0]]^1==.(x0)),line=1.6,adj=0.78,cex=1,col="blue")
+mtext(bquote(X[t[0]]^2==.(y0)),line=0.1,adj=0.78,cex=1,col="blue")
+mtext(bquote(T==.(T)),line=1.9,cex=1,adj=1,col="blue")
+mtext(bquote(Delta*t==.(Dt)),line=0.4,cex=1,adj=1,col="blue")
+legend("topleft",border="gray",c("(X0,Y0)"),pch=c(20),col=c("red2"))
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+X11(6,6)
+par( mar =c(3 ,3 ,2 ,1))
+par(mfrow=c(2,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2)*dt + sigma[1](t,X[t]^1,X[t]^2) *d*W[t]^1),cex=1,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2)*dt + sigma[2](t,X[t]^1,X[t]^2) *d*W[t]^2),cex=1,adj=0,line=0.1,col="blue")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}					  
+time <- t
+X1   <- X
+X2   <- Y
+Result <- data.frame(time,X1,X2)
+showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+}
+attach(Result)
+}
+
+##############################################################################################################################
+##############################################################################################################################
+##############################################################################################################################
+.STS3D <-
+function(N,T=1,t0,x0,y0,z0,Dt,driftx,drifty,driftz,diffx,diffy,diffz,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty) || !is.expression(driftz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy) || !is.expression(diffz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+DDAx   <- D(driftx,"x")
+DDDAx  <- D(D(driftx,"x"),"x")
+DDSx   <- D(diffx,"x")
+DDDSx  <- D(D(diffx,"x"),"x")
+Ax     <- function(t,x,y,z)  eval(driftx)
+DAxx   <- function(t,x,y,z)  eval(DDAx)
+DAxxx  <- function(t,x,y,z)  eval(DDDAx)
+Sx     <- function(t,x,y,z)  eval(diffx)
+DSx    <- function(t,x,y,z)  eval(DDSx)
+DSxx   <- function(t,x,y,z)  eval(DDDSx)
+
+DDAy   <- D(drifty,"y")
+DDDAy  <- D(D(drifty,"y"),"y")
+DDSy   <- D(diffy,"y")
+DDDSy  <- D(D(diffy,"y"),"y")
+Ay     <- function(t,x,y,z)  eval(drifty)
+DAyy   <- function(t,x,y,z)  eval(DDAy)
+DAyyy  <- function(t,x,y,z)  eval(DDDAy)
+Sy     <- function(t,x,y,z)  eval(diffy)
+DSy    <- function(t,x,y,z)  eval(DDSy)
+DSyy   <- function(t,x,y,z)  eval(DDDSy)
+
+DDAz   <- D(driftz,"z")
+DDDAz  <- D(D(driftz,"z"),"z")
+DDSz   <- D(diffz,"z")
+DDDSz  <- D(D(diffz,"z"),"z")
+Az     <- function(t,x,y,z)  eval(driftz)
+DAzz   <- function(t,x,y,z)  eval(DDAz)
+DAzzz  <- function(t,x,y,z)  eval(DDDAz)
+Sz     <- function(t,x,y,z)  eval(diffz)
+DSz    <- function(t,x,y,z)  eval(DDSz)
+DSzz   <- function(t,x,y,z)  eval(DDDSz)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+wz = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dz    <- diff(wz)
+DZx= rnorm(N,0,sqrt((1/3)*Dt^3))
+DZy= rnorm(N,0,sqrt((1/3)*Dt^3))
+DZz= rnorm(N,0,sqrt((1/3)*Dt^3))
+X    <- numeric()
+Y    <- numeric()
+Z    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+Z[1] <- z0
+for (i in 2:(N+1)){
+X[i]=X[i-1]+Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dx[i-1]+
+     0.5*Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSx(t[i-1],X[i-1],Y[i-1],Z[i-1])*((Dx[i-1]^2)-Dt)+
+     DAxx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*DZx[i-1]+0.5*(Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*DAxx(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     0.5*(Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])^2)*DAxxx(t[i-1],X[i-1],Y[i-1],Z[i-1]))*(Dt^2)+(Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSx(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     0.5*(Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])^2)*DSxx(t[i-1],X[i-1],Y[i-1],Z[i-1]))*(Dx[i-1]*Dt-DZx[i-1])+
+     0.5*Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSxx(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     (DSx(t[i-1],X[i-1],Y[i-1],Z[i-1])^2))*((1/3)*(Dx[i-1]^2)-Dt)*Dx[i-1]
+Y[i]=Y[i-1]+Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dy[i-1]+
+     0.5*Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSy(t[i-1],X[i-1],Y[i-1],Z[i-1])*((Dy[i-1]^2)-Dt)+
+     DAyy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*DZy[i-1]+0.5*(Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*DAyy(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     0.5*(Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])^2)*DAyyy(t[i-1],X[i-1],Y[i-1],Z[i-1]))*(Dt^2)+(Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSy(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     0.5*(Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])^2)*DSyy(t[i-1],X[i-1],Y[i-1],Z[i-1]))*(Dy[i-1]*Dt-DZy[i-1])+
+     0.5*Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSyy(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     (DSx(t[i-1],X[i-1],Y[i-1],Z[i-1])^2))*((1/3)*(Dy[i-1]^2)-Dt)*Dy[i-1]
+Z[i]=Z[i-1]+Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dz[i-1]+
+     0.5*Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSz(t[i-1],X[i-1],Y[i-1],Z[i-1])*((Dz[i-1]^2)-Dt)+
+     DAzz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*DZz[i-1]+0.5*(Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*DAzz(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     0.5*(Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])^2)*DAzzz(t[i-1],X[i-1],Y[i-1],Z[i-1]))*(Dt^2)+(Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSz(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     0.5*(Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])^2)*DSzz(t[i-1],X[i-1],Y[i-1],Z[i-1]))*(Dz[i-1]*Dt-DZz[i-1])+
+     0.5*Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSzz(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+     (DSz(t[i-1],X[i-1],Y[i-1],Z[i-1])^2))*((1/3)*(Dz[i-1]^2)-Dt)*Dz[i-1]
+                  } 
+G <- data.frame(X,Y,Z)
+if(Step==FALSE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+lines3d(G[,1],G[,2],G[,3],col="black",from ="lines",lwd=2)
+title3d(family=c("serif"),main="Strong Taylor Scheme Order 1.5 : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+for (i in 1:N) {lines3d(c(G[i,1],G[i+1,1]),c(G[i,2],G[i+1,2]),c(G[i,3],G[i+1,3]),col="black",from ="lines",lwd=2)}
+title3d(family=c("serif"),main="Strong Taylor Scheme Order 1.5 : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+Diff3D <- data.frame(t,X,Y,Z)
+showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Diff3D , "SYS_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+                 }
+attach(Diff3D)
+}
+
+.RK33D <-
+function(N,T=1,t0,x0,y0,z0,Dt,driftx,drifty,driftz,diffx,diffy,diffz,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty) || !is.expression(driftz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy) || !is.expression(diffz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+Ax    <- function(t,x,y,z)  eval(driftx)
+Ay    <- function(t,x,y,z)  eval(drifty)
+Az    <- function(t,x,y,z)  eval(driftz)
+Sx    <- function(t,x,y,z)  eval(diffx)
+Sy    <- function(t,x,y,z)  eval(diffy)
+Sz    <- function(t,x,y,z)  eval(diffz)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+wz = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dz    <- diff(wz)
+X    <- numeric()
+Y    <- numeric()
+Z    <- numeric()
+XX   <- numeric()
+YY   <- numeric()
+ZZ   <- numeric()
+XXX  <- numeric()
+YYY  <- numeric()
+ZZZ  <- numeric()
+X[1] <- x0
+Y[1] <- y0
+Z[1] <- z0
+for (i in 2:(N+1)){
+              XX[i-1]=X[i-1]+0.5*Dt*Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])+Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dx[i-1]
+              YY[i-1]=Y[i-1]+0.5*Dt*Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])+Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dy[i-1]
+              ZZ[i-1]=Z[i-1]+0.5*Dt*Az(t[i-1],X[i-1],Y[i-1],Z[i-1])+Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dz[i-1]
+              XXX[i-1]=X[i-1]-Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+2*Dt*Ax(t[i-1]+0.5*Dt,XX[i-1],Y[i-1],Z[i-1])+
+                     (2*Sx(t[i-1]+0.5*Dt,XX[i-1],Y[i-1],Z[i-1])-Sx(t[i-1],X[i-1],Y[i-1],Z[i-1]))*Dx[i-1]
+              YYY[i-1]=Y[i-1]-Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+2*Dt*Ay(t[i-1]+0.5*Dt,X[i-1],YY[i-1],Z[i-1])+
+                     (2*Sy(t[i-1]+0.5*Dt,X[i-1],YY[i-1],Z[i-1])-Sy(t[i-1],X[i-1],Y[i-1],Z[i-1]))*Dy[i-1]
+              ZZZ[i-1]=Z[i-1]-Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+2*Dt*Az(t[i-1]+0.5*Dt,X[i-1],Y[i-1],ZZ[i-1])+
+                     (2*Sz(t[i-1]+0.5*Dt,X[i-1],Y[i-1],ZZ[i-1])-Sz(t[i-1],X[i-1],Y[i-1],Z[i-1]))*Dz[i-1]
+              X[i] = X[i-1]+(Dt/6)*(Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])+4*Ax(t[i-1]+0.5*Dt,XX[i-1],Y[i-1],Z[i-1])+Ax(t[i-1]+Dt,XXX[i-1],Y[i-1],Z[i-1]))+
+                     (1/6)*(Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])+4*Sx(t[i-1]+0.5*Dt,XX[i-1],Y[i-1],Z[i-1])+Sx(t[i-1]+Dt,XXX[i-1],Y[i-1],Z[i-1]))*Dx[i-1]
+              Y[i] = Y[i-1]+(Dt/6)*(Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])+4*Ay(t[i-1]+0.5*Dt,X[i-1],YY[i-1],Z[i-1])+Ay(t[i-1]+Dt,X[i-1],YYY[i-1],Z[i-1]))+
+                     (1/6)*(Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])+4*Sy(t[i-1]+0.5*Dt,X[i-1],YY[i-1],Z[i-1])+Sy(t[i-1]+Dt,X[i-1],YYY[i-1],Z[i-1]))*Dy[i-1]
+              Z[i] = Z[i-1]+(Dt/6)*(Az(t[i-1],X[i-1],Y[i-1],Z[i-1])+4*Az(t[i-1]+0.5*Dt,X[i-1],Y[i-1],ZZ[i-1])+Az(t[i-1]+Dt,X[i-1],Y[i-1],ZZZ[i-1]))+
+                     (1/6)*(Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])+4*Sz(t[i-1]+0.5*Dt,X[i-1],Y[i-1],ZZ[i-1])+Sz(t[i-1]+Dt,X[i-1],Y[i-1],ZZZ[i-1]))*Dz[i-1]
+                  } 
+G <- data.frame(X,Y,Z)
+if(Step==FALSE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+lines3d(G[,1],G[,2],G[,3],col="black",from ="lines",lwd=2)
+title3d(family=c("serif"),main="Runge-Kutta scheme Order3 : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+for (i in 1:N) {lines3d(c(G[i,1],G[i+1,1]),c(G[i,2],G[i+1,2]),c(G[i,3],G[i+1,3]),col="black",from ="lines",lwd=2)}
+title3d(family=c("serif"),main="Runge-Kutta scheme Order3 : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+Diff3D <- data.frame(t,X,Y,Z)
+showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Diff3D , "RK3_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+                 }
+attach(Diff3D)
+}
+
+.Heun3D <-
+function(N,T=1,t0,x0,y0,z0,Dt,driftx,drifty,driftz,diffx,diffy,diffz,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty) || !is.expression(driftz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy) || !is.expression(diffz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+Ax    <- function(t,x,y,z)  eval(driftx)
+Ay    <- function(t,x,y,z)  eval(drifty)
+Az    <- function(t,x,y,z)  eval(driftz)
+Sx    <- function(t,x,y,z)  eval(diffx)
+Sy    <- function(t,x,y,z)  eval(diffy)
+Sz    <- function(t,x,y,z)  eval(diffz)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+wz = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dz    <- diff(wz)
+X    <- numeric()
+Y    <- numeric()
+Z    <- numeric()
+XX   <- numeric()
+YY   <- numeric()
+ZZ   <- numeric()
+X[1] <- x0
+Y[1] <- y0
+Z[1] <- z0
+for (i in 2:(N+1)){
+         XX[i-1]= X[i-1]+Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dx[i-1]
+         YY[i-1]= Y[i-1]+Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dy[i-1]
+         ZZ[i-1]= Z[i-1]+Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt+Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dz[i-1]
+         X[i]   = X[i-1]+0.5*Dt*(Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])+Ax(t[i-1],XX[i-1],Y[i-1],Z[i-1]))+
+                 0.5*(Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])+Sx(t[i-1],XX[i-1],Y[i-1],Z[i-1]))*Dx[i-1]
+         Y[i]   = Y[i-1]+0.5*Dt*(Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])+Ay(t[i-1],X[i-1],YY[i-1],Z[i-1]))+
+                 0.5*(Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])+Sy(t[i-1],X[i-1],YY[i-1],Z[i-1]))*Dy[i-1]
+         Z[i]   = Z[i-1]+0.5*Dt*(Az(t[i-1],X[i-1],Y[i-1],Z[i-1])+Az(t[i-1],X[i-1],Y[i-1],ZZ[i-1]))+
+                 0.5*(Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])+Sz(t[i-1],X[i-1],Y[i-1],ZZ[i-1]))*Dz[i-1]
+                  } 
+G <- data.frame(X,Y,Z)
+if(Step==FALSE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+lines3d(G[,1],G[,2],G[,3],col="black",from ="lines",lwd=2)
+title3d(family=c("serif"),main="Heun scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+for (i in 1:N) {lines3d(c(G[i,1],G[i+1,1]),c(G[i,2],G[i+1,2]),c(G[i,3],G[i+1,3]),col="black",from ="lines",lwd=2)}
+title3d(family=c("serif"),main="Heun scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+Diff3D <- data.frame(t,X,Y,Z)
+showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Diff3D , "Heun_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+                 }
+attach(Diff3D)
+}
+
+.MilsteinS3D  <-
+function(N,T=1,t0,x0,y0,z0,Dt,driftx,drifty,driftz,diffx,diffy,diffz,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty) || !is.expression(driftz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy) || !is.expression(diffz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+DDAx   <- D(driftx,"x")
+DDDAx  <- D(D(driftx,"x"),"x")
+DDSx   <- D(diffx,"x")
+DDDSx  <- D(D(diffx,"x"),"x")
+Ax     <- function(t,x,y,z)  eval(driftx)
+DAxx   <- function(t,x,y,z)  eval(DDAx)
+DAxxx  <- function(t,x,y,z)  eval(DDDAx)
+Sx     <- function(t,x,y,z)  eval(diffx)
+DSx    <- function(t,x,y,z)  eval(DDSx)
+DSxx   <- function(t,x,y,z)  eval(DDDSx)
+
+DDAy   <- D(drifty,"y")
+DDDAy  <- D(D(drifty,"y"),"y")
+DDSy   <- D(diffy,"y")
+DDDSy  <- D(D(diffy,"y"),"y")
+Ay     <- function(t,x,y,z)  eval(drifty)
+DAyy   <- function(t,x,y,z)  eval(DDAy)
+DAyyy  <- function(t,x,y,z)  eval(DDDAy)
+Sy     <- function(t,x,y,z)  eval(diffy)
+DSy    <- function(t,x,y,z)  eval(DDSy)
+DSyy   <- function(t,x,y,z)  eval(DDDSy)
+
+DDAz   <- D(driftz,"z")
+DDDAz  <- D(D(driftz,"z"),"z")
+DDSz   <- D(diffz,"z")
+DDDSz  <- D(D(diffz,"z"),"z")
+Az     <- function(t,x,y,z)  eval(driftz)
+DAzz   <- function(t,x,y,z)  eval(DDAz)
+DAzzz  <- function(t,x,y,z)  eval(DDDAz)
+Sz     <- function(t,x,y,z)  eval(diffz)
+DSz    <- function(t,x,y,z)  eval(DDSz)
+DSzz   <- function(t,x,y,z)  eval(DDDSz)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+wz = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dz    <- diff(wz)
+X    <- numeric()
+Y    <- numeric()
+Z    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+Z[1] <- z0
+for (i in 2:(N+1)){
+X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dx[i-1] +
+       0.5 *Sx(t[i-1],X[i-1],Y[i-1],Z[i-1]) * DSx(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Dx[i-1]^2-Dt)+ 
+       Dt^(3/2)*(0.5 *Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSx(t[i-1],X[i-1],Y[i-1],Z[i-1]) +
+       0.5 *DAxx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+       0.25 *(Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])^2) * DSxx(t[i-1],X[i-1],Y[i-1],Z[i-1]))*Dx[i -1]+ 
+       (Dt^2) * (0.5*Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*DAxx(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+       0.25 *DAxxx(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])^2))
+
+Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dy[i-1] +
+       0.5 *Sy(t[i-1],X[i-1],Y[i-1],Z[i-1]) * DSy(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Dy[i-1]^2-Dt)+ 
+       Dt^(3/2)*(0.5 *Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSy(t[i-1],X[i-1],Y[i-1],Z[i-1]) +
+       0.5 *DAyy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+       0.25 *(Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])^2) * DSyy(t[i-1],X[i-1],Y[i-1],Z[i-1]))*Dy[i -1]+ 
+       (Dt^2) * (0.5*Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*DAyy(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+       0.25 *DAyyy(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])^2))
+
+Z[i] = Z[i-1] + Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dz[i-1] +
+       0.5 *Sz(t[i-1],X[i-1],Y[i-1],Z[i-1]) * DSz(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Dz[i-1]^2-Dt)+ 
+       Dt^(3/2)*(0.5 *Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSz(t[i-1],X[i-1],Y[i-1],Z[i-1]) +
+       0.5 *DAzz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+       0.25 *(Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])^2) * DSzz(t[i-1],X[i-1],Y[i-1],Z[i-1]))*Dz[i -1]+ 
+       (Dt^2) * (0.5*Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*DAzz(t[i-1],X[i-1],Y[i-1],Z[i-1])+
+       0.25 *DAzzz(t[i-1],X[i-1],Y[i-1],Z[i-1])*(Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])^2))
+                  } 
+G <- data.frame(X,Y,Z)
+if(Step==FALSE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+lines3d(G[,1],G[,2],G[,3],col="black",from ="lines",lwd=2)
+title3d(family=c("serif"),main="Second Milstein scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+for (i in 1:N) {lines3d(c(G[i,1],G[i+1,1]),c(G[i,2],G[i+1,2]),c(G[i,3],G[i+1,3]),col="black",from ="lines",lwd=2)}
+title3d(family=c("serif"),main="Second Milstein scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+Diff3D <- data.frame(t,X,Y,Z)
+showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Diff3D , "MilsteinS_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+                 }
+attach(Diff3D)
+}
+
+.Milstein3D  <-
+function(N,T=1,t0,x0,y0,z0,Dt,driftx,drifty,driftz,diffx,diffy,diffz,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty) || !is.expression(driftz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy) || !is.expression(diffz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+DSxx   <- D(diffx,"x")
+DSyy   <- D(diffy,"y")
+DSzz   <- D(diffz,"z")			
+			
+Ax    <- function(t,x,y,z)  eval(driftx)
+Ay    <- function(t,x,y,z)  eval(drifty)
+Az    <- function(t,x,y,z)  eval(driftz)
+Sx    <- function(t,x,y,z)  eval(diffx)
+Sy    <- function(t,x,y,z)  eval(diffy)
+Sz    <- function(t,x,y,z)  eval(diffz)
+DSx   <- function(t,x,y,z)  eval(DSxx)
+DSy   <- function(t,x,y,z)  eval(DSyy)
+DSz   <- function(t,x,y,z)  eval(DSzz)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+wz = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dz    <- diff(wz)
+X    <- numeric()
+Y    <- numeric()
+Z    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+Z[1] <- z0
+for (i in 2:(N+1)){
+    X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dx[i-1]+
+           0.5 *Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSx(t[i-1],X[i-1],Y[i-1],Z[i-1])*((Dx[i-1])^2 -Dt)
+    Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dy[i-1]+
+           0.5 *Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSy(t[i-1],X[i-1],Y[i-1],Z[i-1])*((Dy[i-1])^2 -Dt) 
+    Z[i] = Z[i-1] + Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dz[i-1]+
+           0.5 *Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*DSz(t[i-1],X[i-1],Y[i-1],Z[i-1])*((Dz[i-1])^2 -Dt) 
+                  }
+G <- data.frame(X,Y,Z)
+if(Step==FALSE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+lines3d(G[,1],G[,2],G[,3],col="black",from ="lines",lwd=2)
+title3d(family=c("serif"),main="Milstein scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+for (i in 1:N) {lines3d(c(G[i,1],G[i+1,1]),c(G[i,2],G[i+1,2]),c(G[i,3],G[i+1,3]),col="black",from ="lines",lwd=2)}
+title3d(family=c("serif"),main="Milstein scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+Diff3D <- data.frame(t,X,Y,Z)
+showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Diff3D , "Milstein_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+                 }
+attach(Diff3D)
+}
+
+.Euler3D <-
+function(N,T=1,t0,x0,y0,z0,Dt,driftx,drifty,driftz,diffx,diffy,diffz,Step=FALSE,Output=FALSE)
+       {
+if( t0 >= T || t0 < 0 ) 
+            stop(tkmessageBox(title="Error",message=paste( "T > t0 >= 0" ),icon="error"))
+
+if( N <= 1 )   
+            stop(tkmessageBox(title="Error",message=paste( " N must be very large N >>> 0" ),icon="error"))
+
+if ( Dt <= 0 )
+            stop(tkmessageBox(title="Error",message=paste( "Dt > 0" ),icon="error"))
+
+if(!is.expression(driftx) || !is.expression(drifty) || !is.expression(driftz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of drift must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+if(!is.expression(diffx) || !is.expression(diffy) || !is.expression(diffz))
+            stop(tkmessageBox(title="Error",message=paste( "The coefficients of diffusion must be expressions f(t,X,Y,Z)" ),icon="error"))
+
+Ax    <- function(t,x,y,z)  eval(driftx)
+Ay    <- function(t,x,y,z)  eval(drifty)
+Az    <- function(t,x,y,z)  eval(driftz)
+Sx    <- function(t,x,y,z)  eval(diffx)
+Sy    <- function(t,x,y,z)  eval(diffy)
+Sz    <- function(t,x,y,z)  eval(diffz)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+wz = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dz    <- diff(wz)
+X    <- numeric()
+Y    <- numeric()
+Z    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+Z[1] <- z0
+for (i in 2:(N+1)){
+    X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dx[i-1]
+    Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dy[i-1] 
+	Z[i] = Z[i-1] + Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dz[i-1] 
+                  } 
+G <- data.frame(X,Y,Z)
+if(Step==FALSE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+lines3d(G[,1],G[,2],G[,3],col="black",from ="lines",lwd=2)
+title3d(family=c("serif"),main="Euler scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+
+if(Step==TRUE){
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+for (i in 1:N) {lines3d(c(G[i,1],G[i+1,1]),c(G[i,2],G[i+1,2]),c(G[i,3],G[i+1,3]),col="black",from ="lines",lwd=2)}
+title3d(family=c("serif"),main="Euler scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Tue Sep 27 23:39:49 2011',color = c("blue"),cex=0.8)
+par( mar =c(3 ,3 ,3 ,1))
+par(mfrow=c(3,1))
+plot(t,X,type="l",xlab=expression(time),ylab=expression(X[t]^1),las=1,col="red")
+mtext(bquote(dX[t]^1== a[1](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[1](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^1),cex=0.8,adj=0,line=0.1,col="red")
+plot(t,Y,type="l",xlab=expression(time),ylab=expression(X[t]^2),las=1,col="blue")
+mtext(bquote(dX[t]^2== a[2](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[2](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^2),cex=0.8,adj=0,line=0.1,col="blue")
+plot(t,Z,type="l",xlab=expression(time),ylab=expression(X[t]^3),las=1,col="green4")
+mtext(bquote(dX[t]^3== a[3](t,X[t]^1,X[t]^2,X[t]^3)*dt + sigma[3](t,X[t]^1,X[t]^2,X[t]^3) *d*W[t]^3),cex=0.8,adj=0,line=0.1,col="green4")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Wed Jan 26 20:51:28 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+}
+Diff3D <- data.frame(t,X,Y,Z)
+showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
+if(Output==TRUE){
+write.xlsx(Diff3D , "Euler_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+           col.names=TRUE, row.names=FALSE, append=FALSE)
+                 }
+attach(Diff3D)
+}
+
+.Euler3DGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+but <- tkbutton(tt,text=" Simulation for Numerical Solution\n                Euler Scheme ?\n Simulation SDE Three-Dimensional",command=function(){print(help("snssde3D"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+N  <- tclVar(5000)
+T  <- tclVar(1)
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+y0 <- tclVar(0)
+z0 <- tclVar(0)
+Dt <- tclVar(0.001)
+driftx <- tclVar("expression(cos(t*x*y))")
+drifty <- tclVar("expression(cos(t))")
+driftz <- tclVar("expression(cos(t*x))")
+diffx  <- tclVar("expression(0.1)")
+diffy  <- tclVar("expression(0.1)")
+diffz  <- tclVar("expression(0.1)")
+Step   <- tclVar("FALSE")
+Output <- tclVar("FALSE")
+reset <- function()
+        {
+         tclvalue(N)       <-""
+         tclvalue(y0)      <-""
+         tclvalue(t0)      <-""
+         tclvalue(T)       <-""
+         tclvalue(x0)      <-""
+         tclvalue(z0)      <-""
+         tclvalue(Dt)      <-""
+         tclvalue(driftx)  <-"expression(     )"
+         tclvalue(drifty)  <-"expression(     )"
+         tclvalue(driftz)  <-"expression(     )"
+         tclvalue(diffx)   <-"expression(     )"
+         tclvalue(diffy)   <-"expression(     )"
+         tclvalue(diffz)   <-"expression(     )"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Step)  <-"FALSE"
+         }
+tkentry        <- ttkentry
+N.entry        <- tkentry(tt, textvariable=N,width = 30)
+y0.entry       <- tkentry(tt, textvariable=y0,width = 30)
+z0.entry       <- tkentry(tt, textvariable=z0,width = 30)
+t0.entry       <- tkentry(tt, textvariable=t0,width = 30)
+T.entry        <- tkentry(tt, textvariable=T,width = 30)
+x0.entry       <- tkentry(tt, textvariable=x0,width = 30)
+Dt.entry       <- tkentry(tt, textvariable=Dt,width = 30)
+driftx.entry   <- tkentry(tt, textvariable=driftx,width = 30)
+drifty.entry   <- tkentry(tt, textvariable=drifty,width = 30)
+driftz.entry   <- tkentry(tt, textvariable=driftz,width = 30)
+diffx.entry    <- tkentry(tt, textvariable=diffx,width = 30)
+diffy.entry    <- tkentry(tt, textvariable=diffy,width = 30)
+diffz.entry    <- tkentry(tt, textvariable=diffz,width = 30)
+Output.entry   <- tkentry(tt, textvariable=Output)
+Step.entry     <- tkentry(tt, textvariable=Step)
+USTHB <- function(...) 
+        {
+         if (is.null(N)) return()
+         if (is.expression(driftx)) return()
+         if (is.expression(drifty)) return()
+         if (is.expression(driftz)) return()
+         if (is.expression(diffx)) return()
+         if (is.expression(diffy)) return()
+         if (is.expression(diffz)) return()
+         N      <- as.numeric(tclObj(N))
+         y0     <- as.numeric(tclObj(y0))  
+         z0     <- as.numeric(tclObj(z0)) 
+         t0     <- as.numeric(tclObj(t0))
+         T      <- as.numeric(tclObj(T))
+         x0     <- as.numeric(tclObj(x0))
+         Dt     <- as.numeric(tclObj(Dt))
+         driftx  <- tclvalue(driftx)    
+         drifty  <- tclvalue(drifty)   
+         driftz  <- tclvalue(driftz)  
+         diffx  <- tclvalue(diffx) 
+         diffy  <- tclvalue(diffy) 
+         diffz  <- tclvalue(diffz)
+         e1     <- try(parse(text=driftx))
+         e2     <- try(parse(text=diffx))
+         e3     <- try(parse(text=drifty))
+         e4     <- try(parse(text=diffy))
+         e5     <- try(parse(text=driftz))
+         e6     <- try(parse(text=diffz))
+         Output <- as.character(tclObj(Output))
+         Step   <- as.character(tclObj(Step))
+        eval(substitute(.Euler3D(N=N,t0=t0,T=1,x0=x0,y0=y0,z0=z0,Dt=Dt,driftx=eval(e1),drifty=eval(e3),driftz=eval(e5),diffx=eval(e2),diffy=eval(e4),diffz=eval(e6),Step=Step,Output=Output)))
+        }
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Dt = (T-t0)/N = 0.1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Discretization (Dt) : "), Dt.entry, sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 100.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(z*cos(t*x*y))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 1 : "), driftx.entry,sticky="w")
+tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 1: "), diffx.entry,sticky="w")
+tkgrid(DimHlp.but, row=8, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example y0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (y0) : "), y0.entry, sticky="w")
+tkgrid(DimHlp.but, row=9, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t*z))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 2 : "), drifty.entry,sticky="w")
+tkgrid(DimHlp.but, row=10, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 2: "), diffy.entry,sticky="w")
+tkgrid(DimHlp.but, row=11, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example z0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (z0) : "), z0.entry, sticky="w")
+tkgrid(DimHlp.but, row=12, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 3 : "), driftz.entry,sticky="w")
+tkgrid(DimHlp.but, row=13, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 3: "), diffz.entry,sticky="w")
+tkgrid(DimHlp.but, row=14, column=2,sticky="w")
+
+tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=15,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=15,column=1)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})   
+}
+
+.Milstein3DGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+but <- tkbutton(tt,text=" Simulation for Numerical Solution\n                Milstein Scheme ?\n Simulation SDE Three-Dimensional",command=function(){print(help("snssde3D"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+N  <- tclVar(5000)
+T  <- tclVar(1)
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+y0 <- tclVar(0)
+z0 <- tclVar(0)
+Dt <- tclVar(0.001)
+driftx <- tclVar("expression(cos(t*x*y))")
+drifty <- tclVar("expression(cos(t))")
+driftz <- tclVar("expression(cos(t*x))")
+diffx  <- tclVar("expression(0.1)")
+diffy  <- tclVar("expression(0.1)")
+diffz  <- tclVar("expression(0.1)")
+Step   <- tclVar("FALSE")
+Output <- tclVar("FALSE")
+reset <- function()
+        {
+         tclvalue(N)       <-""
+         tclvalue(y0)      <-""
+         tclvalue(t0)      <-""
+         tclvalue(T)       <-""
+         tclvalue(x0)      <-""
+         tclvalue(z0)      <-""
+         tclvalue(Dt)      <-""
+         tclvalue(driftx)  <-"expression(     )"
+         tclvalue(drifty)  <-"expression(     )"
+         tclvalue(driftz)  <-"expression(     )"
+         tclvalue(diffx)   <-"expression(     )"
+         tclvalue(diffy)   <-"expression(     )"
+         tclvalue(diffz)   <-"expression(     )"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Step)  <-"FALSE"
+         }
+tkentry        <- ttkentry
+N.entry        <- tkentry(tt, textvariable=N,width = 30)
+y0.entry       <- tkentry(tt, textvariable=y0,width = 30)
+z0.entry       <- tkentry(tt, textvariable=z0,width = 30)
+t0.entry       <- tkentry(tt, textvariable=t0,width = 30)
+T.entry        <- tkentry(tt, textvariable=T,width = 30)
+x0.entry       <- tkentry(tt, textvariable=x0,width = 30)
+Dt.entry       <- tkentry(tt, textvariable=Dt,width = 30)
+driftx.entry   <- tkentry(tt, textvariable=driftx,width = 30)
+drifty.entry   <- tkentry(tt, textvariable=drifty,width = 30)
+driftz.entry   <- tkentry(tt, textvariable=driftz,width = 30)
+diffx.entry    <- tkentry(tt, textvariable=diffx,width = 30)
+diffy.entry    <- tkentry(tt, textvariable=diffy,width = 30)
+diffz.entry    <- tkentry(tt, textvariable=diffz,width = 30)
+Output.entry   <- tkentry(tt, textvariable=Output)
+Step.entry     <- tkentry(tt, textvariable=Step)
+USTHB <- function(...) 
+        {
+         if (is.null(N)) return()
+         if (is.expression(driftx)) return()
+         if (is.expression(drifty)) return()
+         if (is.expression(driftz)) return()
+         if (is.expression(diffx)) return()
+         if (is.expression(diffy)) return()
+         if (is.expression(diffz)) return()
+         N      <- as.numeric(tclObj(N))
+         y0     <- as.numeric(tclObj(y0))  
+         z0     <- as.numeric(tclObj(z0)) 
+         t0     <- as.numeric(tclObj(t0))
+         T      <- as.numeric(tclObj(T))
+         x0     <- as.numeric(tclObj(x0))
+         Dt     <- as.numeric(tclObj(Dt))
+         driftx  <- tclvalue(driftx)    
+         drifty  <- tclvalue(drifty)   
+         driftz  <- tclvalue(driftz)  
+         diffx  <- tclvalue(diffx) 
+         diffy  <- tclvalue(diffy) 
+         diffz  <- tclvalue(diffz)
+         e1     <- try(parse(text=driftx))
+         e2     <- try(parse(text=diffx))
+         e3     <- try(parse(text=drifty))
+         e4     <- try(parse(text=diffy))
+         e5     <- try(parse(text=driftz))
+         e6     <- try(parse(text=diffz))
+         Output <- as.character(tclObj(Output))
+         Step   <- as.character(tclObj(Step))
+        eval(substitute(.Milstein3D(N=N,t0=t0,T=1,x0=x0,y0=y0,z0=z0,Dt=Dt,driftx=eval(e1),drifty=eval(e3),driftz=eval(e5),diffx=eval(e2),diffy=eval(e4),diffz=eval(e6),Step=Step,Output=Output)))
+        }
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Dt = (T-t0)/N = 0.1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Discretization (Dt) : "), Dt.entry, sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 100.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(z*cos(t*x*y))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 1 : "), driftx.entry,sticky="w")
+tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 1: "), diffx.entry,sticky="w")
+tkgrid(DimHlp.but, row=8, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example y0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (y0) : "), y0.entry, sticky="w")
+tkgrid(DimHlp.but, row=9, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t*z))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 2 : "), drifty.entry,sticky="w")
+tkgrid(DimHlp.but, row=10, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 2: "), diffy.entry,sticky="w")
+tkgrid(DimHlp.but, row=11, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example z0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (z0) : "), z0.entry, sticky="w")
+tkgrid(DimHlp.but, row=12, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 3 : "), driftz.entry,sticky="w")
+tkgrid(DimHlp.but, row=13, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 3: "), diffz.entry,sticky="w")
+tkgrid(DimHlp.but, row=14, column=2,sticky="w")
+
+tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=15,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=15,column=1)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})   
+}
+
+.MilsteinS3DGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+but <- tkbutton(tt,text=" Simulation for Numerical Solution\n          Second Milstein scheme ?\n Simulation SDE Three-Dimensional",command=function(){print(help("snssde3D"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+N  <- tclVar(5000)
+T  <- tclVar(1)
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+y0 <- tclVar(0)
+z0 <- tclVar(0)
+Dt <- tclVar(0.001)
+driftx <- tclVar("expression(cos(t*x*y))")
+drifty <- tclVar("expression(cos(t))")
+driftz <- tclVar("expression(cos(t*x))")
+diffx  <- tclVar("expression(0.1)")
+diffy  <- tclVar("expression(0.1)")
+diffz  <- tclVar("expression(0.1)")
+Step   <- tclVar("FALSE")
+Output <- tclVar("FALSE")
+reset <- function()
+        {
+         tclvalue(N)       <-""
+         tclvalue(y0)      <-""
+         tclvalue(t0)      <-""
+         tclvalue(T)       <-""
+         tclvalue(x0)      <-""
+         tclvalue(z0)      <-""
+         tclvalue(Dt)      <-""
+         tclvalue(driftx)  <-"expression(     )"
+         tclvalue(drifty)  <-"expression(     )"
+         tclvalue(driftz)  <-"expression(     )"
+         tclvalue(diffx)   <-"expression(     )"
+         tclvalue(diffy)   <-"expression(     )"
+         tclvalue(diffz)   <-"expression(     )"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Step)  <-"FALSE"
+         }
+tkentry        <- ttkentry
+N.entry        <- tkentry(tt, textvariable=N,width = 30)
+y0.entry       <- tkentry(tt, textvariable=y0,width = 30)
+z0.entry       <- tkentry(tt, textvariable=z0,width = 30)
+t0.entry       <- tkentry(tt, textvariable=t0,width = 30)
+T.entry        <- tkentry(tt, textvariable=T,width = 30)
+x0.entry       <- tkentry(tt, textvariable=x0,width = 30)
+Dt.entry       <- tkentry(tt, textvariable=Dt,width = 30)
+driftx.entry   <- tkentry(tt, textvariable=driftx,width = 30)
+drifty.entry   <- tkentry(tt, textvariable=drifty,width = 30)
+driftz.entry   <- tkentry(tt, textvariable=driftz,width = 30)
+diffx.entry    <- tkentry(tt, textvariable=diffx,width = 30)
+diffy.entry    <- tkentry(tt, textvariable=diffy,width = 30)
+diffz.entry    <- tkentry(tt, textvariable=diffz,width = 30)
+Output.entry   <- tkentry(tt, textvariable=Output)
+Step.entry     <- tkentry(tt, textvariable=Step)
+USTHB <- function(...) 
+        {
+         if (is.null(N)) return()
+         if (is.expression(driftx)) return()
+         if (is.expression(drifty)) return()
+         if (is.expression(driftz)) return()
+         if (is.expression(diffx)) return()
+         if (is.expression(diffy)) return()
+         if (is.expression(diffz)) return()
+         N      <- as.numeric(tclObj(N))
+         y0     <- as.numeric(tclObj(y0))  
+         z0     <- as.numeric(tclObj(z0)) 
+         t0     <- as.numeric(tclObj(t0))
+         T      <- as.numeric(tclObj(T))
+         x0     <- as.numeric(tclObj(x0))
+         Dt     <- as.numeric(tclObj(Dt))
+         driftx  <- tclvalue(driftx)    
+         drifty  <- tclvalue(drifty)   
+         driftz  <- tclvalue(driftz)  
+         diffx  <- tclvalue(diffx) 
+         diffy  <- tclvalue(diffy) 
+         diffz  <- tclvalue(diffz)
+         e1     <- try(parse(text=driftx))
+         e2     <- try(parse(text=diffx))
+         e3     <- try(parse(text=drifty))
+         e4     <- try(parse(text=diffy))
+         e5     <- try(parse(text=driftz))
+         e6     <- try(parse(text=diffz))
+         Output <- as.character(tclObj(Output))
+         Step   <- as.character(tclObj(Step))
+        eval(substitute(.MilsteinS3D(N=N,t0=t0,T=1,x0=x0,y0=y0,z0=z0,Dt=Dt,driftx=eval(e1),drifty=eval(e3),driftz=eval(e5),diffx=eval(e2),diffy=eval(e4),diffz=eval(e6),Step=Step,Output=Output)))
+        }
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Dt = (T-t0)/N = 0.1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Discretization (Dt) : "), Dt.entry, sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 100.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(z*cos(t*x*y))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 1 : "), driftx.entry,sticky="w")
+tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 1: "), diffx.entry,sticky="w")
+tkgrid(DimHlp.but, row=8, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example y0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (y0) : "), y0.entry, sticky="w")
+tkgrid(DimHlp.but, row=9, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t*z))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 2 : "), drifty.entry,sticky="w")
+tkgrid(DimHlp.but, row=10, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 2: "), diffy.entry,sticky="w")
+tkgrid(DimHlp.but, row=11, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example z0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (z0) : "), z0.entry, sticky="w")
+tkgrid(DimHlp.but, row=12, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 3 : "), driftz.entry,sticky="w")
+tkgrid(DimHlp.but, row=13, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 3: "), diffz.entry,sticky="w")
+tkgrid(DimHlp.but, row=14, column=2,sticky="w")
+
+tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=15,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=15,column=1)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})   
+}
+
+.Heun3DGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+but <- tkbutton(tt,text=" Simulation for Numerical Solution\n                Heun scheme ?\n Simulation SDE Three-Dimensional",command=function(){print(help("snssde3D"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+N  <- tclVar(5000)
+T  <- tclVar(1)
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+y0 <- tclVar(0)
+z0 <- tclVar(0)
+Dt <- tclVar(0.001)
+driftx <- tclVar("expression(cos(t*x*y))")
+drifty <- tclVar("expression(cos(t))")
+driftz <- tclVar("expression(cos(t*x))")
+diffx  <- tclVar("expression(0.1)")
+diffy  <- tclVar("expression(0.1)")
+diffz  <- tclVar("expression(0.1)")
+Step   <- tclVar("FALSE")
+Output <- tclVar("FALSE")
+reset <- function()
+        {
+         tclvalue(N)       <-""
+         tclvalue(y0)      <-""
+         tclvalue(t0)      <-""
+         tclvalue(T)       <-""
+         tclvalue(x0)      <-""
+         tclvalue(z0)      <-""
+         tclvalue(Dt)      <-""
+         tclvalue(driftx)  <-"expression(     )"
+         tclvalue(drifty)  <-"expression(     )"
+         tclvalue(driftz)  <-"expression(     )"
+         tclvalue(diffx)   <-"expression(     )"
+         tclvalue(diffy)   <-"expression(     )"
+         tclvalue(diffz)   <-"expression(     )"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Step)  <-"FALSE"
+         }
+tkentry        <- ttkentry
+N.entry        <- tkentry(tt, textvariable=N,width = 30)
+y0.entry       <- tkentry(tt, textvariable=y0,width = 30)
+z0.entry       <- tkentry(tt, textvariable=z0,width = 30)
+t0.entry       <- tkentry(tt, textvariable=t0,width = 30)
+T.entry        <- tkentry(tt, textvariable=T,width = 30)
+x0.entry       <- tkentry(tt, textvariable=x0,width = 30)
+Dt.entry       <- tkentry(tt, textvariable=Dt,width = 30)
+driftx.entry   <- tkentry(tt, textvariable=driftx,width = 30)
+drifty.entry   <- tkentry(tt, textvariable=drifty,width = 30)
+driftz.entry   <- tkentry(tt, textvariable=driftz,width = 30)
+diffx.entry    <- tkentry(tt, textvariable=diffx,width = 30)
+diffy.entry    <- tkentry(tt, textvariable=diffy,width = 30)
+diffz.entry    <- tkentry(tt, textvariable=diffz,width = 30)
+Output.entry   <- tkentry(tt, textvariable=Output)
+Step.entry     <- tkentry(tt, textvariable=Step)
+USTHB <- function(...) 
+        {
+         if (is.null(N)) return()
+         if (is.expression(driftx)) return()
+         if (is.expression(drifty)) return()
+         if (is.expression(driftz)) return()
+         if (is.expression(diffx)) return()
+         if (is.expression(diffy)) return()
+         if (is.expression(diffz)) return()
+         N      <- as.numeric(tclObj(N))
+         y0     <- as.numeric(tclObj(y0))  
+         z0     <- as.numeric(tclObj(z0)) 
+         t0     <- as.numeric(tclObj(t0))
+         T      <- as.numeric(tclObj(T))
+         x0     <- as.numeric(tclObj(x0))
+         Dt     <- as.numeric(tclObj(Dt))
+         driftx  <- tclvalue(driftx)    
+         drifty  <- tclvalue(drifty)   
+         driftz  <- tclvalue(driftz)  
+         diffx  <- tclvalue(diffx) 
+         diffy  <- tclvalue(diffy) 
+         diffz  <- tclvalue(diffz)
+         e1     <- try(parse(text=driftx))
+         e2     <- try(parse(text=diffx))
+         e3     <- try(parse(text=drifty))
+         e4     <- try(parse(text=diffy))
+         e5     <- try(parse(text=driftz))
+         e6     <- try(parse(text=diffz))
+         Output <- as.character(tclObj(Output))
+         Step   <- as.character(tclObj(Step))
+        eval(substitute(.Heun3D(N=N,t0=t0,T=1,x0=x0,y0=y0,z0=z0,Dt=Dt,driftx=eval(e1),drifty=eval(e3),driftz=eval(e5),diffx=eval(e2),diffy=eval(e4),diffz=eval(e6),Step=Step,Output=Output)))
+        }
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Dt = (T-t0)/N = 0.1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Discretization (Dt) : "), Dt.entry, sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 100.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(z*cos(t*x*y))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 1 : "), driftx.entry,sticky="w")
+tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 1: "), diffx.entry,sticky="w")
+tkgrid(DimHlp.but, row=8, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example y0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (y0) : "), y0.entry, sticky="w")
+tkgrid(DimHlp.but, row=9, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t*z))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 2 : "), drifty.entry,sticky="w")
+tkgrid(DimHlp.but, row=10, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 2: "), diffy.entry,sticky="w")
+tkgrid(DimHlp.but, row=11, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example z0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (z0) : "), z0.entry, sticky="w")
+tkgrid(DimHlp.but, row=12, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 3 : "), driftz.entry,sticky="w")
+tkgrid(DimHlp.but, row=13, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 3: "), diffz.entry,sticky="w")
+tkgrid(DimHlp.but, row=14, column=2,sticky="w")
+
+tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=15,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=15,column=1)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})   
+}
+
+.RK33DGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+but <- tkbutton(tt,text=" Simulation for Numerical Solution\n    Runge-Kutta scheme Order3 ?\n Simulation SDE Three-Dimensional",command=function(){print(help("snssde3D"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+N  <- tclVar(5000)
+T  <- tclVar(1)
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+y0 <- tclVar(0)
+z0 <- tclVar(0)
+Dt <- tclVar(0.001)
+driftx <- tclVar("expression(cos(t*x*y))")
+drifty <- tclVar("expression(cos(t))")
+driftz <- tclVar("expression(cos(t*x))")
+diffx  <- tclVar("expression(0.1)")
+diffy  <- tclVar("expression(0.1)")
+diffz  <- tclVar("expression(0.1)")
+Step   <- tclVar("FALSE")
+Output <- tclVar("FALSE")
+reset <- function()
+        {
+         tclvalue(N)       <-""
+         tclvalue(y0)      <-""
+         tclvalue(t0)      <-""
+         tclvalue(T)       <-""
+         tclvalue(x0)      <-""
+         tclvalue(z0)      <-""
+         tclvalue(Dt)      <-""
+         tclvalue(driftx)  <-"expression(     )"
+         tclvalue(drifty)  <-"expression(     )"
+         tclvalue(driftz)  <-"expression(     )"
+         tclvalue(diffx)   <-"expression(     )"
+         tclvalue(diffy)   <-"expression(     )"
+         tclvalue(diffz)   <-"expression(     )"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Step)  <-"FALSE"
+         }
+tkentry        <- ttkentry
+N.entry        <- tkentry(tt, textvariable=N,width = 30)
+y0.entry       <- tkentry(tt, textvariable=y0,width = 30)
+z0.entry       <- tkentry(tt, textvariable=z0,width = 30)
+t0.entry       <- tkentry(tt, textvariable=t0,width = 30)
+T.entry        <- tkentry(tt, textvariable=T,width = 30)
+x0.entry       <- tkentry(tt, textvariable=x0,width = 30)
+Dt.entry       <- tkentry(tt, textvariable=Dt,width = 30)
+driftx.entry   <- tkentry(tt, textvariable=driftx,width = 30)
+drifty.entry   <- tkentry(tt, textvariable=drifty,width = 30)
+driftz.entry   <- tkentry(tt, textvariable=driftz,width = 30)
+diffx.entry    <- tkentry(tt, textvariable=diffx,width = 30)
+diffy.entry    <- tkentry(tt, textvariable=diffy,width = 30)
+diffz.entry    <- tkentry(tt, textvariable=diffz,width = 30)
+Output.entry   <- tkentry(tt, textvariable=Output)
+Step.entry     <- tkentry(tt, textvariable=Step)
+USTHB <- function(...) 
+        {
+         if (is.null(N)) return()
+         if (is.expression(driftx)) return()
+         if (is.expression(drifty)) return()
+         if (is.expression(driftz)) return()
+         if (is.expression(diffx)) return()
+         if (is.expression(diffy)) return()
+         if (is.expression(diffz)) return()
+         N      <- as.numeric(tclObj(N))
+         y0     <- as.numeric(tclObj(y0))  
+         z0     <- as.numeric(tclObj(z0)) 
+         t0     <- as.numeric(tclObj(t0))
+         T      <- as.numeric(tclObj(T))
+         x0     <- as.numeric(tclObj(x0))
+         Dt     <- as.numeric(tclObj(Dt))
+         driftx  <- tclvalue(driftx)    
+         drifty  <- tclvalue(drifty)   
+         driftz  <- tclvalue(driftz)  
+         diffx  <- tclvalue(diffx) 
+         diffy  <- tclvalue(diffy) 
+         diffz  <- tclvalue(diffz)
+         e1     <- try(parse(text=driftx))
+         e2     <- try(parse(text=diffx))
+         e3     <- try(parse(text=drifty))
+         e4     <- try(parse(text=diffy))
+         e5     <- try(parse(text=driftz))
+         e6     <- try(parse(text=diffz))
+         Output <- as.character(tclObj(Output))
+         Step   <- as.character(tclObj(Step))
+        eval(substitute(.RK33D(N=N,t0=t0,T=1,x0=x0,y0=y0,z0=z0,Dt=Dt,driftx=eval(e1),drifty=eval(e3),driftz=eval(e5),diffx=eval(e2),diffy=eval(e4),diffz=eval(e6),Step=Step,Output=Output)))
+        }
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Dt = (T-t0)/N = 0.1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Discretization (Dt) : "), Dt.entry, sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 100.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(z*cos(t*x*y))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 1 : "), driftx.entry,sticky="w")
+tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 1: "), diffx.entry,sticky="w")
+tkgrid(DimHlp.but, row=8, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example y0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (y0) : "), y0.entry, sticky="w")
+tkgrid(DimHlp.but, row=9, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t*z))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 2 : "), drifty.entry,sticky="w")
+tkgrid(DimHlp.but, row=10, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 2: "), diffy.entry,sticky="w")
+tkgrid(DimHlp.but, row=11, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example z0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (z0) : "), z0.entry, sticky="w")
+tkgrid(DimHlp.but, row=12, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 3 : "), driftz.entry,sticky="w")
+tkgrid(DimHlp.but, row=13, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 3: "), diffz.entry,sticky="w")
+tkgrid(DimHlp.but, row=14, column=2,sticky="w")
+
+tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=15,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=15,column=1)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})   
+}
+
+.STS3DGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+but <- tkbutton(tt,text=" Simulation for Numerical Solution\n   Strong Taylor Scheme Order 1.5 ?\n Simulation SDE Three-Dimensional",command=function(){print(help("snssde3D"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+N  <- tclVar(5000)
+T  <- tclVar(1)
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+y0 <- tclVar(0)
+z0 <- tclVar(0)
+Dt <- tclVar(0.001)
+driftx <- tclVar("expression(cos(t*x*y))")
+drifty <- tclVar("expression(cos(t))")
+driftz <- tclVar("expression(cos(t*x))")
+diffx  <- tclVar("expression(0.1)")
+diffy  <- tclVar("expression(0.1)")
+diffz  <- tclVar("expression(0.1)")
+Step   <- tclVar("FALSE")
+Output <- tclVar("FALSE")
+reset <- function()
+        {
+         tclvalue(N)       <-""
+         tclvalue(y0)      <-""
+         tclvalue(t0)      <-""
+         tclvalue(T)       <-""
+         tclvalue(x0)      <-""
+         tclvalue(z0)      <-""
+         tclvalue(Dt)      <-""
+         tclvalue(driftx)  <-"expression(     )"
+         tclvalue(drifty)  <-"expression(     )"
+         tclvalue(driftz)  <-"expression(     )"
+         tclvalue(diffx)   <-"expression(     )"
+         tclvalue(diffy)   <-"expression(     )"
+         tclvalue(diffz)   <-"expression(     )"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Step)  <-"FALSE"
+         }
+tkentry        <- ttkentry
+N.entry        <- tkentry(tt, textvariable=N,width = 30)
+y0.entry       <- tkentry(tt, textvariable=y0,width = 30)
+z0.entry       <- tkentry(tt, textvariable=z0,width = 30)
+t0.entry       <- tkentry(tt, textvariable=t0,width = 30)
+T.entry        <- tkentry(tt, textvariable=T,width = 30)
+x0.entry       <- tkentry(tt, textvariable=x0,width = 30)
+Dt.entry       <- tkentry(tt, textvariable=Dt,width = 30)
+driftx.entry   <- tkentry(tt, textvariable=driftx,width = 30)
+drifty.entry   <- tkentry(tt, textvariable=drifty,width = 30)
+driftz.entry   <- tkentry(tt, textvariable=driftz,width = 30)
+diffx.entry    <- tkentry(tt, textvariable=diffx,width = 30)
+diffy.entry    <- tkentry(tt, textvariable=diffy,width = 30)
+diffz.entry    <- tkentry(tt, textvariable=diffz,width = 30)
+Output.entry   <- tkentry(tt, textvariable=Output)
+Step.entry     <- tkentry(tt, textvariable=Step)
+USTHB <- function(...) 
+        {
+         if (is.null(N)) return()
+         if (is.expression(driftx)) return()
+         if (is.expression(drifty)) return()
+         if (is.expression(driftz)) return()
+         if (is.expression(diffx)) return()
+         if (is.expression(diffy)) return()
+         if (is.expression(diffz)) return()
+         N      <- as.numeric(tclObj(N))
+         y0     <- as.numeric(tclObj(y0))  
+         z0     <- as.numeric(tclObj(z0)) 
+         t0     <- as.numeric(tclObj(t0))
+         T      <- as.numeric(tclObj(T))
+         x0     <- as.numeric(tclObj(x0))
+         Dt     <- as.numeric(tclObj(Dt))
+         driftx  <- tclvalue(driftx)    
+         drifty  <- tclvalue(drifty)   
+         driftz  <- tclvalue(driftz)  
+         diffx  <- tclvalue(diffx) 
+         diffy  <- tclvalue(diffy) 
+         diffz  <- tclvalue(diffz)
+         e1     <- try(parse(text=driftx))
+         e2     <- try(parse(text=diffx))
+         e3     <- try(parse(text=drifty))
+         e4     <- try(parse(text=diffy))
+         e5     <- try(parse(text=driftz))
+         e6     <- try(parse(text=diffz))
+         Output <- as.character(tclObj(Output))
+         Step   <- as.character(tclObj(Step))
+        eval(substitute(.STS3D(N=N,t0=t0,T=1,x0=x0,y0=y0,z0=z0,Dt=Dt,driftx=eval(e1),drifty=eval(e3),driftz=eval(e5),diffx=eval(e2),diffy=eval(e4),diffz=eval(e6),Step=Step,Output=Output)))
+        }
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Dt = (T-t0)/N = 0.1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Discretization (Dt) : "), Dt.entry, sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 100.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(z*cos(t*x*y))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 1 : "), driftx.entry,sticky="w")
+tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 1: "), diffx.entry,sticky="w")
+tkgrid(DimHlp.but, row=8, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example y0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (y0) : "), y0.entry, sticky="w")
+tkgrid(DimHlp.but, row=9, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t*z))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 2 : "), drifty.entry,sticky="w")
+tkgrid(DimHlp.but, row=10, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 2: "), diffy.entry,sticky="w")
+tkgrid(DimHlp.but, row=11, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example z0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (z0) : "), z0.entry, sticky="w")
+tkgrid(DimHlp.but, row=12, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 3 : "), driftz.entry,sticky="w")
+tkgrid(DimHlp.but, row=13, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 3: "), diffz.entry,sticky="w")
+tkgrid(DimHlp.but, row=14, column=2,sticky="w")
+
+tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=15,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=15,column=1)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=16,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=16,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})   
+}
+
+.PredCorr3DGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+but <- tkbutton(tt,text=" Simulation for Numerical Solution\n   Predictor-Corrector Method ?\n Simulation SDE Three-Dimensional",command=function(){print(help("PredCorr3D"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+N  <- tclVar(5000)
+T  <- tclVar(1)
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+y0 <- tclVar(0)
+z0 <- tclVar(0)
+Dt <- tclVar(0.001)
+driftx <- tclVar("expression(cos(t*x*y))")
+drifty <- tclVar("expression(cos(t))")
+driftz <- tclVar("expression(cos(t*x))")
+diffx  <- tclVar("expression(0.1)")
+diffy  <- tclVar("expression(0.1)")
+diffz  <- tclVar("expression(0.1)")
+Step   <- tclVar("FALSE")
+Output <- tclVar("FALSE")
+alpha <- tclVar(0.5)
+mu    <- tclVar(0.5)
+reset <- function()
+        {
+         tclvalue(N)       <-""
+         tclvalue(y0)      <-""
+         tclvalue(t0)      <-""
+         tclvalue(T)       <-""
+         tclvalue(x0)      <-""
+         tclvalue(z0)      <-""
+         tclvalue(Dt)      <-""
+         tclvalue(alpha)   <-"0.5"
+         tclvalue(mu)      <-"0.5"
+         tclvalue(driftx)  <-"expression(     )"
+         tclvalue(drifty)  <-"expression(     )"
+         tclvalue(driftz)  <-"expression(     )"
+         tclvalue(diffx)   <-"expression(     )"
+         tclvalue(diffy)   <-"expression(     )"
+         tclvalue(diffz)   <-"expression(     )"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Step)  <-"FALSE"
+         }
+tkentry        <- ttkentry
+N.entry        <- tkentry(tt, textvariable=N,width = 30)
+y0.entry       <- tkentry(tt, textvariable=y0,width = 30)
+z0.entry       <- tkentry(tt, textvariable=z0,width = 30)
+t0.entry       <- tkentry(tt, textvariable=t0,width = 30)
+T.entry        <- tkentry(tt, textvariable=T,width = 30)
+x0.entry       <- tkentry(tt, textvariable=x0,width = 30)
+Dt.entry       <- tkentry(tt, textvariable=Dt,width = 30)
+driftx.entry   <- tkentry(tt, textvariable=driftx,width = 30)
+drifty.entry   <- tkentry(tt, textvariable=drifty,width = 30)
+driftz.entry   <- tkentry(tt, textvariable=driftz,width = 30)
+diffx.entry    <- tkentry(tt, textvariable=diffx,width = 30)
+diffy.entry    <- tkentry(tt, textvariable=diffy,width = 30)
+diffz.entry    <- tkentry(tt, textvariable=diffz,width = 30)
+alpha.entry    <- tkentry(tt, textvariable=alpha)
+mu.entry       <- tkentry(tt, textvariable=mu)
+Output.entry   <- tkentry(tt, textvariable=Output)
+Step.entry     <- tkentry(tt, textvariable=Step)
+USTHB <- function(...) 
+        {
+         if (is.null(N)) return()
+         if (is.expression(driftx)) return()
+         if (is.expression(drifty)) return()
+         if (is.expression(driftz)) return()
+         if (is.expression(diffx)) return()
+         if (is.expression(diffy)) return()
+         if (is.expression(diffz)) return()
+         N      <- as.numeric(tclObj(N))
+         y0     <- as.numeric(tclObj(y0))  
+         z0     <- as.numeric(tclObj(z0)) 
+         alpha  <- as.numeric(tclObj(alpha))
+         mu     <- as.numeric(tclObj(mu))
+         t0     <- as.numeric(tclObj(t0))
+         T      <- as.numeric(tclObj(T))
+         x0     <- as.numeric(tclObj(x0))
+         Dt     <- as.numeric(tclObj(Dt))
+         driftx  <- tclvalue(driftx)    
+         drifty  <- tclvalue(drifty)   
+         driftz  <- tclvalue(driftz)  
+         diffx  <- tclvalue(diffx) 
+         diffy  <- tclvalue(diffy) 
+         diffz  <- tclvalue(diffz)
+         e1     <- try(parse(text=driftx))
+         e2     <- try(parse(text=diffx))
+         e3     <- try(parse(text=drifty))
+         e4     <- try(parse(text=diffy))
+         e5     <- try(parse(text=driftz))
+         e6     <- try(parse(text=diffz))
+         Output <- as.character(tclObj(Output))
+         Step   <- as.character(tclObj(Step))
+        eval(substitute(PredCorr3D(N=N,t0=t0,T=1,x0=x0,y0=y0,z0=z0,Dt=Dt,alpha=alpha,mu=mu,driftx=eval(e1),drifty=eval(e3),driftz=eval(e5),diffx=eval(e2),diffy=eval(e4),diffz=eval(e6),Step=Step,Output=Output)))
+        }
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example N = 1000.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Size of process (N) : "), N.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Dt = (T-t0)/N = 0.1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Discretization (Dt) : "), Dt.entry, sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example T = 100.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Final time (T) : "), T.entry,sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+##DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Weight Alpha of the predictor-corrector scheme. ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text = "Alpha : "),sticky = "w")
+SliderValueLabel <- tklabel(tt)
+##tkgrid(tklabel(tt,text=""),row=7, column=1)
+tkconfigure(SliderValueLabel,textvariable=alpha)
+slider <- tkscale(tt,from=0, to=1,showvalue=TRUE, variable=alpha,
+                   resolution=0.01, orient="horizontal")
+tkgrid(slider,row=7, column = 1,sticky="ew")
+##tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+##DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Weight Mu of the predictor-corrector scheme.  ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text = "Mu : "),sticky = "w")
+SliderValueLabel1 <- tklabel(tt)
+##tkgrid(tklabel(tt,text=""),row=8, column=1)
+tkconfigure(SliderValueLabel1,textvariable=mu)
+slider1 <- tkscale(tt,from=0, to=1,showvalue=TRUE, variable=mu,
+                   resolution=0.01, orient="horizontal")
+tkgrid(slider1,row=8, column = 1,sticky="ew")
+##tkgrid(DimHlp.but, row=8, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(z*cos(t*x*y))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 1 : "), driftx.entry,sticky="w")
+tkgrid(DimHlp.but, row=9, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 1: "), diffx.entry,sticky="w")
+tkgrid(DimHlp.but, row=10, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example y0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (y0) : "), y0.entry, sticky="w")
+tkgrid(DimHlp.but, row=11, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t*z))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 2 : "), drifty.entry,sticky="w")
+tkgrid(DimHlp.but, row=12, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 2: "), diffy.entry,sticky="w")
+tkgrid(DimHlp.but, row=13, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example z0 = 1.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (z0) : "), z0.entry, sticky="w")
+tkgrid(DimHlp.but, row=14, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(cos(t))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien 3 : "), driftz.entry,sticky="w")
+tkgrid(DimHlp.but, row=15, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of four variables t and x and y and z, Example (expression(0.1)). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient 3: "), diffz.entry,sticky="w")
+tkgrid(DimHlp.but, row=16, column=2,sticky="w")
+
+tkgrid(tklabel(tt,text = "Step by Step : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Step),row=17,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Step),row=17,column=1)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=18,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=18,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})   
+}
+
+.Codion <- function()
+        {
+x <- seq(-2.5,2.5,by=0.001)
+t <- seq(0,10,by=0.01)
+t0=0
+x0=2
+drift <- expression(-4*x)
+diff  <- expression(sqrt(2*1))
+A    <- function(t,x)  eval(drift)
+S    <- function(t,x)  eval(diff)
+for(i in 1:length(t)){
+plot(x,dnorm (x, mean = x0 - A(t[i],x)*t[i], sd= sqrt(t[i])*S(t[i],x)),type="l",xlab="x",ylab=expression(bold(f(list(t,y)/x))),las=1)
+mtext(bquote("Evolution Conditional Density at time":.(round(t[i],2))),line=2.5,cex=1.2,adj=0.5)
+mtext(bquote("Langevin Equation":dX[t]==-a*X[t]*dt+sqrt(2*D)*dW[t]),line=0.8,cex=1.2,adj=0.5,col="red")
+mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Thu Sep 29 07:05:19 2011"),side = 1, line = 4, adj = 0.5, cex = .66)
+                     }
+}
+
+.AppdconGUI <-
+function()
+         {
+local({
+    have_ttk <- as.character(tcl("info", "tclversion")) >= "8.5"
+    if(have_ttk) {
+        tkbutton <- ttkbutton
+        tkcheckbutton <- ttkcheckbutton
+        tkentry <- ttkentry
+        tkframe <- ttkframe
+        tklabel <- ttklabel
+        tkradiobutton <- ttkradiobutton
+    }
+tt <- tktoplevel()
+tkwm.title(tt, "Sim.DiffProc~~Statistical analysis")
+tkwm.resizable(tt, 0,0)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
+tk2ico.set(tt, Rico)
+tk2ico.destroy(Rico)
+
+but <- tkbutton(tt,text="Approximated Conditional Law \n        a Diffusion Process",command=function(){print(help("Appdcon"))},width=40)
+tkgrid(but,row=1,columnspan = 3,sticky="ew")
+
+x  <- tclVar("seq(0,3,by=0.001)")
+t  <- tclVar("seq(0,3,by=0.01)")
+t0 <- tclVar(0)
+x0 <- tclVar(0)
+drift <- tclVar("expression(1*(1-x))")
+diff  <- tclVar("expression(0.3*x)")
+Methods <- tclVar("Euler")
+Output <- tclVar("FALSE")
+reset <- function()
+        {
+         tclvalue(x)       <-"seq(-2,3,by=0.001)"
+         tclvalue(t)       <-""
+         tclvalue(t0)      <-"0"
+         tclvalue(x0)      <-""
+         tclvalue(drift)   <-"expression((   ))"
+         tclvalue(diff)    <-"expression((   ))"
+         tclvalue(Output)  <-"FALSE"
+         tclvalue(Methods) <-"Euler"
+         }
+tkentry       <- ttkentry
+x.entry       <- tkentry(tt, textvariable=x,width = 25)
+t.entry       <- tkentry(tt, textvariable=t,width = 25)
+t0.entry      <- tkentry(tt, textvariable=t0,width = 25)
+x0.entry      <- tkentry(tt, textvariable=x0,width = 25)
+drift.entry   <- tkentry(tt, textvariable=drift,width = 25)
+diff.entry    <- tkentry(tt, textvariable=diff,width = 25)
+Output.entry  <- tkentry(tt, textvariable=Output)
+Methods.entry <- tkentry(tt, textvariable=Methods)
+USTHB <- function(...)
+        {
+         if (is.null(t0)) return()  
+         t0     <- as.numeric(tclObj(t0))
+         x0     <- as.numeric(tclObj(x0))
+         x      <- tclvalue(x) 
+         t      <- tclvalue(t)
+         drift  <- tclvalue(drift)      
+         diff   <- tclvalue(diff) 
+         e1     <- try(parse(text=drift))
+         e2     <- try(parse(text=diff))
+         e3     <- try(parse(text=x))
+         e4     <- try(parse(text=t))
+         Output <- as.character(tclObj(Output))
+         Methods<- as.character(tclObj(Methods))
+        eval(substitute(Appdcon(x=eval(e3), t=eval(e4), x0=x0, t0=t0,drift=eval(e1),diff=eval(e2),Output=Output,Methods=Methods)))
+}
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x=seq(0,2,by=0.01).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Vector of quantiles : "), x.entry, sticky="w")
+tkgrid(DimHlp.but, row=2, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t=seq(0,5,by=0.1) OR t = 2 .",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="calcul at time t : "), t.entry, sticky="w")
+tkgrid(DimHlp.but, row=3, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example t0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial time (t0) : "), t0.entry,sticky="w")
+tkgrid(DimHlp.but, row=4, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="Example x0 = 0.",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Initial value (x0) : "), x0.entry, sticky="w")
+tkgrid(DimHlp.but, row=5, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.03 * t * x - x^3))).",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Drift coefficien : "), drift.entry,sticky="w")
+tkgrid(DimHlp.but, row=6, column=2,sticky="w")
+
+DimHlp.but <- tkbutton(tt, text="?", command=function() tkmessageBox(title="Help",message="an expression of two variables t and x, Example (expression((0.1))). ",icon="info",type="ok"))
+tkgrid(tklabel(tt,text="Diffusion coefficient : "), diff.entry,sticky="w")
+tkgrid(DimHlp.but, row=7, column=2,sticky="w")
+
+frame1 <- tkframe(tt, relief = "ridge", borderwidth = 15)
+tkgrid(tklabel(frame1, text = "Methods"), sticky = "n")
+tkgrid(tkradiobutton(frame1, text = "Euler methods", value = "Euler", variable = Methods),
+        sticky = "w")
+tkgrid(tkradiobutton(frame1, text = "Kessler methods", value = "Kessler", variable = Methods), 
+        sticky = "w")
+tkgrid(tkradiobutton(frame1, text = "Shoji-Ozaki methods", value = "Shoji-Ozaki", variable = Methods),
+        sticky = "w")
+tkgrid(frame1, rowspan = 1,row=8,columnspan=5,padx=5,pady=5)
+
+tkgrid(tklabel(tt,text = "Output in Excel (.xlsx) : "),sticky = "w")
+tkgrid(tkradiobutton(tt,text = "No",value="FALSE",variable = Output),row=9,columnspan = 2)
+tkgrid(tkradiobutton(tt,text = "Yes",value="TRUE",variable = Output),row=9,column=1)
+reset.but  <- tkbutton(tt, text="Reset", command=reset)
+submit.but <- tkbutton(tt, text="Simulation",
+                      command=function(){USTHB()})
+q.but <- tkbutton(tt,text="Quit",
+                      command=function() tkdestroy(tt))
+tkgrid(submit.but,reset.but,q.but,sticky="e")
+})
+}
+
+
+.sde.sim3D <-
+function()
+       {
+N = 2500
+t0= 0
+x0 = y0 = z0 = 0
+Dt = 0.001
+driftx <- expression(cos(t*x*y))
+drifty <- expression(cos(t))
+driftz <- expression(cos(t*x))
+diffx <- expression(0.1)
+diffy <- expression(0.1)
+diffz <- expression(0.1)
+
+Ax    <- function(t,x,y,z)  eval(driftx)
+Ay    <- function(t,x,y,z)  eval(drifty)
+Az    <- function(t,x,y,z)  eval(driftz)
+Sx    <- function(t,x,y,z)  eval(diffx)
+Sy    <- function(t,x,y,z)  eval(diffy)
+Sz    <- function(t,x,y,z)  eval(diffz)
+
+if(missing(Dt)){t <- seq (t0 ,T, length =N+1)} 
+          else {t <- c(t0 ,t0+ cumsum(rep(Dt,N)))
+                T <- t[N +1]}
+Dt = (T-t0)/N
+wx = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dx    <- diff(wx)
+wy = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dy    <- diff(wy)
+wz = c(0,cumsum(rnorm(N,mean=0,sd=sqrt(Dt))))
+Dz    <- diff(wz)
+X    <- numeric()
+Y    <- numeric()
+Z    <- numeric()
+X[1] <- x0
+Y[1] <- y0
+Z[1] <- z0
+for (i in 2:(N+1)){
+    X[i] = X[i-1] + Ax(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sx(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dx[i-1]
+    Y[i] = Y[i-1] + Ay(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sy(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dy[i-1] 
+	Z[i] = Z[i-1] + Az(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dt + Sz(t[i-1],X[i-1],Y[i-1],Z[i-1])*Dz[i-1] 
+                  } 
+G <- data.frame(X,Y,Z)
+open3d()
+a <- c(0,1,0,0)
+b <- c(0,0,1,0)
+c <- c(0,0,0,1)
+labels <- c("O", "X", "Y", "Z")
+i <- c(1,2,1,3,1,4)
+segments3d(a[i],b[i],c[i],color = c("black"),lwd= 2.0,box=T)
+text3d(a,b,c,labels,adj=0.5,col="red",cex=1.2,family=c("serif"))
+text3d(x0,y0,z0,c("(X0,Y0,Z0)"),adj=c(0.5,-0.25),cex=0.8,family=c("serif"),col="blue")
+points3d(G[1,],color = c("blue"),size=6)
+for (i in 1:N) {lines3d(c(G[i,1],G[i+1,1]),c(G[i,2],G[i+1,2]),c(G[i,3],G[i+1,3]),col="black",from ="lines",lwd=2)}
+title3d(family=c("serif"),main="Euler scheme : Simulation SDE Three-Dimensional",color = c("black"),cex=1.2)
+title3d(family=c("serif"),font=4,sub='USTHB,Faculty of Mathematics,Department of Probabilities and Statistics,Algeria Thu Sep 29 07:20:36 2011',color = c("blue"),cex=0.8)
+}
+
 
 ################
 ################
@@ -14587,7 +16956,7 @@ local({
     }
 tclRequire("BWidget")
 tt <- tktoplevel()
-tkwm.title(tt,"Sim.DiffProcGUI version 2.0~~Sat Feb 26 15:58:10 2011")
+tkwm.title(tt,"Sim.DiffProcGUI version 2.1~~Thu Sep 29 07:28:06 2011")
 tkwm.resizable(tt, 0,0)
 xScr       <- tkscrollbar(tt,command=function(...)tkxview(treeWidget,...),orient="horizontal")
 yScr       <- tkscrollbar(tt,command=function(...)tkyview(treeWidget,...))
@@ -14611,6 +16980,7 @@ tkinsert(treeWidget,"end","Record1Node","Name2Node",text="Change working directo
 tkinsert(treeWidget,"end","Record1Node","Name3Node",text="Import data from...")
 tkinsert(treeWidget,"end","Record1Node","Name4Node",text="Save")
 tkinsert(treeWidget,"end","Record1Node","Name5Node",text="Save graphic")
+tkinsert(treeWidget,"end","Record1Node","Name1212Node",text="Print...")
 tkinsert(treeWidget,"end","Record1Node","Name6Node",text="Quit")
 tkinsert(treeWidget,"end","Record2Node","Name7Node",text="Eval code")
 tkinsert(treeWidget,"end","Record2Node","Name8Node",text="Clear")
@@ -14652,8 +17022,10 @@ tkinsert(treeWidget,"end","Record6Node","Name43Node",text="Parametric Estimation
 tkinsert(treeWidget,"end","Record6Node","Name44Node",text="Parametric Estimation of Ornstein-Uhlenbeck Model")
 tkinsert(treeWidget,"end","Record7Node","Name45Node",text="One-Dimensional SDE")
 tkinsert(treeWidget,"end","Record7Node","Name46Node",text="Two-Dimensional SDE")
+tkinsert(treeWidget,"end","Record7Node","Name466Node",text="Three-Dimensional SDE")
 tkinsert(treeWidget,"end","Record8Node","Name47Node",text="Simulation M-Samples of Random Variable")
 tkinsert(treeWidget,"end","Record8Node","Name48Node",text="Simulation The First Passage Time FPT")
+tkinsert(treeWidget,"end","Record8Node","Name470Node",text="Approximated Conditional Density")
 tkinsert(treeWidget,"end","Record8Node","Name49Node",text="Ploting")
 tkinsert(treeWidget,"end","Record8Node","Name50Node",text="Adjustment of Distributions")
 tkinsert(treeWidget,"end","Record8Node","Name51Node",text="Density Estimation")
@@ -14663,6 +17035,7 @@ tkinsert(treeWidget,"end","Record9Node","Name533Node",text="Teachware")
 tkinsert(treeWidget,"end","Record9Node","Name54Node",text="Start Sim.DiffProc help (.HTML)")
 tkinsert(treeWidget,"end","Record9Node","Name55Node",text="Start Sim.DiffProc help (.PDF)")
 tkinsert(treeWidget,"end","Record9Node","Name56Node",text="Start R help system")
+tkinsert(treeWidget,"end","Record9Node","Name54326Node",text="Check for Update...")
 tkinsert(treeWidget,"end","Record9Node","Name57Node",text="About Sim.DiffProc")
 tkinsert(treeWidget,"end","Name6Node","Name1Val",text="Quit Sim.DiffProcGUI")
 tkinsert(treeWidget,"end","Name6Node","Name2Val",text="Quit R")
@@ -14685,14 +17058,14 @@ tkinsert(treeWidget,"end","Name22Node","Name79Val",text="By the normal distribut
 tkinsert(treeWidget,"end","Name22Node","Name80Val",text="By a random walk")
 tkinsert(treeWidget,"end","Name23Node","Name81Val",text="By the normal distribution")
 tkinsert(treeWidget,"end","Name23Node","Name82Val",text="By a random walk")
-tkinsert(treeWidget,"end","Name24Node","Name18Val",text="Simulation of the Stratonovitch integral(W(s) o dW(s),0,t)")
-tkinsert(treeWidget,"end","Name24Node","Name19Val",text="Simulation of the Stratonovitch integral(alpha o dW(s),0,t)")
-tkinsert(treeWidget,"end","Name24Node","Name20Val",text="Simulation of the Stratonovitch integral(W(s)^n o dW(s),0,t)")
-tkinsert(treeWidget,"end","Name24Node","Name21Val",text="Simulation of the Stratonovitch integral(s o dW(s),0,t)")
-tkinsert(treeWidget,"end","Name25Node","Name22Val",text="Simulation of the Ito integral(W(s)dW(s),0,t)")
-tkinsert(treeWidget,"end","Name25Node","Name23Val",text="Simulation of the Ito integral(alpha*dW(s),0,t)")
-tkinsert(treeWidget,"end","Name25Node","Name24Val",text="Simulation of the Ito integral(W(s)^n*dW(s),0,t)")
-tkinsert(treeWidget,"end","Name25Node","Name25Val",text="Simulation of the Ito integral(s*dW(s),0,t)")
+tkinsert(treeWidget,"end","Name24Node","Name18Val",text="Integral(W(s) o dW(s),0,t)")
+tkinsert(treeWidget,"end","Name24Node","Name19Val",text="Integral(alpha o dW(s),0,t)")
+tkinsert(treeWidget,"end","Name24Node","Name20Val",text="Integral(W(s)^n o dW(s),0,t)")
+tkinsert(treeWidget,"end","Name24Node","Name21Val",text="Integral(s o dW(s),0,t)")
+tkinsert(treeWidget,"end","Name25Node","Name22Val",text="Integral(W(s)dW(s),0,t)")
+tkinsert(treeWidget,"end","Name25Node","Name23Val",text="Integral(alpha*dW(s),0,t)")
+tkinsert(treeWidget,"end","Name25Node","Name24Val",text="Integral(W(s)^n*dW(s),0,t)")
+tkinsert(treeWidget,"end","Name25Node","Name25Val",text="Integral(s*dW(s),0,t)")
 tkinsert(treeWidget,"end","Name26Node","Name26Val",text="Integral(W(s)dW(s),0,t) vs Integral(W(s) o dW(s),0,t)")
 tkinsert(treeWidget,"end","Name26Node","Name27Val",text="Integral(s*dW(s),0,t) vs Integral(s o dW(s),0,t)")
 tkinsert(treeWidget,"end","Name26Node","Name28Val",text="Integral(W(s)^n*dW(s),0,t) vs Integral(W(s)^n o dW(s),0,t)")
@@ -14722,6 +17095,12 @@ tkinsert(treeWidget,"end","Name46Node","Name51Val",text="Milstein Scheme")
 tkinsert(treeWidget,"end","Name46Node","Name52Val",text="Strong Ito-Taylor Scheme")
 tkinsert(treeWidget,"end","Name46Node","Name53Val",text="Heun Scheme")
 tkinsert(treeWidget,"end","Name46Node","Name54Val",text="Runge-Kutta Scheme")
+tkinsert(treeWidget,"end","Name466Node","Name499Val",text="Euler Scheme")
+tkinsert(treeWidget,"end","Name466Node","Name500Val",text="Predictor-Corrector Method")
+tkinsert(treeWidget,"end","Name466Node","Name511Val",text="Milstein Scheme")
+tkinsert(treeWidget,"end","Name466Node","Name522Val",text="Strong Ito-Taylor Scheme")
+tkinsert(treeWidget,"end","Name466Node","Name533Val",text="Heun Scheme")
+tkinsert(treeWidget,"end","Name466Node","Name544Val",text="Runge-Kutta Scheme")
 tkinsert(treeWidget,"end","Name49Node","Name55Val",text="Histograms")
 tkinsert(treeWidget,"end","Name49Node","Name56Val",text="Kernel Density")
 tkinsert(treeWidget,"end","Name49Node","Name57Val",text="Empirical Distribution")
@@ -14736,15 +17115,15 @@ tkinsert(treeWidget,"end","Name50Node","Name65Val",text="Student Distribution")
 tkinsert(treeWidget,"end","Name50Node","Name66Val",text="Weibull Distribution")
 tkinsert(treeWidget,"end","Name51Node","Name67Val",text="by Histograms Methods")
 tkinsert(treeWidget,"end","Name51Node","Name68Val",text="by Kernel Methods")
+tkinsert(treeWidget,"end","Name53Node","Name698Val",text="Conditional Density for Langevin Equation")
 tkinsert(treeWidget,"end","Name53Node","Name69Val",text="Attractive Model for One-System SDE (2D)")
 tkinsert(treeWidget,"end","Name53Node","Name70Val",text="Attractive Model for One-System SDE (3D)")
 tkinsert(treeWidget,"end","Name53Node","Name71Val",text="Attractive Model for Two-System SDE (2D)")
 tkinsert(treeWidget,"end","Name53Node","Name72Val",text="Attractive Model for Two-System SDE (3D)")
 tkinsert(treeWidget,"end","Name53Node","Name73Val",text="Brownian Motion in 2D plane")
-tkinsert(treeWidget,"end","Name53Node","Name74Val",text="Brownian Motion Trajectory Approxsime by Euler Scheme")
+##tkinsert(treeWidget,"end","Name53Node","Name74Val",text="Brownian Motion Trajectory Approxsime by Euler Scheme")
 tkinsert(treeWidget,"end","Name53Node","Name75Val",text="Flow of the Diffusion Processes")
-tkinsert(treeWidget,"end","Name53Node","Name76Val",text="Numerical Solution of One-Dimensional SDE")
-tkinsert(treeWidget,"end","Name53Node","Name77Val",text="Numerical Solution of Two-Dimensional SDE")
+tkinsert(treeWidget,"end","Name53Node","Name76Val",text="Numerical Simulation")
 tkinsert(treeWidget,"end","Name53Node","Name78Val",text="Stochastic Processes (Models)")
 tkinsert(treeWidget,"end","Name30Val","Age1Val",text="Two-Dimensional Attractive Model")
 tkinsert(treeWidget,"end","Name30Val","Age2Val",text="Three-Dimensional Attractive Model")
@@ -14758,6 +17137,8 @@ tkinsert(treeWidget,"end","Name45Val","Age9Val",text="Milstein Scheme")
 tkinsert(treeWidget,"end","Name45Val","Age10Val",text="Milstein Second Scheme")
 tkinsert(treeWidget,"end","Name51Val","Age11Val",text="Milstein Scheme")
 tkinsert(treeWidget,"end","Name51Val","Age12Val",text="Milstein Second Scheme")
+tkinsert(treeWidget,"end","Name511Val","Age111Val",text="Milstein Scheme")
+tkinsert(treeWidget,"end","Name511Val","Age122Val",text="Milstein Second Scheme")
 tkinsert(treeWidget,"end","Name58Val","Age15Val",text="Estimate of The Parameters")
 tkinsert(treeWidget,"end","Name58Val","Age16Val",text="Kolmogorov-Smirnov Tests")
 tkinsert(treeWidget,"end","Name59Val","Age17Val",text="Estimate of The Parameters")
@@ -14776,6 +17157,9 @@ tkinsert(treeWidget,"end","Name65Val","Age29Val",text="Estimate of The Parameter
 tkinsert(treeWidget,"end","Name65Val","Age30Val",text="Kolmogorov-Smirnov Tests")
 tkinsert(treeWidget,"end","Name66Val","Age31Val",text="Estimate of The Parameters")
 tkinsert(treeWidget,"end","Name66Val","Age32Val",text="Kolmogorov-Smirnov Tests")
+tkinsert(treeWidget,"end","Name76Val","Age765Val",text="One-Dimensional SDE")
+tkinsert(treeWidget,"end","Name76Val","Age766Val",text="Two-Dimensional SDE")
+tkinsert(treeWidget,"end","Name76Val","Age767Val",text="Three-Dimensional SDE")
 })
 }
 
@@ -14799,9 +17183,12 @@ local({
 
 tt <- tktoplevel()
 topMenu <- tkmenu(tt)
-tkwm.title(tt,"Sim.DiffProc~~Simulation of Diffusion Processes(2.0-Sat Feb 26 15:58:10 2011)")
-tkwm.resizable(tt, 0,0)
-Rico <- tk2ico.load(file.path(Sys.getenv("R_HOME"), "bin","R.exe"), res = "R")
+tkwm.title(tt,"Sim.DiffProc~~Simulation of Diffusion Processes(Sun Nov 20 17:56:49 2011)")
+tkwm.resizable(tt,0,0)
+##tkwm.maxsize(tt,912,412)
+tkwm.positionfrom(tt)
+tkwm.sizefrom(tt)
+Rico <- tk2ico.load(file.path(R.home("bin"),"R.exe"), res = "R")
 tk2ico.set(tt, Rico)
 tk2ico.destroy(Rico)
 rm(Rico)
@@ -14819,10 +17206,29 @@ xscr <- ttkscrollbar(tt, orient="horizontal",
                      command=function(...) tkxview(txt, ...))
 yscr <- ttkscrollbar(tt,
                      command=function(...) tkyview(txt, ...))
-txt <- tktext(tt,width=99,height=14, bg="white",wrap="none", undo=TRUE,yscrollcommand = function(...) tkset(xscr, 
+txt <- tktext(tt,width=98,height=14, bg="white",wrap="none", undo=TRUE,yscrollcommand = function(...) tkset(xscr, 
         ...))
 tkconfigure(txt, xscrollcommand=function(...) tkset(xscr, ...))
 tkconfigure(txt, yscrollcommand=function(...) tkset(yscr, ...))
+
+# xscr2 <- ttkscrollbar(tt, orient="horizontal",
+                     # command=function(...) tkxview(txt2, ...))
+# yscr2 <- ttkscrollbar(tt,
+                     # command=function(...) tkyview(txt2, ...))
+# txt2 <- tktext(tt,width=98,height=13, bg="white",wrap="none", undo=TRUE,yscrollcommand = function(...) tkset(xscr2, 
+        # ...))
+# tkconfigure(txt2, xscrollcommand=function(...) tkset(xscr2, ...))
+# tkconfigure(txt2, yscrollcommand=function(...) tkset(yscr2, ...))
+
+# xscr3 <- ttkscrollbar(tt, orient="horizontal",
+                     # command=function(...) tkxview(txt3, ...))
+# yscr3 <- ttkscrollbar(tt,
+                     # command=function(...) tkyview(txt3, ...))
+# txt3 <- tktext(tt,width=98,height=2, bg="gray85",wrap="none", undo=TRUE,yscrollcommand = function(...) tkset(xscr3, 
+        # ...))
+# tkconfigure(txt3, xscrollcommand=function(...) tkset(xscr3, ...))
+# tkconfigure(txt3, yscrollcommand=function(...) tkset(yscr3, ...))
+
 
 ###############################################################################
 ###############################################################################
@@ -14871,6 +17277,21 @@ tkgrid(xscr,columnspan=2)
 tkgrid.configure(yscr, sticky="ns")
 tkgrid.configure(xscr, sticky="ew")
 tkfocus(txt)
+
+# tkgrid(tklabel(tt, text=gettext("R-Output"), foreground="blue"),row=10,sticky="w")
+# tkgrid(txt2, yscr2, sticky="news", columnspan=2,row=11)
+# tkgrid(xscr2,columnspan=2)
+# tkgrid.configure(yscr2, sticky="ns")
+# tkgrid.configure(xscr2, sticky="ew")
+# tkfocus(txt2)
+
+
+# tkgrid(tklabel(tt, text=gettext("R-Sim.DiffProc Warning"), foreground="blue"),row=13,sticky="w")
+# tkgrid(txt3, yscr3, sticky="news", columnspan=2,row=14)
+# tkgrid(xscr3,columnspan=2)
+# tkgrid.configure(yscr3, sticky="ns")
+# tkgrid.configure(xscr3, sticky="ew")
+# tkfocus(txt3)
 ###############################################################################
 ###############################################################################
 
@@ -14916,6 +17337,7 @@ onUndo <- function(){
 focused <- tkfocus()
 tcl(focused, "edit", "undo")
 }
+
 onRedo <- function(){
 focused <- tkfocus()
 tcl(focused, "edit", "redo")
@@ -14925,11 +17347,47 @@ exit <-function(){
     exitValue <- tkmessageBox(message="Are you sure you want to exit Sim.DiffProc ?",
       icon="question",
       type="okcancel",
-      default="cancel")
+      default="cancel",
+      parent= tt)
     if(tclvalue(exitValue) == "ok"){
-      tkdestroy(tt)
+      tkdestroy(tt) || closeAllConnections()
    }
   }
+
+# R.base.dir <- system.file()
+# lib.loc <- .libPaths()[1L]
+# Met.Console <- paste(lib.loc, "/Sim.DiffProc/Console/SDP_Console_O", 
+        # sep = "")
+# Met.Console2 <- paste(lib.loc, "/Sim.DiffProc/Console/SDP_Console_W", 
+        # sep = "")
+# z  <- file(Met.Console, "w+b")
+# z2 <- file(Met.Console2, "w+b")
+# sink(file = z, append = TRUE, type = c("output", "message"), 
+        # split = FALSE)
+# sink(file = z2, append = TRUE, type = "message", split = FALSE)
+# .write <- function() {
+        # tkconfigure(txt2, state = "normal")
+        # tkconfigure(txt3, state = "normal")
+        # chn <- tclopen(Met.Console, "r")
+        # chn2 <- tclopen(Met.Console2, "r")
+        # tkdelete(txt2, "0.0", "100000.0")
+        # tkdelete(txt3, "0.0", "100000.0")
+        # tkinsert(txt2, "end", tclvalue(tclread(chn)))
+        # tkinsert(txt3, "end", tclvalue(tclread(chn2)))
+        # tkconfigure(txt2, state = "disabled",foreground="blue")
+        # tkconfigure(txt3, state = "disabled",foreground="red")
+        # }
+# evalGUI <- function() {
+    # code <- tclvalue(tkget(txt, "0.0", "end"))
+    # e <- try(parse(text = code))
+    # if (inherits(e, "try-error")) {
+          # tkmessageBox(message = "Syntax error", icon = "error")
+           # return()
+        # }
+    # .write()
+    # print(eval(e))
+    # .write()
+#    }
 
 evalGUI <-function() 
 {
@@ -14945,12 +17403,12 @@ tkfocus(txt)
 return()
 }
 }
-  e <- try(parse(text=selection))
-  if (inherits(e, "try-error")) {
-    tkmessageBox(message="Syntax error",
-                 icon="error")
-    return()
-   }
+e <- try(parse(text=selection))
+ if (inherits(e, "try-error")) {
+   tkmessageBox(message="Syntax error",
+                icon="error")
+   return()
+  }
 tkinsert(txt,"end",paste("\n ", eval(e),"\n", sep=""))
 tktag.add(txt, "currentLine", "end - 2 lines linestart", "end - 2 lines lineend")
 tktag.configure(txt, "currentLine", foreground="red")
@@ -14988,17 +17446,52 @@ tkinsert(txt, "end", paste(contents, collapse="\n"))
     }
   }
 
+Pritxt <- function() NULL
+.Print.file <- function() {
+      try(win.print(), silent = TRUE)
+      if (geterrmessage() != "Error in win.print() : unable to start device devWindows\n") {
+      Pritxt()
+      dev.off()
+        }
+    }
+
+SDP.update <- function()
+{
+  version.available <- available.packages(contriburl="http://cran.at.r-project.org/bin/windows/contrib/2.14")["Sim.DiffProcGUI","Version"]
+  version.installed <- installed.packages()["Sim.DiffProcGUI","Version"]
+  if(compareVersion(version.available,version.installed)==1){
+  tkmessageBox(title="Update Sim.DiffProcGUI...",message=paste("A new version of Sim.DiffProcGUI is available and is being installed, close and restart Sim.DiffProcGUI."))
+  detach(package:Sim.DiffProc)
+  detach(package:Sim.DiffProcGUI)
+  install.packages("Sim.DiffProc") 
+  install.packages("Sim.DiffProcGUI")   
+  library(Sim.DiffProcGUI)
+  }else{
+  tkmessageBox(title="Update Sim.DiffProcGUI...",message=paste("You have the most recent version of Sim.DiffProcGUI.")) 
+  }
+}
+
+
 ###############################################################################
 ################################### File ######################################
   
 fileMenu <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(topMenu,"cascade",label="File",menu=fileMenu)
+tkadd(topMenu,"cascade",label="File",menu=fileMenu,underline = "1")
 tkadd(fileMenu,"command",label="Open file",command=function() {.openFile()})
 tkadd(fileMenu,"command",label="Change working directory",command=function(){.setWd()})
 tkadd(fileMenu,"separator")
 tkadd(fileMenu,"command",label="Import data from...",command=function(){.importDataGUI()})
-tkadd(fileMenu,"command",label="Save                           Ctrl+S",command=function(){Save()})
-tkadd(fileMenu,"command",label="Save graphic             Ctrl+G",command=function() {.outgraph()})
+tkadd(fileMenu,"command",label="Save",accelerator="Ctrl+S",command=function(){Save()})
+tkadd(fileMenu,"command",label="Save graphic",accelerator="Ctrl+G",command=function() {.outgraph()})
+##tkadd(fileMenu,"command",label="Print...",accelerator="Ctrl+P",command=function() {.Print.file()})
+tkadd(fileMenu, "command", label = "Print...", 
+        accelerator = "Ctrl+P", state = if (.Platform$OS.type != 
+            "windows") 
+            "disabled"
+        else "normal", command = function() {
+            .Print.file()
+        })
+
 tkadd(fileMenu,"separator")
 Quit <- tkmenu(topMenu,tearoff=FALSE)
 tkadd(Quit,"command",label="Quit Sim.DiffProc",command=function() exit())
@@ -15012,28 +17505,28 @@ tkbind(tt, "<Control-G>",.outgraph)
 #############################    Edit       ###################################
 
 EDMenu <- tkmenu(tkmenu(txt),tearoff=FALSE)
-tkadd(topMenu,"cascade",label="Edit",menu=EDMenu)
-tkadd(EDMenu,"command",label="Eval Code           Ctrl+R",
-     command=function() {evalGUI()})
-tkadd(EDMenu,"command",label="Clear                   Ctrl+T",
-     command=function(){tkdelete(txt, '@0,0', 'end' )})
+tkadd(topMenu,"cascade",label="Edit",menu=EDMenu,underline = "0")
+tkadd(EDMenu,"command",label="Eval Code",
+     accelerator="Ctrl+R",command=function() {evalGUI()})
+tkadd(EDMenu,"command",label="Clear",
+     accelerator="Ctrl+T",command=function(){tkdelete(txt, '@0,0', 'end' )})
 tkadd(EDMenu,"separator")
-tkadd(EDMenu,"command",label="Undo                   Ctrl+Z",
-     command=function() {onUndo()})
-tkadd(EDMenu,"command",label="Redo                    Ctrl+W",
-     command=function() {onRedo()})
+tkadd(EDMenu,"command",label="Undo",
+     accelerator="Ctrl+Z",command=function() {onUndo()})
+tkadd(EDMenu,"command",label="Redo",
+     accelerator="Ctrl+W",command=function() {onRedo()})
 tkadd(EDMenu,"separator")
-tkadd(EDMenu,"command",label="Cut                       Ctrl+X",
-     command=function() {onCut()})
-tkadd(EDMenu,"command",label="Copy                    Ctrl+C",
-     command=function() {onCopy()})
-tkadd(EDMenu,"command",label="Paste                    Ctrl+V",
-     command=function() {onPaste()})
+tkadd(EDMenu,"command",label="Cut",
+     accelerator="Ctrl+X",command=function() {onCut()})
+tkadd(EDMenu,"command",label="Copy",
+     accelerator="Ctrl+C",command=function() {onCopy()})
+tkadd(EDMenu,"command",label="Paste",
+     accelerator="Ctrl+V",command=function() {onPaste()})
 tkadd(EDMenu,"separator")
-tkadd(EDMenu,"command",label="Select All              Ctrl+A",
-     command=function() {onSelectAll()})
-tkadd(EDMenu,"command",label="Delete                   Ctrl+D",
-     command=function() {onDelete()})
+tkadd(EDMenu,"command",label="Select All",
+     accelerator="Ctrl+A",command=function() {onSelectAll()})
+tkadd(EDMenu,"command",label="Delete",
+     accelerator="Ctrl+D",command=function() {onDelete()})
 click  <- function() {tkpopup(EDMenu, tkwinfo("pointerx", txt), tkwinfo("pointery", txt))}
 tkbind(tt, "<Control-r>", evalGUI)
 tkbind(tt, "<Control-R>", evalGUI)
@@ -15053,13 +17546,15 @@ tkbind(tt, "<Control-a>", onSelectAll)
 tkbind(tt, "<Control-A>", onSelectAll)
 tkbind(tt, "<Control-d>", onDelete)
 tkbind(tt, "<Control-D>", onDelete)
+tkbind(tt, "<Control-p>", .Print.file)
+tkbind(tt, "<Control-P>", .Print.file)
 tkbind(txt, "<Button-3>", click)
 
 ###############################################################################
 ####################### Brownian Motion Model #################################
 
 BMMMenu <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(topMenu,"cascade",label="Brownian Motion",menu=BMMMenu)
+tkadd(topMenu,"cascade",label="Brownian Motion",menu=BMMMenu,underline = "0")
 BMMenu <- tkmenu(topMenu,tearoff=FALSE)
 tkadd(BMMenu,"command",label="by The Normal Distribution",
       command=function() {.BMNGUI()})
@@ -15120,25 +17615,25 @@ tkadd(BMMMenu,"cascade",label="Brownian Trajectory in 3D",menu=BM3DDMenu)
 #############################  Stochastic Integral ############################
 
 STMenu <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(topMenu,"cascade",label="Stochastic Integral",menu=STMenu)
+tkadd(topMenu,"cascade",label="Stochastic Integral",menu=STMenu,underline = "0")
 Stra <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(Stra,"command",label="Simulation of the Stratonovitch integral(W(s) o dW(s),0,t)",
+tkadd(Stra,"command",label="Integral(W(s) o dW(s),0,t)",
        command=function() {.BMStraGUI()})
-tkadd(Stra,"command",label="Simulation of the Stratonovitch integral(alpha o dW(s),0,t)",
+tkadd(Stra,"command",label="Integral(alpha o dW(s),0,t)",
        command=function() {.BMStraCGUI()})
-tkadd(Stra,"command",label="Simulation of the Stratonovitch integral(W(s)^n o dW(s),0,t)",
+tkadd(Stra,"command",label="Integral(W(s)^n o dW(s),0,t)",
        command=function() {.BMStraPGUI()})
-tkadd(Stra,"command",label="Simulation of the Stratonovitch integral(s o dW(s),0,t)",
+tkadd(Stra,"command",label="Integral(s o dW(s),0,t)",
        command=function() {.BMStraTGUI()})
 tkadd(STMenu,"cascade",label="Stratonovitch Integral",menu=Stra)
 Ito <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(Ito,"command",label="Simulation of the Ito integral(W(s)dW(s),0,t)",
+tkadd(Ito,"command",label="Integral(W(s)dW(s),0,t)",
        command=function() {.BMIto2GUI()})
-tkadd(Ito,"command",label="Simulation of the Ito integral(alpha*dW(s),0,t)",
+tkadd(Ito,"command",label="Integral(alpha*dW(s),0,t)",
        command=function() {.BMItoCGUI()})
-tkadd(Ito,"command",label="Simulation of the Ito integral(W(s)^n*dW(s),0,t)",
+tkadd(Ito,"command",label="Integral(W(s)^n*dW(s),0,t)",
        command=function() {.BMItoPGUI()})
-tkadd(Ito,"command",label="Simulation of the Ito integral(s*dW(s),0,t)",
+tkadd(Ito,"command",label="Integral(s*dW(s),0,t)",
        command=function() {.BMItoTGUI()})
 tkadd(STMenu,"cascade",label="Ito Integral",menu=Ito)
 ItovsStra <- tkmenu(topMenu,tearoff=FALSE)
@@ -15154,7 +17649,7 @@ tkadd(STMenu,"cascade",label="Ito Integral vs Stratonovitch Integral",menu=Itovs
 ############################ Simulation for Stochastic Models #################
 
 SMMenu <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(topMenu,"cascade",label="Stochastic Models",menu=SMMenu)
+tkadd(topMenu,"cascade",label="Stochastic Models",menu=SMMenu,underline = "0")
 
 Attarctive  <- tkmenu(topMenu,tearoff=FALSE)
 tkadd(Attarctive,"command",label="Attractive Model for One-System SDE",
@@ -15234,7 +17729,7 @@ tkadd(SMMenu,"cascade",label="Stochastic Process",menu=PSMenu)
 ############################   Parametric Estimation         ##################
 
 EPMenu <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(topMenu,"cascade",label="Parametric Estimation",menu=EPMenu)
+tkadd(topMenu,"cascade",label="Parametric Estimation",menu=EPMenu,underline = "0")
 tkadd(EPMenu,"command",label="Parametric Estimation of Arithmetic Brownian Motion",
      command=function() {.PEABMGUI()})
 tkadd(EPMenu,"command",label="Parametric Estimation of Model Black-Scholes",
@@ -15251,7 +17746,7 @@ tkadd(EPMenu,"cascade",label="Parametric Estimation of Ornstein-Uhlenbeck Model"
 ############################Simulation for Numerical Solution##################
 
 SNSMenu <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(topMenu,"cascade",label="Numerical Solution of SDE",menu=SNSMenu)
+tkadd(topMenu,"cascade",label="Numerical Methods",menu=SNSMenu,underline = "0")
 NumSDE1 <- tkmenu(topMenu,tearoff=FALSE)
 tkadd(NumSDE1,"command",label="Euler Scheme",
      command=function() {.EulerGUI()})
@@ -15289,17 +17784,38 @@ tkadd(NumSDE2,"command",label="Runge-Kutta Scheme",
      command=function() {.RK32DGUI()})
 tkadd(SNSMenu,"cascade",label="Two-Dimensional SDE",menu=NumSDE2)
 
+NumSDE3 <- tkmenu(topMenu,tearoff=FALSE)
+tkadd(NumSDE3,"command",label="Euler Scheme",
+     command=function() {.Euler3DGUI()})
+tkadd(NumSDE3,"command",label="Predictor-Corrector Method",
+     command=function() {.PredCorr3DGUI()})
+MIMenu3 <- tkmenu(topMenu,tearoff=FALSE)
+tkadd(MIMenu3,"command",label="Milstein Scheme",
+     command=function() {.Milstein3DGUI()})
+tkadd(MIMenu3,"command",label="Milstein Second Scheme",
+     command=function() {.MilsteinS3DGUI()})
+tkadd(NumSDE3,"cascade",label="Milstein Scheme",menu=MIMenu3)
+tkadd(NumSDE3,"command",label="Strong Ito-Taylor Scheme",
+     command=function() {.STS3DGUI()})
+tkadd(NumSDE3,"command",label="Heun Scheme",
+     command=function() {.Heun3DGUI()})
+tkadd(NumSDE3,"command",label="Runge-Kutta Scheme",
+     command=function() {.RK33DGUI()})
+tkadd(SNSMenu,"cascade",label="Three-Dimensional SDE",menu=NumSDE3)
+
 
 ###############################################################################
 ############################   Statistical analysis          ##################
 
 AnayMenu <- tkmenu(topMenu,tearoff=FALSE)
-tkadd(topMenu,"cascade",label="Statistical Analysis",menu=AnayMenu)
+tkadd(topMenu,"cascade",label="Statistical Analysis",menu=AnayMenu,underline = "0")
 tkadd(AnayMenu,"command",label="Simulation M-Samples of Random Variable",
       command=function() {.AnaSimXGUI()})
 tkadd(AnayMenu,"command",label="Simulation The First Passage Time FPT",
       command=function() {.AnaSimFPTGUI()})
-
+tkadd(AnayMenu,"command",label="Approximated Conditional Density",
+      command=function() {.AppdconGUI()})	  
+	  
 PLOT <- tkmenu(topMenu,tearoff=FALSE)
 tkadd(PLOT,"command",label="Histograms",
       command=function() {.hist_methGUI()})
@@ -15389,6 +17905,10 @@ tkadd(AnayMenu,"command",label="Distribution Estimation",
 AideMenu <- tkmenu(topMenu,tearoff=FALSE)
 tkadd(topMenu,"cascade",label="?",menu=AideMenu)
 DOMenu <- tkmenu(topMenu,tearoff=FALSE)
+
+tkadd(DOMenu,"command",label="Conditional Density for Langevin Equation",
+     command=function() {.Codion()})
+
 tkadd(DOMenu,"command",label="Attractive Model for One-System SDE (2D)",
      command=function() {.Attra2D()})
 tkadd(DOMenu,"command",label="Attractive Model for One-System SDE (3D)",
@@ -15399,20 +17919,27 @@ tkadd(DOMenu,"command",label="Attractive Model for Two-System SDE (3D)",
      command=function() {.Attra3D2()})
 tkadd(DOMenu,"command",label="Brownian Motion in 2D plane",
      command=function() {.BM2D()})
-tkadd(DOMenu,"command",label="Brownian Motion Trajectory Approxsime by Euler Scheme",
-     command=function() {.BMEuler()})
+##tkadd(DOMenu,"command",label="Brownian Motion Trajectory Approxsime by Euler Scheme",
+##     command=function() {.BMEuler()})
 tkadd(DOMenu,"command",label="Flow of the Diffusion Processes",
      command=function() {.flow()})
-tkadd(DOMenu,"command",label="Numerical Solution of One-Dimensional SDE",
+		 
+MIMenu332 <- tkmenu(topMenu,tearoff=FALSE)
+tkadd(MIMenu332,"command",label="One-Dimensional SDE",
      command=function() {.sde.sim()})
-tkadd(DOMenu,"command",label="Numerical Solution of Two-Dimensional SDE",
+tkadd(MIMenu332,"command",label="Two-Dimensional SDE",
      command=function() {.sde.sim2D()})
+tkadd(MIMenu332,"command",label="Three-Dimensional SDE",
+     command=function() {.sde.sim3D()})
+
+tkadd(DOMenu,"cascade",label="Numerical Simulation",menu=MIMenu332)
+	 
 tkadd(DOMenu,"command",label="Stochastic Processes (Models)",
      command=function() {.sde()})
 tkadd(AideMenu,"cascade",label="Demos",menu=DOMenu)
 tkadd(AideMenu,"command",label="Teachware",
       command= function(){
-                         browseURL(paste(file.path(.path.package(package="Sim.DiffProcGUI")[1], "Manual"),
+                         browseURL(paste(file.path(.path.package(package="Sim.DiffProcGUI")[1], "teachware"),
              "/", "1.JPG", sep=""))})
 tkadd(AideMenu,"separator")
 tkadd(AideMenu,"command",label="Start Sim.DiffProc help (.HTML)",
@@ -15420,14 +17947,19 @@ tkadd(AideMenu,"command",label="Start Sim.DiffProc help (.HTML)",
 tkadd(AideMenu,"command",label="Start Sim.DiffProc help (.PDF)",
      command= function(){
                          browseURL(paste(file.path(.path.package(package="Sim.DiffProc")[1], "doc"),
-             "/", "Sim.DiffProc.pdf", sep=""))})
+             "/", "RSim.DiffProc.pdf", sep=""))})
 tkadd(AideMenu,"command",label="Start R help system",
      command= function() {help.start()})
 tkadd(AideMenu,"separator")
-tkadd(AideMenu,"command",label="About Sim.DiffProc", 
-     command= function() {tkmessageBox(title="Information",message=paste(" Sim.DiffProc version 2.0 (Sat Feb 26 15:58:10 2011).\n","BOUKHETALA Kamal <kboukhetala@usthb.dz>.\n", "GUIDOUM Arsalane <starsalane@gmail.com>.\n",
+tkadd(AideMenu,"command",label="Check for Update...",
+     command= function() {SDP.update()})
+tkadd(AideMenu,"command",label="About Sim.DiffProcGUI...",underline = "0",accelerator="F1", 
+     command= function() {tkmessageBox(title="Information",message=paste(" Sim.DiffProc version 2.1 (Sun Nov 20 17:56:49 2011).\n","BOUKHETALA Kamal <kboukhetala@usthb.dz>.\n", "GUIDOUM Arsalane <starsalane@gmail.com>.\n",
              "University of Sciences and Technology Houari Boumediene (USTHB)\n","Faculty of Mathematics\n","Department of Probabilities and Statistics.\n",
-             "Copyright (C) 2011 Algeria."))})
+             "Copyright (C) 2011 USTHB, Algeria."))})
+tkbind(tt, "<F1>", function() {tkmessageBox(title="Information",message=paste(" Sim.DiffProc version 2.1 (Sun Nov 20 17:56:49 2011).\n","BOUKHETALA Kamal <kboukhetala@usthb.dz>.\n", "GUIDOUM Arsalane <starsalane@gmail.com>.\n",
+             "University of Sciences and Technology Houari Boumediene (USTHB)\n","Faculty of Mathematics\n","Department of Probabilities and Statistics.\n",
+             "Copyright (C) 2011 USTHB, Algeria."))})
 
 ###############################################################################
 ##############################   Run    #######################################
@@ -15445,10 +17977,14 @@ site <- function(){browseURL("http://www.usthb.dz")}
 ## fontHeading1 <- tkfont.create(family="times",size=10,weight="bold",slant="italic")
 USTHB.but <- tkbutton(tt,text="     University of Sciences and Technology Houari Boumediene (USTHB)
 Faculty of Mathematics , Department of Probabilities and Statistics , Algeria",command=function(){site()})
-tkgrid(USTHB.but,sticky="news",row=11,column=0,columnspan=2)
+tkgrid(USTHB.but,sticky="news",row=18,column=0,columnspan=2)
 ###############################################################################
 ###############################################################################
 })
 }
+
+
+
+
 
 
