@@ -4272,7 +4272,7 @@ local({
                 defaultextension = ".png", title = "Save graph...", 
                 filetypes = "{PNG {.png}} {{All Files} {*.*}}"))
             if (filename != "") {
-                png(file = filename, width = width, height = height)
+                png(filename = filename, width = width, height = height)
             }
         }
         else if (outform == 6) {
@@ -4280,7 +4280,7 @@ local({
                 defaultextension = ".jpeg", title = "Save graph...", 
                 filetypes = "{JPEG {.jpeg .jpg}} {{All Files} {*.*}}"))
             if (filename != "") {
-                jpeg(file = filename, width = width, height = height)
+                jpeg(filename = filename, width = width, height = height)
             }
         }
         ndev <- dev.cur()
@@ -9809,7 +9809,7 @@ X2   <- Y
 Result <- data.frame(time,X1,X2)
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "PredCorr2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "PredCorr2D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -13671,7 +13671,7 @@ Result <- data.frame(time,X)
 if (M >=2) {Result <- data.frame(time,Q,X.mean)}
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "Euler.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "Euler.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -13748,7 +13748,7 @@ Result <- data.frame(time,X)
 if (M >=2) {Result <- data.frame(time,Q,X.mean)}
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "Milstein.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "Milstein.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -13835,7 +13835,7 @@ Result <- data.frame(time,X)
 if (M >=2) {Result <- data.frame(time,Q,X.mean)}
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "MilsteinS.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "MilsteinS.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -13923,7 +13923,7 @@ Result <- data.frame(time,X)
 if (M >=2) {Result <- data.frame(time,Q,X.mean)}
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "STS.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "STS.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -13999,7 +13999,7 @@ Result <- data.frame(time,X)
 if (M >=2) {Result <- data.frame(time,Q,X.mean)}
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "Heun.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "Heun.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14078,7 +14078,7 @@ Result <- data.frame(time,X)
 if (M >=2) {Result <- data.frame(time,Q,X.mean)}
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "RK3.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "RK3.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14174,7 +14174,7 @@ X2   <- Y
 Result <- data.frame(time,X1,X2)
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "Euler2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "Euler2D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14277,7 +14277,7 @@ X2   <- Y
 Result <- data.frame(time,X1,X2)
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "Milstein2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "Milstein2D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14406,7 +14406,7 @@ X2   <- Y
 Result <- data.frame(time,X1,X2)
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14510,7 +14510,7 @@ X2   <- Y
 Result <- data.frame(time,X1,X2)
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14619,7 +14619,7 @@ X2   <- Y
 Result <- data.frame(time,X1,X2)
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "Heun2D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14748,7 +14748,7 @@ X2   <- Y
 Result <- data.frame(time,X1,X2)
 showData(Result , placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Result, "MilsteinS2D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
 }
 attach(Result)
@@ -14903,7 +14903,7 @@ mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statis
 Diff3D <- data.frame(t,X,Y,Z)
 showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Diff3D , "SYS_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Diff3D , "SYS_Diff3D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
                  }
 attach(Diff3D)
@@ -15026,7 +15026,7 @@ mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statis
 Diff3D <- data.frame(t,X,Y,Z)
 showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Diff3D , "RK3_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Diff3D , "RK3_Diff3D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
                  }
 attach(Diff3D)
@@ -15140,7 +15140,7 @@ mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statis
 Diff3D <- data.frame(t,X,Y,Z)
 showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Diff3D , "Heun_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Diff3D , "Heun_Diff3D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
                  }
 attach(Diff3D)
@@ -15291,7 +15291,7 @@ mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statis
 Diff3D <- data.frame(t,X,Y,Z)
 showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Diff3D , "MilsteinS_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Diff3D , "MilsteinS_Diff3D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
                  }
 attach(Diff3D)
@@ -15406,7 +15406,7 @@ mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statis
 Diff3D <- data.frame(t,X,Y,Z)
 showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Diff3D , "Milstein_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Diff3D , "Milstein_Diff3D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
                  }
 attach(Diff3D)
@@ -15511,7 +15511,7 @@ mtext(paste("USTHB,Faculty of Mathematics,Department of Probabilities and Statis
 Diff3D <- data.frame(t,X,Y,Z)
 showData(Diff3D, placement='+200-200', font = "Courier 11", body.textcolor = "black")
 if(Output==TRUE){
-write.xlsx(Diff3D , "Euler_Diff3D.xlsx", sheetName="Sheet 1", formatTemplate=NULL,
+write.xlsx(Diff3D , "Euler_Diff3D.xlsx", sheetName="Sheet 1",
            col.names=TRUE, row.names=FALSE, append=FALSE)
                  }
 attach(Diff3D)
@@ -16956,7 +16956,7 @@ local({
     }
 tclRequire("BWidget")
 tt <- tktoplevel()
-tkwm.title(tt,"Sim.DiffProcGUI version 2.1~~Thu Sep 29 07:28:06 2011")
+tkwm.title(tt,"Sim.DiffProcGUI version 2.2~~Tue Feb 14 22:03:59 2012")
 tkwm.resizable(tt, 0,0)
 xScr       <- tkscrollbar(tt,command=function(...)tkxview(treeWidget,...),orient="horizontal")
 yScr       <- tkscrollbar(tt,command=function(...)tkyview(treeWidget,...))
@@ -17034,6 +17034,7 @@ tkinsert(treeWidget,"end","Record9Node","Name53Node",text="Demos")
 tkinsert(treeWidget,"end","Record9Node","Name533Node",text="Teachware")
 tkinsert(treeWidget,"end","Record9Node","Name54Node",text="Start Sim.DiffProc help (.HTML)")
 tkinsert(treeWidget,"end","Record9Node","Name55Node",text="Start Sim.DiffProc help (.PDF)")
+tkinsert(treeWidget,"end","Record9Node","Name98765Node",text="Solution of SDE(.PDF)")
 tkinsert(treeWidget,"end","Record9Node","Name56Node",text="Start R help system")
 tkinsert(treeWidget,"end","Record9Node","Name54326Node",text="Check for Update...")
 tkinsert(treeWidget,"end","Record9Node","Name57Node",text="About Sim.DiffProc")
@@ -17183,7 +17184,7 @@ local({
 
 tt <- tktoplevel()
 topMenu <- tkmenu(tt)
-tkwm.title(tt,"Sim.DiffProc~~Simulation of Diffusion Processes(Sun Nov 20 17:56:49 2011)")
+tkwm.title(tt,"Sim.DiffProc~~Simulation of Diffusion Processes(V.2.2-Tue Feb 14 22:03:59 2012)")
 tkwm.resizable(tt,0,0)
 ##tkwm.maxsize(tt,912,412)
 tkwm.positionfrom(tt)
@@ -17463,9 +17464,7 @@ SDP.update <- function()
   tkmessageBox(title="Update Sim.DiffProcGUI...",message=paste("A new version of Sim.DiffProcGUI is available and is being installed, close and restart Sim.DiffProcGUI."))
   detach(package:Sim.DiffProc)
   detach(package:Sim.DiffProcGUI)
-  install.packages("Sim.DiffProc") 
-  install.packages("Sim.DiffProcGUI")   
-  library(Sim.DiffProcGUI)
+  install.packages("Sim.DiffProcGUI",contriburl="http://CRAN.R-project.org/package=Sim.DiffProcGUI")    
   }else{
   tkmessageBox(title="Update Sim.DiffProcGUI...",message=paste("You have the most recent version of Sim.DiffProcGUI.")) 
   }
@@ -17948,18 +17947,22 @@ tkadd(AideMenu,"command",label="Start Sim.DiffProc help (.PDF)",
      command= function(){
                          browseURL(paste(file.path(.path.package(package="Sim.DiffProc")[1], "doc"),
              "/", "RSim.DiffProc.pdf", sep=""))})
+tkadd(AideMenu,"command",label="Solution of SDE (.PDF)",
+     command= function(){
+                         browseURL(paste(file.path(.path.package(package="Sim.DiffProc")[1], "doc"),
+             "/", "EDS.pdf", sep=""))})
 tkadd(AideMenu,"command",label="Start R help system",
      command= function() {help.start()})
 tkadd(AideMenu,"separator")
 tkadd(AideMenu,"command",label="Check for Update...",
      command= function() {SDP.update()})
 tkadd(AideMenu,"command",label="About Sim.DiffProcGUI...",underline = "0",accelerator="F1", 
-     command= function() {tkmessageBox(title="Information",message=paste(" Sim.DiffProc version 2.1 (Sun Nov 20 17:56:49 2011).\n","BOUKHETALA Kamal <kboukhetala@usthb.dz>.\n", "GUIDOUM Arsalane <starsalane@gmail.com>.\n",
+     command= function() {tkmessageBox(title="Information",message=paste(" Sim.DiffProc version 2.2 (Tue Feb 14 22:03:59 2012).\n","BOUKHETALA Kamal <kboukhetala@usthb.dz>.\n", "GUIDOUM Arsalane <starsalane@gmail.com>.\n",
              "University of Sciences and Technology Houari Boumediene (USTHB)\n","Faculty of Mathematics\n","Department of Probabilities and Statistics.\n",
-             "Copyright (C) 2011 USTHB, Algeria."))})
-tkbind(tt, "<F1>", function() {tkmessageBox(title="Information",message=paste(" Sim.DiffProc version 2.1 (Sun Nov 20 17:56:49 2011).\n","BOUKHETALA Kamal <kboukhetala@usthb.dz>.\n", "GUIDOUM Arsalane <starsalane@gmail.com>.\n",
+             "Copyright (C) 2012 USTHB, Algeria."))})
+tkbind(tt, "<F1>", function() {tkmessageBox(title="Information",message=paste(" Sim.DiffProc version 2.2 (Tue Feb 14 22:03:59 2012).\n","BOUKHETALA Kamal <kboukhetala@usthb.dz>.\n", "GUIDOUM Arsalane <starsalane@gmail.com>.\n",
              "University of Sciences and Technology Houari Boumediene (USTHB)\n","Faculty of Mathematics\n","Department of Probabilities and Statistics.\n",
-             "Copyright (C) 2011 USTHB, Algeria."))})
+             "Copyright (C) 2012 USTHB, Algeria."))})
 
 ###############################################################################
 ##############################   Run    #######################################

@@ -12,8 +12,8 @@ A Graphical User Interface for some functions in the Sim.DiffProc package
 \tabular{ll}{
 Package: \tab Sim.DiffProcGUI\cr
 Type: \tab Package\cr
-Version: \tab 2.1\cr
-Date: \tab 2011-11-21\cr
+Version: \tab 2.2\cr
+Date: \tab 2012-02-14\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
