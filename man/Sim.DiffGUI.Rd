@@ -10,10 +10,10 @@ Sim.DiffGUI()
 A Graphical User Interface for some functions in the Sim.DiffProc package
 }
 \author{
-BOUKHETALA Kamal ,GUIDOUM Arsalane.
+Guidoum Arsalane, Boukhetala Kamal.
 }
 \examples{
-## Sim.DiffGUI()
+\donttest{ Sim.DiffGUI()}
 }
 \keyword{ Diffusion Process }
 \keyword{ Environment R }
@@ -21,4 +21,5 @@ BOUKHETALA Kamal ,GUIDOUM Arsalane.
 \keyword{ Financial models }
 \keyword{ Stochastic Differential Equation }
 \keyword{Numerical Solution of Stochastic Differential Equation}
+\keyword{Graphical User Interface GUI}
 

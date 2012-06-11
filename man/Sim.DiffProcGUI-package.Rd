@@ -12,16 +12,16 @@ A Graphical User Interface for some functions in the Sim.DiffProc package
 \tabular{ll}{
 Package: \tab Sim.DiffProcGUI\cr
 Type: \tab Package\cr
-Version: \tab 2.2\cr
-Date: \tab 2012-02-14\cr
+Version: \tab 2.5\cr
+Date: \tab 2012-06-11\cr
 License: \tab GPL (>= 2)\cr
 LazyLoad: \tab yes\cr
 }
 }
 \author{
-BOUKHETALA Kamal <kboukhetala@usthb.dz>, GUIDOUM Arsalane <starsalane@gmail.com>. 
+Boukhetala Kamal <kboukhetala@usthb.dz>, Guidoum Arsalane <starsalane@gmail.com>.
 
-Maintainer: BOUKHETALA Kamal <kboukhetala@usthb.dz>
+Maintainer: Guidoum Arsalane <starsalane@gmail.com>
 }
 \references{
 \enumerate{
@@ -29,11 +29,11 @@ Maintainer: BOUKHETALA Kamal <kboukhetala@usthb.dz>
 \item Dalgaard P. Changes to the R-Tcl/Tk Package. R News, 2(3), pp. 25-71, 2002.
 \item Welch B. Practical Programming in Tcl and Tk. 3nd edition. Prentice Hall PTR Upper Saddle River, NJ, USA. ISBN 0-13-022028-0, 2000.
 \item S. Baillargeon. Programmation en R: incorporation de code C et creation de packages, 2006.
-\item R Development Core Team, 2011. Writing R extensions, ISBN 3-900051-11-9, version 2.13.1 (2011-07-08).
+\item R Development Core Team, 2012. Writing R extensions, ISBN 3-900051-07-0, version 2.15.0 (2012-03-30).
 }
 }
 \keyword{Software Engineering}
-\keyword{ Attractive Model}
+\keyword{Graphical User Interface GUI}
 \keyword{ Diffusion Process Multidimensional}
 \keyword{ Diffusion Process }
 \keyword{ Environment R }
@@ -44,8 +44,10 @@ Maintainer: BOUKHETALA Kamal <kboukhetala@usthb.dz>
 \keyword{ Solution of SDE One-Dimensional}
 \keyword{ Solution of SDE Two-Dimensional}
 \keyword{ Solution of SDE Three-Dimensional}
+\keyword{ Attractive Model}
 \keyword{ Statistical Analysis }
 \examples{
-## Sim.DiffGUI()
+\donttest{
+ Sim.DiffGUI()}
 }
 

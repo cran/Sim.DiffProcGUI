@@ -1,14 +1,14 @@
 e73499cb89e0d6e97b8ba271c46739fd *COPYING
-bfc023723cc273b1dfcb1b65e77b95fc *DESCRIPTION
+66a293c26cb89de23eecf3a4a0453639 *DESCRIPTION
 65397490cf540d8e7d08160d5757aa0f *INDEX
 eb723b61539feef013de476e68b5c50a *LICENSE
 202102d6ed93210a0756a1903e0c08be *NAMESPACE
 bf842e7c7abc53d011f047c3b1b57eca *R/Sim.DiffGUI.R
-681e5c88d451c25b0fb78f2dc0fae13a *R/Sim.DiffProcGUI-internal.R
+c5a7aff4aeffb7c6a8654f5447c8b6f0 *R/Sim.DiffProcGUI-internal.R
 f4d565152bc0aa8f81c84256821e054d *R/startup.R
-f13709cc09d72b1a6204c0ef20a9fe9b *inst/CITATION
-31cef44e40c999f2fd7a697f5c2803f6 *inst/NEWS
-71a54521116c95da52b2cce200ae9eaf *inst/teachware/1.JPG
+3c96f52ef5a45cf44f4a559233aa94a2 *inst/CITATION
+3cc85840e3e35ca4c791ee137028e6af *inst/NEWS
+61764ffeb72cd2f4d0ed2939fd86fa57 *inst/teachware/1.JPG
 da3549b83fa483836aa5902fb131ddf0 *inst/teachware/10.JPG
 b77ba46f5ff0255b3f540c380ae67d4f *inst/teachware/13.JPG
 b52ef32a00d6f03323ff4c70bf01dedf *inst/teachware/14.JPG
@@ -26,5 +26,5 @@ e7dd5efcbdc939f73a74b027e7db2773 *inst/teachware/41.JPG
 11e0e9744484c5ef8789f0392773c5b8 *inst/teachware/6.JPG
 60b24a75282a3a9cb60dfa26e672579a *inst/teachware/7.JPG
 c83d7e5e1e75391e057a619fd292a167 *inst/teachware/Z.JPG
-1978e2113c14ddc941a760ee10a62f4c *man/Sim.DiffGUI.Rd
-9997fca053c0c36c2f8f5636e5a24db3 *man/Sim.DiffProcGUI-package.Rd
+31f82104c35e3febb4ace40f049b3ccb *man/Sim.DiffGUI.Rd
+870138f625e756633e1d29dce3632a2e *man/Sim.DiffProcGUI-package.Rd
